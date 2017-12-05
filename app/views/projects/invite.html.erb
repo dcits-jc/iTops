@@ -1,0 +1,12 @@
+<p>
+  <% @project.managers.each do |manager| %>
+    <kbd><%= manager.email %></kbd>
+  <% end %>
+  邀请你加入
+  <%= @project.name %>项目
+
+</p>
+
+<%= link_to('加入项目',join_in_project_path(@project),method: :post,class: "btn btn-primary") %>
+
+<%= link_to('拒绝',refuse_project_path(@project),class: "btn btn-danger") %>
