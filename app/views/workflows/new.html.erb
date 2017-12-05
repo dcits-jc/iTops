@@ -1,0 +1,12 @@
+<h1><%= @project.name %></h1>
+<p><%= @project.description %></p>
+
+
+<%= simple_form_for [@project,@workflow] do |f| %>
+  <div class="form-group">
+    <%= f.input :name,label: '任务名', input_html: { class: "form-control"} %>
+    <%= f.input :description,label: '任务描述', input_html: { class: "form-control"} %>
+    <%= f.input :hours,label: '工作量(小时)', input_html: { class: "form-control"} %>
+  </div>
+  <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交ing..." } %>
+<% end %>

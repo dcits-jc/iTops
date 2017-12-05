@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>项目名</td>
+      <td>项目描述</td>
+      <td>项目负责人</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to(project.name,project_path(project)) %></td>
+        <td><%= project.description %></td>
+        <td>
+          <% project.managers.each do |manager| %>
+          <kbd><%= manager.email %></kbd>
+          <% end %>          
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
