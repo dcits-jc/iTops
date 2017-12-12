@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  layout "user"
   def index
     @projects = current_user.projects
   end
@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     @project.managers << current_user
     if @project.save
       flash[:notice] = '项目新建成功!'
-      redirect_to project_path(@project)
+      redirect_to admin_projects_path
     else
       flash[:alert] = '项目新建失败'
       render :new    
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
   end
 
 
-
+  # 邀请加入
   def invite
     @project = Project.find(params[:id])
   end
@@ -47,9 +47,40 @@ class ProjectsController < ApplicationController
     redirect_to project_path(@project)
   end
 
+
+  # 邀请管理
+  def invite_manager
+    @project = Project.find(params[:id])
+  end
+
+  # 加入项目管理
+  def manage_in
+    @project = Project.find(params[:id])
+    if @project.is_managers?(current_user)
+      flash[:warning] = '你已经在该项目中!'
+    else
+      @project.join!(current_user)
+      @project.join_manager!(current_user)
+      flash[:success] = '成功加入该项目!'
+    end
+    redirect_to project_path(@project)
+  end
+
+
+
   # 拒绝加入项目
   def refuse
     @project = Project.find(params[:id])
+    flash[:success] = '您拒绝了加入'+@project.name+'项目的邀请!'
+    redirect_to :root
+  end
+
+
+
+  # 拒绝加入项目
+  def refuse
+    @project = Project.find(params[:id])
+    flash[:success] = '您拒绝了加入'+@project.name+'项目的邀请!'
     redirect_to :root
   end
 

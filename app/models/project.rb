@@ -24,9 +24,19 @@ class Project < ApplicationRecord
     members << user
   end
 
+  # 管理员管理项目
+  def join_manager!(user)
+    managers << user
+  end
+
+
+
   # 成员退出项目
   def exit!(user)
     members.delete(user)
+    if is_managers?(user)
+      managers.delete(user)  
+    end
   end  
 
 
@@ -48,4 +58,7 @@ end
 #  description :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  code        :string
+#  sales_name  :string
+#  sbu         :string
 #

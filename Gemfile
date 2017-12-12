@@ -57,6 +57,8 @@ gem 'rails-i18n', '~> 5.0.0'
 # 添加 devise 的国际化支持
 gem 'devise-i18n'
 
+# 搜索模块
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

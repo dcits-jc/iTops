@@ -1,0 +1,19 @@
+<ul class="nav nav-pills nav-stacked">
+  <li role="presentation">
+    <%= link_to weeklies_path do %>
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>历史周报
+    <% end %>
+  </li>
+
+  <li role="presentation">
+    <%= link_to projects_path do %>
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>参与项目
+    <% end %>
+  </li>
+
+  <li role="presentation">
+    <%= link_to user_path(current_user) do %>
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息
+    <% end %>
+  </li>
+</ul>

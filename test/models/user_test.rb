@@ -24,6 +24,15 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
+#  itcode                 :string
+#  code                   :string
+#  name                   :string
+#  sbu                    :string
+#  phone                  :string
+#  title                  :string
+#  level                  :integer
+#  cost                   :integer
+#  pm                     :boolean          default(FALSE)
 #
 # Indexes
 #

@@ -1,0 +1,49 @@
+<ol class="breadcrumb">
+  <li><%= link_to("全部用户",admin_users_path) %></li>
+  <li><%= link_to(@user.email,admin_user_path(@user)) %></li>
+
+  <li class="active">Y<%= @weekly.year %> # W<%= @weekly.week %></li>
+</ol>
+
+<h2>Y<%= @weekly.year %> # W<%= @weekly.week %></h2>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>项目名</td>
+      <td>任务名</td>
+      <td>工作量(小时)</td>
+      <td>状态</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weekly.workflows.each do |workflow| %>
+      <tr>
+        <td><%= workflow.project.name %></td>
+        <td><%= workflow.name %></td>
+        <td><%= workflow.hours %></td>
+        <td>
+          <% case workflow.aasm_state %>
+            <% when 'processing' %>
+              <i class="fa fa-gavel" aria-hidden="true"> 待确认 </i>
+            <% when 'confirmed' %>
+              <i class="fa fa-money" aria-hidden="true"> 已确认! </i>
+            <% else %>
+              <i class="fa fa-question" aria-hidden="true"> Invalid </i>
+          <% end %>        
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<% if @weekly.start_time<Time.new and @weekly.end_time>Time.new %>
+  <%= link_to('新报工',new_weekly_workflow_path(@weekly),class: "btn btn-primary") %>
+<% end %>
+
+
+

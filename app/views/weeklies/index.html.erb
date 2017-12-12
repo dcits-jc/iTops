@@ -1,0 +1,23 @@
+
+
+<div class="row">
+
+  <% @weeklies.each do |weekly| %>
+    <% if weekly.start_time<Time.new and weekly.end_time>Time.new %>
+      <div class="col-md-12 btn btn-default">
+        <h1><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,weekly_path(weekly))  %></h1>
+      </div>
+
+      <div class="col-md-12">
+        <hr>
+      </div>
+
+    <% else %>
+      <div class="col-md-2 btn btn-default">
+        <p><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,weekly_path(weekly))  %></p>
+      </div>
+    <% end %>
+  <% end %>
+  
+</div>
+

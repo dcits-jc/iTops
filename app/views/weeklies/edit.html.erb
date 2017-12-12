@@ -1,0 +1,34 @@
+<h1>Y<%= @weekly.year %> # W<%= @weekly.week %></h1>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>项目名</td>
+      <td>任务名</td>
+      <td>工作量(小时)</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @workflows.each do |workflow| %>
+      <tr>
+        <td><%= workflow.project.name %></td>
+        <td><%= workflow.name %></td>
+        <td><%= workflow.hours %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @weekly.start_time<Time.new and @weekly.end_time>Time.new %>
+  <%= link_to('新报工',new_weekly_workflow_path(@weekly),class: "btn btn-primary") %>
+<% end %>
+
+
+<%#= simple_form_for(@weekly) do |f| %>
+
+  <%#= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交中..." },  onkeydown: "if(event.keyCode==13){return false;}"  %>
+<%# end %>
+
+

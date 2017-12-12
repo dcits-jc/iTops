@@ -1,10 +1,24 @@
+<ol class="breadcrumb">
+  <li>
+    <%= link_to('项目',root_path)%>
+  </li>
+  <li class="active"><%= @project.name %></li>
+</ol>
+
 <h1>
-  <%= @project.name %>
+  <%= @project.code %>#<%= @project.name %>
 </h1>
 
 <p>
   <%= @project.description %>
 </p>
+
+
+<p>销售: <%= @project.sales_name %></p>
+<p>部门: <%= @project.sbu %></p>
+
+
+
 
 负责人:
 <% @project.managers.each do |manager| %>
@@ -22,8 +36,10 @@
 <%= link_to('http://localhost:3000'+invite_project_path(@project),invite_project_path(@project)) %>
 
 
+
+
 <hr>
-<%= link_to('报工',new_project_workflow_path(@project),class: "btn btn-primary")  %>
+<%#= link_to('报工',new_project_workflow_path(@project),class: "btn btn-primary")  %>
 
 
 <table class="table">
@@ -45,12 +61,13 @@
         <td><%= workflow.name %></td>
         <td><%= workflow.user.email %></td>
         <td><%= workflow.hours %></td>
+
         <td>
           <% case workflow.aasm_state %>
             <% when 'processing' %>
-              <i class="fa fa-gavel" aria-hidden="true"> 待确认 </i>
+              <i class="fa fa-gavel" aria-hidden="true"> 待确认 # <%= workflow.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></i>
             <% when 'confirmed' %>
-              <i class="fa fa-money" aria-hidden="true"> 已确认! </i>
+              <i class="fa fa-money" aria-hidden="true"> 已确认! # <%= workflow.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></i>
             <% else %>
               <i class="fa fa-question" aria-hidden="true"> Invalid </i>
           <% end %>        

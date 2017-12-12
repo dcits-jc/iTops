@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     member do
       get :invite
       post :join_in
+      get :invite_manager
+      post :manage_in      
       post :refuse
     end
   end
@@ -24,12 +26,32 @@ Rails.application.routes.draw do
       member do 
         post :set_admin
         post :cancel_admin
+        post :set_pm
+        post :cancel_pm
       end 
+      resources :weeklies
     end
     resources :projects
 
+
+
   end
 
+
+
+  # 普通用户
+  resources :weeklies do
+    resources :workflows do
+      member do
+        post :confirm
+      end
+    end
+  end
+  resources :users
+
+
+
+  
 
 
 end
