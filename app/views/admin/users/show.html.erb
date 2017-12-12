@@ -16,3 +16,23 @@
 
 
 <%= link_to('编辑',edit_admin_user_path(@user),class: "btn btn-primary") %>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>周</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.weeklies.each do |weekly| %>
+    <tr>
+      <td><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,admin_user_weekly_path(@user,weekly))  %></td>
+    </tr>
+    
+    <% end %>
+  </tbody>
+</table>
+
+

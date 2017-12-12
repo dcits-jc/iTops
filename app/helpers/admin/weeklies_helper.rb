@@ -1,0 +1,2 @@
+module Admin::WeekliesHelper
+end

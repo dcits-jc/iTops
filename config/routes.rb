@@ -29,8 +29,11 @@ Rails.application.routes.draw do
         post :set_pm
         post :cancel_pm
       end 
+      resources :weeklies
     end
     resources :projects
+
+
 
   end
 
