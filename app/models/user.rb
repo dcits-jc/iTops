@@ -5,6 +5,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :workflows
+  has_many :weeklies
+
+
+  has_many :user_company_relationships
+  has_many :companies, through: :user_company_relationships, source: :company
+
+  has_many :user_skill_relationships
+  has_many :skills, through: :user_skill_relationships, source: :skill
+
+
+
 
   has_many :project_relationships
   has_many :projects, through: :project_relationships, source: :project
@@ -38,6 +49,15 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
+#  itcode                 :string
+#  code                   :string
+#  name                   :string
+#  sbu                    :string
+#  phone                  :string
+#  title                  :string
+#  level                  :integer
+#  cost                   :integer
+#  pm                     :boolean          default(FALSE)
 #
 # Indexes
 #

@@ -3,6 +3,11 @@ class Workflow < ApplicationRecord
   belongs_to :project
   belongs_to :user
 
+  belongs_to :weekly
+
+  has_many :companies
+  has_many :skills
+
 
   # 加入状态机
   include AASM
@@ -34,6 +39,9 @@ end
 #  project_id  :integer
 #  user_id     :integer
 #  aasm_state  :string           default("processing")
+#  weekly_id   :integer
+#  begin_time  :datetime
+#  end_time    :datetime
 #
 # Indexes
 #

@@ -11,6 +11,9 @@
 #  project_id  :integer
 #  user_id     :integer
 #  aasm_state  :string           default("processing")
+#  weekly_id   :integer
+#  begin_time  :datetime
+#  end_time    :datetime
 #
 # Indexes
 #

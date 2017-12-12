@@ -1,3 +1,6 @@
+<%= link_to('新建项目',new_admin_project_path,class: 'btn btn-primary') %>
+
+
 <table class="table">
   <thead>
     <tr>
@@ -9,7 +12,7 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= link_to(project.name,project_path(project)) %></td>
+        <td><%= link_to(project.name,admin_project_path(project)) %></td>
         <td><%= project.description %></td>
         <td>
           <% project.managers.each do |manager| %>
@@ -20,3 +23,4 @@
     <% end %>
   </tbody>
 </table>
+

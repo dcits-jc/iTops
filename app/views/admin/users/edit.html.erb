@@ -1,0 +1,22 @@
+<ol class="breadcrumb">
+  <li><%= link_to("全部用户",admin_users_path) %></li>
+  <li><%= link_to(@user.email,admin_user_path(@user)) %></li>
+  <li class="active">编辑</li>
+</ol>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name ,label: '姓名'%>
+  <%= f.input :code ,label: '员工编号'%>
+  <%= f.input :itcode ,label: 'itcode'%>
+  <%= f.input :sbu ,label: '所属部门'%>
+  <%= f.input :phone ,label: '联系方式'%>
+  <%= f.input :title ,label: '职位'%>
+  <%= f.input :level ,label: '级别'%>
+  <%= f.input :cost ,label: '成本'%>
+
+
+
+  <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交中..." },  onkeydown: "if(event.keyCode==13){return false;}"  %>
+<% end %>
+
+
