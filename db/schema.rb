@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212172257) do
+ActiveRecord::Schema.define(version: 20171212182311) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -113,6 +113,8 @@ ActiveRecord::Schema.define(version: 20171212172257) do
     t.integer "weekly_id"
     t.datetime "begin_time"
     t.datetime "end_time"
+    t.string "worktype"
+    t.text "remaining_issue"
     t.index ["aasm_state"], name: "index_workflows_on_aasm_state"
   end
 

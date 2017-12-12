@@ -3,13 +3,16 @@
 
 <%= simple_form_for [@weekly,@workflow] do |f| %>
   <div class="form-group">
-    <%= f.input :project_id,label: '项目名', collection: current_user.projects %>
+    <%= f.input :project_id,label: '项目', collection: current_user.projects %>
     <%#= f.input :project_id,label: '项目名', collection: @project_names %>
 
 
 
     <%= f.input :name,label: '任务名', input_html: { class: "form-control"} %>
+
     <%= f.input :description,label: '任务描述', input_html: { class: "form-control"} %>
+    <%= f.input :worktype,label: '工作类别', collection:['售前','售中','售后','供货','单次服务','集成'] %>
+    <%= f.input :remaining_issue,label: '遗留问题', input_html: { class: "form-control"} %>
 
 
     <label for="">开始日期</label>
