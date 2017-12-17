@@ -1,4 +1,10 @@
 class Workflow < ApplicationRecord
+  validates :project_id, presence: true
+  validates :name, presence: true
+  validates :worktype, presence: true
+  validates :hours, presence: true
+
+
 
   belongs_to :project
   belongs_to :user
@@ -7,6 +13,10 @@ class Workflow < ApplicationRecord
 
   has_many :companies
   has_many :skills
+
+
+
+
 
 
   # 加入状态机
@@ -20,7 +30,6 @@ class Workflow < ApplicationRecord
     event :confirm do
       transitions from: :processing, to: :confirmed
     end
-
   end
 
 
@@ -40,7 +49,7 @@ end
 #  user_id         :integer
 #  aasm_state      :string           default("processing")
 #  weekly_id       :integer
-#  begin_time      :datetime
+#  start_time      :datetime
 #  end_time        :datetime
 #  worktype        :string
 #  remaining_issue :text

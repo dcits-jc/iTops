@@ -2,21 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  root 'projects#index'
+  # root 'projects#index'
+
+  # 首页设置为本周周报
+  root 'weeklies#this_week'
+
 
   resources :projects do
-    resources :workflows do
-      member do
-        post :confirm
-      end
-    end
-    member do
-      get :invite
-      post :join_in
-      get :invite_manager
-      post :manage_in      
-      post :refuse
-    end
+    resources :workflows
   end
 
 
@@ -31,27 +24,34 @@ Rails.application.routes.draw do
       end 
       resources :weeklies
     end
-    resources :projects
-
-
-
+    resources :projects do
+      member do
+        post :enable_workflow
+        post :disable_workflow
+      end
+    end
+    resources :weekly_templates
   end
 
 
 
   # 普通用户
   resources :weeklies do
-    resources :workflows do
-      member do
-        post :confirm
-      end
+    collection do
+      get :this_week
     end
+    resources :workflows
   end
   resources :users
 
 
-
-  
-
+  namespace :api, :defaults => { :format => :json } do
+    namespace :v1 do
+      # resources :trains, only: [:index, :show]
+      # resources :reservations, ony:[:show, :create, :update, :destroy] 
+      # 为了更明白的给api 使用者显示,所以最好手动列出来,并且将'id'换成对应的参数
+      get "/projects/:project_code" => "projects#show", as: :project
+    end
+  end
 
 end

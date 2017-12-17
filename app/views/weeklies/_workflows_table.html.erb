@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>项目名</td>
+      <td>任务</td>
+      <td>工作量(小时)</td>
+      <td>开始时间</td>
+      <td>结束时间</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @workflows.each do |workflow| %>
+    <tr>
+      <td><%= workflow.project.code %>#<%= workflow.project.name %>#<%= workflow.project.project_type %></td>
+      <td><%= workflow.name %></td>
+      <td><%= workflow.hours %>h</td>
+      <td><%= workflow.start_time.strftime("%Y-%m-%d") %></td>
+      <td><%= workflow.end_time.strftime("%Y-%m-%d") %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

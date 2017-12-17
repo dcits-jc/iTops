@@ -6,19 +6,25 @@
     <tr>
       <td>项目名</td>
       <td>项目描述</td>
-      <td>项目负责人</td>
+      <td>状态</td>
     </tr>
   </thead>
   <tbody>
     <% @projects.each do |project| %>
-      <tr>
+      <% if project.workflow_disabled?  %>
+        <tr class="alert alert-danger">
+      <% else %>
+        <tr class="alert alert-success">
+      <% end %>
+      
         <td><%= link_to(project.name,admin_project_path(project)) %></td>
         <td><%= project.description %></td>
         <td>
-          <% project.managers.each do |manager| %>
-          <kbd><%= manager.email %></kbd>
-          <% end %>          
-        </td>
+          <% if project.workflow_disabled?  %>
+            已停止报工
+          <% else %>
+            进行中..
+          <% end %>
       </tr>
     <% end %>
   </tbody>

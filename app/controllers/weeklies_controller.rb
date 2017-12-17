@@ -1,7 +1,9 @@
 class WeekliesController < ApplicationController
   layout "user"
+
+  before_action :current_week
   def index
-    @weeklies = current_user.weeklies
+    @weeklies = current_user.weeklies.order_by_created_at
   end
 
 
@@ -44,10 +46,33 @@ class WeekliesController < ApplicationController
   #   end
   # end
 
+
+  def this_week
+    @user = current_user
+    @current_weekly = current_user.weeklies.last
+    @workflow = Workflow.new
+    
+    @workflows = @current_weekly.workflows
+    sum_workhours = 0
+    @workflows.each do |workflow|
+      sum_workhours = sum_workhours + workflow.hours
+    end
+    @current_weekly_workhours = sum_workhours
+  end
+
+
+
   private
 
   def weekly_params
     params.require(:weekly).permit(:week,:year)
+  end
+
+  def current_week
+    @current_weekly = current_user.weeklies.last
+    @start_time =@current_weekly.start_time.strftime("%Y-%m-%d")
+    @end_time =@current_weekly.end_time.strftime("%Y-%m-%d")
+
   end
 
 end

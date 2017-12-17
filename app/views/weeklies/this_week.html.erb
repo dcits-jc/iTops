@@ -1,0 +1,21 @@
+<!-- Button trigger modal -->
+<h3>本周工作量: <%= @current_weekly_workhours %>小时</h3>
+
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newWorkflow">
+  报工
+</button>
+
+<%= render 'workflows_table' %>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="newWorkflow" tabindex="-1" role="dialog" aria-labelledby="newWorkflowLabel">
+  <div class="modal-dialog" role="document">
+
+    <%= render "workflow_form" %>
+
+
+  </div>
+</div>

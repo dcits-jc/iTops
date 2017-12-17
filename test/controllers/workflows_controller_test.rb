@@ -12,7 +12,7 @@
 #  user_id         :integer
 #  aasm_state      :string           default("processing")
 #  weekly_id       :integer
-#  begin_time      :datetime
+#  start_time      :datetime
 #  end_time        :datetime
 #  worktype        :string
 #  remaining_issue :text

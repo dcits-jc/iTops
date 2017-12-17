@@ -2,16 +2,17 @@
 #
 # Table name: weeklies
 #
-#  id          :integer          not null, primary key
-#  year        :integer
-#  month       :integer
-#  week        :integer
-#  description :text
-#  user_id     :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  start_time  :datetime
-#  end_time    :datetime
+#  id                 :integer          not null, primary key
+#  year               :integer
+#  month              :integer
+#  week               :integer
+#  description        :text
+#  user_id            :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  start_time         :datetime
+#  end_time           :datetime
+#  weekly_template_id :integer
 #
 
 require 'test_helper'

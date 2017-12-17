@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
   <li>
-    <%= link_to('项目',root_path)%>
+    <%= link_to('项目',projects_path)%>
   </li>
   <li class="active"><%= @project.name %></li>
 </ol>
@@ -20,20 +20,12 @@
 
 
 
-负责人:
-<% @project.managers.each do |manager| %>
-<kbd><%= manager.email %></kbd>
-<% end %>
-
 <br>
 项目成员:
 <% @project.members.each do |member| %>
 <code><%= member.email %></code>
 <% end %>
 
-<br>
-邀请链接:
-<%= link_to('http://localhost:3000'+invite_project_path(@project),invite_project_path(@project)) %>
 
 
 
@@ -48,10 +40,6 @@
       <td>任务名</td>
       <td>用户名</td>
       <td>工作量(小时)</td>
-      <td>状态</td>
-      <% if @project.is_managers?(current_user) %>
-        <td>操作</td>
-      <% end %>
 
     </tr>    
   </thead>
@@ -62,31 +50,6 @@
         <td><%= workflow.user.email %></td>
         <td><%= workflow.hours %></td>
 
-        <td>
-          <% case workflow.aasm_state %>
-            <% when 'processing' %>
-              <i class="fa fa-gavel" aria-hidden="true"> 待确认 # <%= workflow.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></i>
-            <% when 'confirmed' %>
-              <i class="fa fa-money" aria-hidden="true"> 已确认! # <%= workflow.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></i>
-            <% else %>
-              <i class="fa fa-question" aria-hidden="true"> Invalid </i>
-          <% end %>        
-        </td>
-        <!-- 如果是管理员可以 确认报工 -->
-        <% if @project.is_managers?(current_user) %>
-          <td>
-          <% case workflow.aasm_state %>
-            <% when 'processing' %>
-              <%= link_to('确认报工',confirm_project_workflow_path(@project,workflow),method: :post,class: "btn btn-primary") %>
-            <% when 'confirmed' %>
-              <%= link_to('已确认',confirm_project_workflow_path(@project,workflow),class: "btn btn-primary",disabled: "disabled") %>
-            <% else %>
-              <button></button>
-          <% end %> 
-
-            
-          </td>
-        <% end %>
 
 
       </tr>
