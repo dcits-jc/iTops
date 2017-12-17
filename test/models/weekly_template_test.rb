@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ManagerRelationshipTest < ActiveSupport::TestCase
+class WeeklyTemplateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
@@ -8,11 +8,14 @@ end
 
 # == Schema Information
 #
-# Table name: manager_relationships
+# Table name: weekly_templates
 #
 #  id         :integer          not null, primary key
-#  project_id :integer
-#  user_id    :integer
+#  year       :integer
+#  month      :integer
+#  week       :integer
+#  start_time :datetime
+#  end_time   :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

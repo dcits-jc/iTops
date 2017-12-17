@@ -26,17 +26,34 @@ class Admin::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @project_sum_hours = @project.hours_sum
   end
 
   def edit
     @project = Project.find(params[:id])
   end
 
+
+  # 禁止报工
+  def disable_workflow
+    @project = Project.find(params[:id])
+    @project.workflow_disabled!
+    redirect_to admin_project_path(@project)
+  end
+
+  # 重新开启报工
+  def enable_workflow
+    @project = Project.find(params[:id])
+    @project.workflow_enabled!
+    redirect_to admin_project_path(@project)
+  end
+
+
   
   private
 
   def project_params
-    params.require(:project).permit(:code,:name,:sales_name,:sbu,:description)
+    params.require(:project).permit(:code,:name,:description,:sales_name,:sbu,:project_type,:start_time,:end_time)
   end
 
 

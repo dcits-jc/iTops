@@ -20,14 +20,14 @@ class User < ApplicationRecord
   has_many :project_relationships
   has_many :projects, through: :project_relationships, source: :project
 
-  has_many :manage_relationships
-  has_many :manage_projects, through: :manage_relationships, source: :project
 
 
 
   def is_admin?
     admin
   end
+
+
 
 end
 

@@ -1,0 +1,17 @@
+<%= link_to('新建周报模板',new_admin_weekly_template_path) %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>日期</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weekly_templates.each do |weekly_template| %>
+    <tr>
+      <td><%= weekly_template.week %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

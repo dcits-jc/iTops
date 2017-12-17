@@ -5,18 +5,12 @@ class Project < ApplicationRecord
   has_many :project_relationships
   has_many :members, through: :project_relationships, source: :user
 
-  has_many :manager_relationships
-  has_many :managers, through: :manager_relationships, source: :user
 
   # 判断是否已经在项目组中
   def is_members?(user)
     members.include?(user)
   end
 
-  # 判断是否是该项目管理员
-  def is_managers?(user)
-    managers.include?(user)
-  end
 
 
   # 成员加入项目
@@ -24,9 +18,23 @@ class Project < ApplicationRecord
     members << user
   end
 
-  # 管理员管理项目
-  def join_manager!(user)
-    managers << user
+
+  # 是否禁止报工
+  def workflow_disabled?
+    self.disable_workflow
+  end
+
+
+  # 禁止报工
+  def workflow_disabled!
+    self.disable_workflow = true
+    self.save
+  end
+
+  # 开启报工
+  def workflow_enabled!
+    self.disable_workflow = false
+    self.save
   end
 
 
@@ -40,10 +48,23 @@ class Project < ApplicationRecord
   end  
 
 
+  def hours_sum
+    sum = 0
+    self.workflows.pluck(:hours).each do |h|
+      sum = sum + h
+    end
+    sum
+  end
 
 
-
-
+  def workhours(user_id)
+    user_workflows = self.workflows.where(user_id: user_id)
+    sum = 0
+    user_workflows.each do |w|
+      sum = sum + w.hours
+    end
+    sum
+  end
 
 
 
@@ -53,12 +74,16 @@ end
 #
 # Table name: projects
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  description :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  code        :string
-#  sales_name  :string
-#  sbu         :string
+#  id               :integer          not null, primary key
+#  name             :string
+#  description      :string
+#  project_type     :string
+#  start_time       :datetime
+#  end_time         :datetime
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  code             :string
+#  sales_name       :string
+#  sbu              :string
+#  disable_workflow :boolean          default(FALSE)
 #

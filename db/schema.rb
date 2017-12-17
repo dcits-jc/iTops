@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212182311) do
+ActiveRecord::Schema.define(version: 20171217172045) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "manager_relationships", force: :cascade do |t|
-    t.integer "project_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,11 +28,15 @@ ActiveRecord::Schema.define(version: 20171212182311) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "project_type"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
     t.string "sales_name"
     t.string "sbu"
+    t.boolean "disable_workflow", default: false
   end
 
   create_table "skills", force: :cascade do |t|
@@ -99,6 +96,17 @@ ActiveRecord::Schema.define(version: 20171212182311) do
     t.datetime "updated_at", null: false
     t.datetime "start_time"
     t.datetime "end_time"
+    t.integer "weekly_template_id"
+  end
+
+  create_table "weekly_templates", force: :cascade do |t|
+    t.integer "year"
+    t.integer "month"
+    t.integer "week"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "workflows", force: :cascade do |t|
@@ -111,7 +119,7 @@ ActiveRecord::Schema.define(version: 20171212182311) do
     t.integer "user_id"
     t.string "aasm_state", default: "processing"
     t.integer "weekly_id"
-    t.datetime "begin_time"
+    t.datetime "start_time"
     t.datetime "end_time"
     t.string "worktype"
     t.text "remaining_issue"

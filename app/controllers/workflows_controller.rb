@@ -19,15 +19,24 @@ class WorkflowsController < ApplicationController
 
   def create
     @weekly = Weekly.find(params[:weekly_id])
-    @workflow = Workflow.new(workflow_params)
-    @workflow.weekly = @weekly
-    @workflow.user = current_user
-    if @workflow.save
-      flash[:notice] = '报工成功!'
-      redirect_to edit_weekly_path(@weekly)
+    @project = Project.find(workflow_params[:project_id])
+    if @project.workflow_disabled?
+      flash[:alert] = '报工失败,该项目已禁止报工!'
+      redirect_to root_path 
     else
-      flash[:alert] = '报工失败'
-      render :new    
+      @workflow = Workflow.new(workflow_params)
+      @workflow.weekly = @weekly
+      @workflow.user = current_user
+      if @workflow.save
+        if !@project.is_members?(current_user)
+          @project.join!(current_user)
+        end
+        flash[:notice] = '报工成功!'
+        redirect_to root_path
+      else
+        flash[:alert] = '报工失败'
+        redirect_to root_path    
+      end
     end
   end
 
@@ -45,7 +54,7 @@ class WorkflowsController < ApplicationController
   private
 
   def workflow_params
-    params.require(:workflow).permit(:name,:description,:hours,:project_id,:begin_time,:end_time,:worktype,:remaining_issue)
+    params.require(:workflow).permit(:name,:description,:hours,:project_id,:start_time,:end_time,:worktype,:remaining_issue)
   end
 
 end

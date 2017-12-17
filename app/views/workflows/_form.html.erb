@@ -1,0 +1,29 @@
+<h1>Y<%= @weekly.year %> # W<%= @weekly.week %></h1>
+
+
+<%= simple_form_for [@weekly,@workflow] do |f| %>
+  <div class="form-group">
+    <%= f.input :project_id,label: '项目', collection: current_user.projects %>
+    <%#= f.input :project_id,label: '项目名', collection: @project_names %>
+
+
+
+
+    <%= f.input :description,label: '任务描述', input_html: { class: "form-control"} %>
+    <%= f.input :worktype,label: '工作类别', collection:['售前','售中','售后','供货','单次服务','集成'] %>
+    <%= f.input :remaining_issue,label: '遗留问题', input_html: { class: "form-control"} %>
+
+
+    <label for="">开始日期</label>
+
+    <%= f.datetime_select :begin_time,:discard_hour => true %>
+
+    <label for="">结束日期</label>
+
+    <%= f.datetime_select :end_time,:discard_hour => true %>
+
+
+    <%= f.input :hours,label: '工作量(小时)', input_html: { class: "form-control"} %>
+  </div>
+  <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交ing..." } %>
+<% end %>

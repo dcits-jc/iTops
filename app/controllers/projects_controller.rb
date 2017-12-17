@@ -1,5 +1,8 @@
 class ProjectsController < ApplicationController
   layout "user"
+
+  before_action :current_week
+
   def index
     @projects = current_user.projects
   end
@@ -87,8 +90,13 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name,:description)
+    params.require(:project).permit(:code,:name,:description,:sales_name,:sbu,:project_type,:start_time,:end_time)
   end
 
+  def current_week
+    @current_weekly = current_user.weeklies.last
+    @start_time =@current_weekly.start_time.strftime("%Y-%m-%d")
+    @end_time =@current_weekly.end_time.strftime("%Y-%m-%d")
+  end
 
 end
