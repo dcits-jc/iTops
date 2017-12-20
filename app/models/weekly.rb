@@ -2,7 +2,7 @@ class Weekly < ApplicationRecord
 
 
 
-  has_many :workflows
+  has_many :workflows, dependent: :destroy
   belongs_to :user
 
   belongs_to :weekly_template

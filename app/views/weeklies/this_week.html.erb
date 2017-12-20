@@ -1,9 +1,8 @@
 <!-- Button trigger modal -->
-<h3>本周工作量: <%= @current_weekly_workhours %>小时</h3>
-
+<p>本周工作量: <strong style="font-size: 3em"><%= @current_weekly_workhours %>小时</strong>   </p>
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newWorkflow">
-  报工
+  新增一条工作内容
 </button>
 
 <%= render 'workflows_table' %>

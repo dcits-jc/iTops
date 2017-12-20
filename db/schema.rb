@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217172045) do
+ActiveRecord::Schema.define(version: 20171220060611) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -105,6 +105,20 @@ ActiveRecord::Schema.define(version: 20171217172045) do
     t.integer "week"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workflow_company_relationships", force: :cascade do |t|
+    t.integer "workflow_id"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workflow_skill_relationships", force: :cascade do |t|
+    t.integer "workflow_id"
+    t.integer "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

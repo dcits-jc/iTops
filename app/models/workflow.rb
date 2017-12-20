@@ -11,11 +11,14 @@ class Workflow < ApplicationRecord
 
   belongs_to :weekly
 
-  has_many :companies
-  has_many :skills
 
 
 
+  has_many :workflow_skill_relationships
+  has_many :skills, through: :workflow_skill_relationships, source: :skill
+
+  has_many :workflow_company_relationships
+  has_many :companies, through: :workflow_company_relationships, source: :company
 
 
 
