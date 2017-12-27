@@ -1,0 +1,37 @@
+<ol class="breadcrumb">
+  <li><%= link_to("全部部门",admin_sbus_index_path) %></li>
+  <li class="active"><%= @sbu.name %></li>
+</ol>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>用户名</td>
+      <td>操作</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to(user.email,admin_user_path(user)) %></td>
+
+        <td>
+          <!-- 如果是管理员,则按钮为取消管理员 -->
+          <% if user.admin %>
+            <%= link_to('管理员',cancel_admin_admin_user_path(user),method: 'post',class: "btn btn-warning") %>
+          <% else %>
+            <%= link_to('管理员',set_admin_admin_user_path(user),method: 'post',class: "btn btn-default") %>
+          <% end %>
+          <!-- 如果是pm,则按钮为取消pm -->
+          <% if user.pm %>
+            <%= link_to('项目经理',cancel_pm_admin_user_path(user),method: 'post',class: "btn btn-warning") %>
+          <% else %>
+            <%= link_to('项目经理',set_pm_admin_user_path(user),method: 'post',class: "btn btn-default") %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

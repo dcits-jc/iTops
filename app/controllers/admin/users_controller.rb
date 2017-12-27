@@ -1,8 +1,10 @@
 class Admin::UsersController < ApplicationController
   layout "admin"
   
+
   def index
     @users = User.all
+    @sbus = Sbu.all
   end
 
   def new
@@ -11,6 +13,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @weeklies = @user.weeklies.order_by_week
   end
 
   def edit

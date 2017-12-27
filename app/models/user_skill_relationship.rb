@@ -1,4 +1,8 @@
 class UserSkillRelationship < ApplicationRecord
+
+  belongs_to :user
+  belongs_to :skill
+
 end
 
 # == Schema Information

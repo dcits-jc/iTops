@@ -14,10 +14,18 @@ class WorkflowsController < ApplicationController
 
     @skills = Skill.all
     @companies = Company.all
+
+    @workflow_types = {}
+
+    WorkflowType.find_each do |w|
+     @workflow_types[w.name]=w.id.to_s
+    end
+    # @workflow_types = WorkflowType.all
   end
 
 
   def create
+    # binding.pry
     @weekly = Weekly.find(params[:weekly_id])
     @project = Project.find(workflow_params[:project_id])
     if @project.workflow_disabled?
@@ -54,7 +62,7 @@ class WorkflowsController < ApplicationController
   private
 
   def workflow_params
-    params.require(:workflow).permit(:name,:description,:hours,:project_id,:start_time,:end_time,:worktype,:remaining_issue)
+    params.require(:workflow).permit(:description,:hours,:project_id,:start_time,:end_time,:remaining_issue,:workflow_type_id,:other_company,:other_skill,company_ids: [],skill_ids: [])
   end
 
 end

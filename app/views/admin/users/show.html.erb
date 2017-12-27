@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li><%= link_to("全部用户",admin_users_path) %></li>
+  <li><%= link_to(@user.sbu.name,admin_sbus_path(@user.sbu)) %></li>
   <li class="active"><%= @user.email %></li>
 </ol>
 
@@ -23,12 +23,19 @@
   <thead>
     <tr>
       <td>周</td>
+      <td>工作量</td>
     </tr>
   </thead>
   <tbody>
-    <% @user.weeklies.each do |weekly| %>
-    <tr>
+    <% @weeklies.each do |weekly| %>
+      <% if weekly.workload_sum == 0 %>
+        <tr class="bg-danger">
+      <% else %>
+        <tr>
+      <% end %>
+    
       <td><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,admin_user_weekly_path(@user,weekly))  %></td>
+      <td><%= weekly.workload_sum %>小时</td>
     </tr>
     
     <% end %>

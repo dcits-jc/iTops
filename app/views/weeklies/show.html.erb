@@ -1,6 +1,17 @@
-<h1>Y<%= @weekly.year %> # W<%= @weekly.week %></h1>
+<div class="col-md-2">
 
-<%= render 'workflows_table' %>
+  <%= link_to weeklies_path do %>
+    <h1>历史周报</h1>
+  <% end %>
 
+  
+</div>
+<div class="col-md-10">
+
+  <h1>Y<%= @weekly.year %> # W<%= @weekly.week %></h1>
+  <p>日期:<%= @weekly.start_time.strftime("%Y-%m-%d") %>~<%= @weekly.end_time.strftime("%Y-%m-%d") %></p>
+  <%= render 'common/workflows_table' %>
+
+</div>
 
 

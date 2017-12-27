@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :projects, through: :project_relationships, source: :project
 
 
+  belongs_to :sbu
 
 
   def is_admin?
@@ -52,7 +53,7 @@ end
 #  itcode                 :string
 #  code                   :string
 #  name                   :string
-#  sbu                    :string
+#  sbu_id                 :integer
 #  phone                  :string
 #  title                  :string
 #  level                  :integer

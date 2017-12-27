@@ -3,7 +3,7 @@ class AddColunmToUser < ActiveRecord::Migration[5.1]
     add_column :users, :itcode, :string
     add_column :users, :code, :string
     add_column :users, :name, :string
-    add_column :users, :sbu, :string
+    add_column :users, :sbu_id, :integer
     add_column :users, :phone, :string
     add_column :users, :title, :string
     add_column :users, :level, :integer

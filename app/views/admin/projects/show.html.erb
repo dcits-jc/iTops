@@ -32,6 +32,22 @@
   <% end %>
 </p>
 
+
+
+<p>
+涉及产品:
+<% if @project.used_companies_hours.present? %>
+  <% @project.used_companies_hours.each do |key,value|  %>
+    <code><%= key %>#<%= value %>h</code>
+  <% end %>
+<% end %>
+</p>
+
+<p>
+项目参与人数:
+<%= @workflow_user_groups.count %>人  
+</p>
+
 <p>
 项目参与者:
 <% @project.members.each do |member| %>
@@ -67,27 +83,4 @@
     </div>
   <% end %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <td>任务名</td>
-      <td>用户名</td>
-      <td>工作量(小时)</td>
-
-    </tr>    
-  </thead>
-  <tbody>
-    <% @project.workflows.each do |workflow| %>
-      <tr>
-        <td><%= workflow.name %></td>
-        <td><%= workflow.user.email %></td>
-        <td><%= workflow.hours %></td>
-
-        
-      </tr>
-    <% end %>
-  </tbody>
-
-
-
-</table>
+<%= render "common/workflows_usergroup_table" %>

@@ -1,61 +1,59 @@
-<ol class="breadcrumb">
-  <li>
-    <%= link_to('项目',projects_path)%>
-  </li>
-  <li class="active"><%= @project.name %></li>
-</ol>
+<div class="col-md-2">
 
-<h1>
-  <%= @project.code %>#<%= @project.name %>
-</h1>
+  <%= link_to projects_path do %>
+    <h1>历史项目</h1>
+  <% end %>
 
-<p>
-  <%= @project.description %>
-</p>
-
-
-<p>销售: <%= @project.sales_name %></p>
-<p>部门: <%= @project.sbu %></p>
-
-
-
-
-<br>
-项目成员:
-<% @project.members.each do |member| %>
-<code><%= member.email %></code>
-<% end %>
+  
+</div>
+<div class="col-md-10">
 
 
 
 
 
-<hr>
-<%#= link_to('报工',new_project_workflow_path(@project),class: "btn btn-primary")  %>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to('项目',projects_path)%>
+    </li>
+    <li class="active"><%= @project.name %></li>
+  </ol>
+
+  <h1>
+    <%= @project.code %>#<%= @project.name %>
+  </h1>
+
+  <p>
+    <%= @project.description %>
+  </p>
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <td>任务名</td>
-      <td>用户名</td>
-      <td>工作量(小时)</td>
-
-    </tr>    
-  </thead>
-  <tbody>
-    <% @project.workflows.each do |workflow| %>
-      <tr>
-        <td><%= workflow.name %></td>
-        <td><%= workflow.user.email %></td>
-        <td><%= workflow.hours %></td>
-
-
-
-      </tr>
-    <% end %>
-  </tbody>
+  <p>销售: <%= @project.sales_name %></p>
+  <p>部门: <%= @project.sbu %></p>
 
 
 
-</table>
+
+  <br>
+  项目成员:
+  <% @project.members.each do |member| %>
+  <code><%= member.email %></code>
+  <% end %>
+
+
+
+
+
+  <hr>
+  <%#= link_to('报工',new_project_workflow_path(@project),class: "btn btn-primary")  %>
+
+
+  <%= render "common/workflows_usergroup_table" %>
+
+
+
+
+  </table>
+
+
+</div>  

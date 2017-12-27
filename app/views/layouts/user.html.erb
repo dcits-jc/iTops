@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ITops</title>
+    <title>ITS@Daily</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,15 +12,9 @@
     <div class="container-fluid">
       <%= render "common/navbar" %>
       <div class="row">
-        <!-- 侧边栏 -->
-        <div class="col-md-2">
-          <%=  render "common/user_sidebar" %>
-        </div>
-        <!-- 内容区 -->
-        <div class="col-md-10">
-          <%= render "common/flashes" %>
-          <%= yield %>
-        </div>
+        <!--  -->
+        <%= render "common/flashes" %>
+        <%= yield %>
       </div>
         
 

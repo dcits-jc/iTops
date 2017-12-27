@@ -6,15 +6,16 @@
         <% if current_user.present? %>
         <div class="navbar-header">
             <a class="navbar-brand" href="<%= root_path %>">
-                <img src="https://i.loli.net/2017/12/16/5a3523bb28d35.jpg" alt="背景图像_sm.jpg" title="背景图像_sm.jpg" width="25px" height="25px" />
+                <!-- <img src="https://i.loli.net/2017/12/16/5a3523bb28d35.jpg" alt="背景图像_sm.jpg" title="背景图像_sm.jpg" width="25px" height="25px" /> -->
+                ITS@Daily
             </a>
         </div>
 
         
 
-        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lv<%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %></p>
+        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lv<%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/人天)</p>
 
-        <p class="navbar-text">工号:<%= current_user.code%>  ITcode:<%=current_user.itcode%>  部门:<%=current_user.sbu%>  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%=current_user.phone %> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%=current_user.email %></p>
+        <p class="navbar-text">工号:<%= current_user.code%>  ITcode:<%=current_user.itcode%>  部门:<%=current_user.sbu.name%>  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%=current_user.phone %> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%=current_user.email %></p>
         <% end %>
 
         
@@ -37,6 +38,24 @@
                             <% if current_user.is_admin? %>
                                 <li><%= link_to("管理中心",admin_projects_path)  %></li>
                             <% end %>
+
+
+                              <li>
+                                <%= link_to root_path do %>
+                                    本周周报
+                                <% end %>    
+                              </li>
+
+                              <li >
+                                <%= link_to weeklies_path do %>
+                                  历史周报
+                                <% end %>
+                              </li>
+                              <li>
+                                <%= link_to projects_path do %>
+                                  历史项目
+                                <% end %>
+                              </li>
 
 
                             <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>

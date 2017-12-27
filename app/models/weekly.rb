@@ -2,7 +2,7 @@ class Weekly < ApplicationRecord
 
 
 
-  has_many :workflows
+  has_many :workflows, dependent: :destroy
   belongs_to :user
 
   belongs_to :weekly_template
@@ -11,6 +11,23 @@ class Weekly < ApplicationRecord
   # def current_week
   #   current_user.weeklies.last
   # end
+  scope :order_by_week, -> { order("week DESC") }
+
+
+  def workflows_group_by_project
+    self.workflows.group_by{|w| w.project}
+  end
+
+
+
+  def workload_sum
+    sum_workhours = 0
+    self.workflows.each do |workflow|
+      sum_workhours = sum_workhours + workflow.hours
+    end
+    sum_workhours
+  end
+
 
 end
 

@@ -1,15 +1,28 @@
+<div class="col-md-2">
 
-
-<div class="row">
-
-  <% @weeklies.each do |weekly| %>
-    <% if weekly.start_time<Time.new and weekly.end_time>Time.new %>
-    <% else %>
-      <div class="col-md-2 btn btn-default">
-        <p><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,weekly_path(weekly))  %></p>
-      </div>
-    <% end %>
+  <%= link_to weeklies_path do %>
+    <h1>历史周报</h1>
   <% end %>
+
   
 </div>
+<div class="col-md-10">
+  <div class="row">
+
+    <% @weeklies.each do |weekly| %>
+      <% if weekly.start_time<Time.new and weekly.end_time>Time.new %>
+      <% else %>
+        <div class="col-md-2 btn btn-default">
+          <p><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,weekly_path(weekly))  %></p>
+          <p><%= weekly.start_time.strftime("%Y-%m-%d") %>~<%= weekly.end_time.strftime("%Y-%m-%d") %></p>
+        </div>
+      <% end %>
+    <% end %>
+    
+  </div>
+  
+</div>
+
+
+
 

@@ -8,6 +8,13 @@ class Admin::WeeklyTemplatesController < ApplicationController
 
   def show
     @weekly_template = WeeklyTemplate.find(params[:id])
+    @weeklies = @weekly_template.weeklies
+    @workflows = []
+    @weeklies.each do |week|
+      week.workflows.each do |workflow|
+        @workflows.push(workflow)
+      end
+    end
   end
 
   def new

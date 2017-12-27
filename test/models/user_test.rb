@@ -27,7 +27,7 @@ end
 #  itcode                 :string
 #  code                   :string
 #  name                   :string
-#  sbu                    :string
+#  sbu_id                 :integer
 #  phone                  :string
 #  title                  :string
 #  level                  :integer

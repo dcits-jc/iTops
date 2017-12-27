@@ -1,6 +1,6 @@
 class WeeklyTemplate < ApplicationRecord
 
-  has_many :weeklies
+  has_many :weeklies, dependent: :destroy
 
 
   def create_weeklies!
