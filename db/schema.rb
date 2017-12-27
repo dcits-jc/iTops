@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220060611) do
+ActiveRecord::Schema.define(version: 20171220134151) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20171220060611) do
     t.string "sales_name"
     t.string "sbu"
     t.boolean "disable_workflow", default: false
+  end
+
+  create_table "sbus", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|
@@ -76,7 +82,7 @@ ActiveRecord::Schema.define(version: 20171220060611) do
     t.string "itcode"
     t.string "code"
     t.string "name"
-    t.string "sbu"
+    t.integer "sbu_id"
     t.string "phone"
     t.string "title"
     t.integer "level"
@@ -123,9 +129,14 @@ ActiveRecord::Schema.define(version: 20171220060611) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "workflows", force: :cascade do |t|
+  create_table "workflow_types", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workflows", force: :cascade do |t|
+    t.text "description"
     t.integer "hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -135,8 +146,10 @@ ActiveRecord::Schema.define(version: 20171220060611) do
     t.integer "weekly_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "worktype"
     t.text "remaining_issue"
+    t.integer "workflow_type_id"
+    t.string "other_skill"
+    t.string "other_company"
     t.index ["aasm_state"], name: "index_workflows_on_aasm_state"
   end
 

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
         post :set_pm
         post :cancel_pm
       end 
+
       resources :weeklies
     end
     resources :projects do
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
       end
     end
     resources :weekly_templates
+    resources :sbus
   end
 
 

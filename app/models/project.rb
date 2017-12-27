@@ -67,6 +67,45 @@ class Project < ApplicationRecord
   end
 
 
+  def workflows_group_by_project
+    self.workflows.group_by{|w| w.project}
+  end
+
+
+  def workflows_group_by_user
+    self.workflows.group_by{|w| w.user}
+  end
+
+
+  # 一个项目都用到了哪些产品
+  def used_companies
+    company_list = []
+    self.workflows.each do |w|
+      company_list << w.companies
+    end
+    company_list = company_list.flatten.uniq
+  end
+
+
+  # 涉及的产品及工作量
+  def used_companies_hours
+    companies_hour_obj = {}
+    self.used_companies.each do |c|
+      companies_hour_obj[c.name] = 0
+    end
+    # 循环每个工作流
+    self.workflows.each do |w|
+      # 涉及的产品公司
+      self.used_companies.each do |c|
+        if w.companies.include?(c)
+          companies_hour_obj[c.name] = companies_hour_obj[c.name]+w.hours
+        end
+      end
+    end
+    companies_hour_obj
+  end
+
+
 
 end
 

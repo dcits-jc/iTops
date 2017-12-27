@@ -1,0 +1,10 @@
+<!-- 所有部门 -->
+<% @sbus.each do |sbu| %>
+
+<%= link_to admin_sbus_path(sbu) do %>
+<div class="col-md-3 btn btn-default">
+  <h3 class="text-center"><%= sbu.name %></h3>
+  <p class="text-center"><%= sbu.users.count %>人</p>
+</div>
+<% end %>
+<% end %>

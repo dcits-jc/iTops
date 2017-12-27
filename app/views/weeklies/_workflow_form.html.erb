@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="newWorkflowLabel">报工</h4>
+        <h4 class="modal-title" id="newWorkflowLabel">新工作流</h4>
       </div>
       <div class="modal-body">
         
@@ -15,17 +15,44 @@
 
             <div class="form-group">
               <label for="search_project_blank">* 项目号</label>
-              <input type="text" class="form-control" id="search_project_blank" placeholder="">
               <div id="project_info"></div>
+              <input type="text" class="form-control" id="search_project_blank" placeholder="">
+              
             </div>
 
 
 
 
-            <%= f.input :name,label: '任务名', input_html: { class: "form-control"} %>
+            <%= f.input :description,label: '工作内容描述', input_html: { class: "form-control"} %>
 
-            <%= f.input :description,label: '任务描述', input_html: { class: "form-control"} %>
-            <%= f.input :worktype,label: '工作类别', collection:['售前','售中','售后','供货','单次服务','集成'] %>
+            <%#= f.input :worktype,label: '工作类别', collection:['售前','售中','售后','供货','单次服务','集成'] %>
+
+
+      
+            <%= f.input :workflow_type_id,label: '工作类别',  collection: {
+                   "售前(客户交流)" => 1,
+                  "售前(招标书编写)" => 2,
+                  "售前(投标书编写)" => 3,
+                  "售前(投标或讲标)" => 4,
+                         "售中" => 5,
+                         "售后" => 6,
+                         "供货" => 7,
+                       "单次服务" => 8,
+                         "集成" => 9,
+                       "认证考试" => 10
+              } %>
+            <!-- 多选框 -->
+
+            <label>涉及厂商</label>
+
+            <%= f.association :companies,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
+
+            <%= f.input :other_company,label: false,placeholder: '其他厂商'  %>
+            <label>技术方向</label>
+            <%= f.association :skills,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
+
+            <%= f.input :other_skill,label: false,placeholder: '其他方向'  %>
+
             <%= f.input :remaining_issue,label: '遗留问题', input_html: { class: "form-control"} %>
 
 
@@ -57,6 +84,13 @@
 
 <% end %>
 
+
+<style>
+  span.checkbox.inline {
+    display: inline;
+    padding: 1em;
+  }
+</style>
 
 
 <script>
@@ -93,11 +127,11 @@ function searchProject(code) {
       if (data_obj['stat']==1) {
         console.log(data_obj['data']);
         $('#workflow_project_id').val(data_obj['data']['id'])
-        $('#project_info').html('<p>'+data_obj['data']['name']+'#'+data_obj['data']['sales_name']+'</p>')
+        $('#project_info').html('<p>'+data_obj['data']['code']+'#'+data_obj['data']['name']+'#'+data_obj['data']['project_type']+'#'+data_obj['data']['sbu']+'#'+data_obj['data']['sales_name']+'</p>')
       }else if((data_obj['stat']==2)){
         $('#workflow_project_id').val(data_obj['data']['id'])
         $('#search_project_blank').css("background-color","#CC3333");
-        $('#project_info').html('<p class="text-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true">'+data_obj['data']['name']+'#'+data_obj['data']['sales_name']+'(该项目已禁止继续派工)</p>')
+        $('#project_info').html('<p class="text-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true">'+data_obj['data']['code']+'#'+data_obj['data']['name']+'#'+data_obj['data']['project_type']+'#'+data_obj['data']['sbu']+'#'+data_obj['data']['sales_name']+'(该项目已禁止继续派工)</p>')
       }else{
         console.log('项目号不存在');
         $('#workflow_project_id').val('');

@@ -10,7 +10,10 @@ class Api::V1::ProjectsController < ApiController
           stat: 2,
           data:{
             id: @project.id,
+            code: @project.code,
             name: @project.name,
+            project_type: @project.project_type,
+            sbu: @project.sbu,
             sales_name: @project.sales_name
           }
         }   
@@ -19,9 +22,11 @@ class Api::V1::ProjectsController < ApiController
           stat: 1,
           data:{
             id: @project.id,
+            code: @project.code,
             name: @project.name,
-            sales_name: @project.sales_name,
-            workflow_disabled: @project.disable_workflow
+            project_type: @project.project_type,
+            sbu: @project.sbu,
+            sales_name: @project.sales_name
           }
         }        
       end

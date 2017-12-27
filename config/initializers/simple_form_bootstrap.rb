@@ -48,6 +48,9 @@ SimpleForm.setup do |config|
     b.use :html5
     b.optional :readonly
     b.use :label, class: 'control-label'
+    # b.use :label, class: 'checkbox inline'
+
+    # b.use :label_input, :wrap_with => { :class => 'checkbox inline' }
     b.use :input
     b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
     b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
@@ -151,4 +154,15 @@ SimpleForm.setup do |config|
     date: :multi_select,
     time: :multi_select
   }
+
+  config.wrappers :inline_checkbox, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
+    b.use :html5
+    b.wrapper :tag => 'div', :class => 'controls' do |ba|
+      # ba.use :label_input, :class => 'checkbox inline'
+      ba.use :label_input, :wrap_with => { :class => 'checkbox-inline' }
+      ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
+      ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+    end
+  end
+
 end

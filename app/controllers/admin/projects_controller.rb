@@ -27,6 +27,7 @@ class Admin::ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @project_sum_hours = @project.hours_sum
+    @workflow_user_groups = @project.workflows_group_by_user
   end
 
   def edit

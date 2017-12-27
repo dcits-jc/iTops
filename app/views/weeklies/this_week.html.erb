@@ -1,20 +1,46 @@
-<!-- Button trigger modal -->
-<p>本周工作量: <strong style="font-size: 3em"><%= @current_weekly_workhours %>小时</strong>   </p>
+<div class="col-md-2">
+  <%= link_to root_path do %>
+    <h1>本周周报</h1>
+    <p><strong>W<%= @current_weekly.week %></strong> <small>(<%= @start_time %> ~ <%= @end_time %>)</small></p>
+  <% end %>
+  <p class="text-right">本周工作量:
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newWorkflow">
-  新增一条工作内容
-</button>
+  <% if @workload_sum==0 %>
+  <strong style="font-size: 3em;color: red">
+  <% else %>
+  <strong style="font-size: 3em">
+  <% end %>
 
-<%= render 'workflows_table' %>
+   <%= @workload_sum %></strong> 小时 
 
-
-
-<!-- Modal -->
-<div class="modal fade" id="newWorkflow" tabindex="-1" role="dialog" aria-labelledby="newWorkflowLabel">
-  <div class="modal-dialog" role="document">
-
-    <%= render "workflow_form" %>
-
-
-  </div>
+  </p>
+  
 </div>
+<div class="col-md-10">
+
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newWorkflow">
+    新增一条工作内容
+  </button>
+
+  <%= render 'common/workflows_table' %>
+
+  <!-- Button trigger modal -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="newWorkflow" tabindex="-1" role="dialog" aria-labelledby="newWorkflowLabel">
+    <div class="modal-dialog" role="document">
+
+      <%= render "workflow_form" %>
+
+
+    </div>
+  </div>
+
+  
+</div>
+
+
+
+
+

@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @workflows = @project.workflows_group_by_project
+    @workflow_user_groups = @project.workflows_group_by_user
   end
 
   def new

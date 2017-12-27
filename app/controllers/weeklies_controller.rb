@@ -9,7 +9,7 @@ class WeekliesController < ApplicationController
 
   def show
     @weekly = Weekly.find(params[:id])
-    @workflows = @weekly.workflows
+    @workflows = @weekly.workflows_group_by_project
   end
 
   def edit
@@ -52,9 +52,12 @@ class WeekliesController < ApplicationController
     @current_weekly = current_user.weeklies.last
     @workflow = Workflow.new
     
-    @workflows = @current_weekly.workflows
+    @workflows = @current_weekly.workflows_group_by_project
+
+    @workload_sum = @current_weekly.workload_sum
+
     sum_workhours = 0
-    @workflows.each do |workflow|
+    @current_weekly.workflows.each do |workflow|
       sum_workhours = sum_workhours + workflow.hours
     end
     @current_weekly_workhours = sum_workhours

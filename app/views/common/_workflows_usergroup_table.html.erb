@@ -1,0 +1,50 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>用户名</td>
+      <td>工作量合计</td>
+      
+      <td>工作内容</td>
+      <td>工作类型</td>
+      <td>涉及厂商</td>
+      <td>技术方向</td>
+      <td>工作量(小时)</td>
+      <td>时间</td>
+    </tr>    
+  </thead>
+  <tbody>
+
+    <% @workflow_user_groups.each do |workflow| %>
+      <tr>
+        <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].name %></td>
+        <td rowspan="<%= workflow[1].count+1 %>"><%= @project.workhours(workflow[0]) %>h</td>
+      </tr>
+      <% workflow[1].each do |w| %>
+
+        <% companies = w.companies.map {|s| s.name} %>
+        <% skills = w.skills.map {|s| s.name} %>
+        <!-- 把其他情况加进去 -->
+        <% if w.other_company.present?
+          companies.push(w.other_company)
+        end %>
+
+        <% if w.other_skill.present?
+          skills.push(w.other_skill)
+        end %>
+
+        <tr>
+          <td><%= w.description %></td>
+          <td><%= w.workflow_type.name %></td>
+          <td><%= companies %></td>
+          <td><%= skills %></td>
+          <td><%= w.hours %>h</td>
+          <td><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></td>        
+        </tr>
+      <% end %>
+    <% end %>
+
+  </tbody>
+
+
+
+</table>
