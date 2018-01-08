@@ -64,11 +64,13 @@ class ProjectsController < ApplicationController
     if @project.is_managers?(current_user)
       flash[:warning] = '你已经在该项目中!'
     else
-      @project.join!(current_user)
+      if !@project.is_members?(current_user)
+        @project.join!(current_user)
+      end
       @project.join_manager!(current_user)
       flash[:success] = '成功加入该项目!'
     end
-    redirect_to project_path(@project)
+    redirect_to my_project_path(@project)
   end
 
 
@@ -82,12 +84,7 @@ class ProjectsController < ApplicationController
 
 
 
-  # 拒绝加入项目
-  def refuse
-    @project = Project.find(params[:id])
-    flash[:success] = '您拒绝了加入'+@project.name+'项目的邀请!'
-    redirect_to :root
-  end
+
 
   private
 

@@ -8,12 +8,36 @@
       <div class="modal-body">
         
           <div class="form-group">
+
+            <%= f.input :workflow_type_id,class: 'workflowtype_selection',label: '工作类别',  collection: {
+                   "售前(客户交流)" => 1,
+                  "售前(招标书编写)" => 2,
+                  "售前(投标书编写)" => 3,
+                  "售前(解决方案编写)" => 4,
+                  "售前(投标或讲标)" => 5,
+                  "售前(厂商交流)" => 14,
+                    "售前(临时)" => 13,
+                         "售中" => 6,
+                         "售后" => 7,
+                         "供货" => 8,
+                       "单次服务" => 9,
+                         "集成" => 10,
+                       "认证考试" => 11,
+                       "技术提升" => 12,
+                       "部门工作" => 15,
+              } %>
+
+
+
+
             <%= f.input :project_id,label: false,as: :hidden%>
             <%#= f.input :project_id,label: '项目名', collection: @project_names %>
 
+            
 
 
-            <div class="form-group">
+
+            <div class="form-group hidden" id="project_number">
               <label for="search_project_blank">* 项目号</label>
               <div id="project_info"></div>
               <input type="text" class="form-control" id="search_project_blank" placeholder="">
@@ -21,7 +45,7 @@
             </div>
 
 
-
+            <%= f.input :project_sales,label: '* 销售'%>
 
             <%= f.input :description,label: '工作内容描述', input_html: { class: "form-control"} %>
 
@@ -29,18 +53,7 @@
 
 
       
-            <%= f.input :workflow_type_id,label: '工作类别',  collection: {
-                   "售前(客户交流)" => 1,
-                  "售前(招标书编写)" => 2,
-                  "售前(投标书编写)" => 3,
-                  "售前(投标或讲标)" => 4,
-                         "售中" => 5,
-                         "售后" => 6,
-                         "供货" => 7,
-                       "单次服务" => 8,
-                         "集成" => 9,
-                       "认证考试" => 10
-              } %>
+
             <!-- 多选框 -->
 
             <label>涉及厂商</label>
@@ -60,13 +73,13 @@
 
             <label for="">开始日期</label>
 
-            <%= f.datetime_select :start_time,:discard_hour => true %>
+            <%= f.datetime_select :start_time,:discard_hour => true ,default: @current_weekly.start_time %>
 
             <br>
             
             <label for="">结束日期</label>
 
-            <%= f.datetime_select :end_time,:discard_hour => true %>
+            <%= f.datetime_select :end_time,:discard_hour => true ,default: @current_weekly.end_time %>
 
 
 
@@ -103,6 +116,33 @@ $(document).ready(function(){
     code = $('#search_project_blank').val();
     searchProject(code);
   });
+
+  $('.workflow_project_sales').addClass('hidden');
+  $('#project_number').addClass('hidden');
+  // 如果选项卡选中了什么
+  $('#workflow_workflow_type_id').change(function() {
+    // console.log('haha')
+    /* Act on the event */
+    console.log($(this).val());
+    if ($(this).val()>=10 && $(this).val()<=14 ) {
+      // 隐藏项目号
+      $('#project_number').addClass('hidden')
+      // 显示销售
+      $('.workflow_project_sales').removeClass('hidden');
+    }else if ($(this).val()>=15) {
+      // 隐藏项目号
+      $('#project_number').addClass('hidden')
+      // 显示销售
+      $('.workflow_project_sales').addClass('hidden');
+    }else{
+      // 删除项目号
+      $('#project_number').removeClass('hidden')
+      // 隐藏销售
+      $('.workflow_project_sales').addClass('hidden');
+    }
+  });
+
+
 });
 
 
@@ -149,6 +189,7 @@ function searchProject(code) {
 
 }
  
+
 
 
 </script>

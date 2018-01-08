@@ -1,3 +1,5 @@
+<div class="col-md-12">
+
 <p>
   <% @project.managers.each do |manager| %>
     <kbd><%= manager.email %></kbd>
@@ -10,3 +12,6 @@
 <%= link_to('加入项目',manage_in_project_path(@project),method: :post,class: "btn btn-primary") %>
 
 <%= link_to('拒绝',refuse_project_path(@project),method: :post,class: "btn btn-danger") %>
+  
+</div>
+

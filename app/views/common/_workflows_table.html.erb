@@ -3,8 +3,8 @@
     <tr>
       <td>项目号</td>
       <td>项目名</td>
-      <td>项目类型</td>
-      <td>部门</td>
+      <!-- <td>项目类型</td> -->
+      <td>事业部</td>
       <td>销售</td>
       
       <td>工作内容描述</td>
@@ -20,9 +20,9 @@
       <tr>
         <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].code %></td>
         <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].name %></td>
-        <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].project_type %></td>
+        <!-- <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].project_type %></td> -->
         <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].sbu %></td>
-        <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].sales_name %></td>
+        <!-- <td rowspan="<%#= workflow[1].count+1 %>"><%#= workflow[0].sales_name %></td> -->
       </tr>
       <% workflow[1].each do |w| %>
 
@@ -38,6 +38,7 @@
         end %>
 
         <tr>
+          <td><%= w.project_sales %></td>
           <td><%= w.description %></td>
           <td><%= w.workflow_type.name %></td>
           <td><%= companies %></td>

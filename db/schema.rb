@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220134151) do
+ActiveRecord::Schema.define(version: 20180108195859) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "project_manages", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,6 +44,8 @@ ActiveRecord::Schema.define(version: 20171220134151) do
     t.string "sales_name"
     t.string "sbu"
     t.boolean "disable_workflow", default: false
+    t.integer "cost_plan"
+    t.integer "cost_already"
   end
 
   create_table "sbus", force: :cascade do |t|
@@ -88,6 +97,7 @@ ActiveRecord::Schema.define(version: 20171220134151) do
     t.integer "level"
     t.integer "cost"
     t.boolean "pm", default: false
+    t.string "costcenter"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -137,7 +147,7 @@ ActiveRecord::Schema.define(version: 20171220134151) do
 
   create_table "workflows", force: :cascade do |t|
     t.text "description"
-    t.integer "hours"
+    t.float "hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_id"
@@ -150,6 +160,8 @@ ActiveRecord::Schema.define(version: 20171220134151) do
     t.integer "workflow_type_id"
     t.string "other_skill"
     t.string "other_company"
+    t.string "project_sales"
+    t.float "cost"
     t.index ["aasm_state"], name: "index_workflows_on_aasm_state"
   end
 

@@ -16,6 +16,7 @@ module ITops
     # -- all .rb files in that directory are automatically loaded.
     # i18n 修改成中文
     config.i18n.default_locale = 'zh-CN'
-        
+    config.active_record.default_timezone = :local
+    config.time_zone = 'Beijing'   
   end
 end

@@ -25,6 +25,7 @@
 #  level                  :integer
 #  cost                   :integer
 #  pm                     :boolean          default(FALSE)
+#  costcenter             :string
 #
 # Indexes
 #

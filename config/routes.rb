@@ -10,8 +10,15 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :workflows
+    member do
+      get :invite_manager
+      post :manage_in
+      post :refuse
+    end
+     
   end
 
+  resources :my_projects
 
   # 管理员路由
   namespace :admin do

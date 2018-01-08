@@ -7,7 +7,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="<%= root_path %>">
                 <!-- <img src="https://i.loli.net/2017/12/16/5a3523bb28d35.jpg" alt="背景图像_sm.jpg" title="背景图像_sm.jpg" width="25px" height="25px" /> -->
-                ITS@Daily
+                Daily
             </a>
         </div>
 
@@ -15,7 +15,10 @@
 
         <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lv<%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/人天)</p>
 
-        <p class="navbar-text">工号:<%= current_user.code%>  ITcode:<%=current_user.itcode%>  部门:<%=current_user.sbu.name%>  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%=current_user.phone %> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%=current_user.email %></p>
+        <p class="navbar-text">工号:<%= current_user.code%>
+          ITcode:<%=current_user.itcode%>
+          部门:<%=current_user.sbu.name%>  
+          成本中心:<%=current_user.costcenter%>  
         <% end %>
 
         
@@ -53,9 +56,15 @@
                               </li>
                               <li>
                                 <%= link_to projects_path do %>
-                                  历史项目
+                                  参与过的项目
                                 <% end %>
                               </li>
+
+                            <li>
+                                <%= link_to('我管理的项目',my_projects_path) %>
+                            </li>
+
+
 
 
                             <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
