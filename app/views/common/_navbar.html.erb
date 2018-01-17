@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
 
@@ -6,6 +6,7 @@
         <% if current_user.present? %>
         <div class="navbar-header">
             <a class="navbar-brand" href="<%= root_path %>">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                 <!-- <img src="https://i.loli.net/2017/12/16/5a3523bb28d35.jpg" alt="背景图像_sm.jpg" title="背景图像_sm.jpg" width="25px" height="25px" /> -->
                 Daily
             </a>
@@ -13,7 +14,7 @@
 
         
 
-        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lv<%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/人天)</p>
+        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lv<%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/时)</p>
 
         <p class="navbar-text">工号:<%= current_user.code%>
           ITcode:<%=current_user.itcode%>

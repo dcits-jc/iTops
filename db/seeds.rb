@@ -10,11 +10,11 @@ Sbu.create(name: "解决方案部")
 Sbu.create(name: "金融事业部")
 Sbu.create(name: "互联网事业部")
 
-User.create(email: 'liangchaob@163.com',password: "000000",password_confirmation: "000000",admin: true,itcode: "liangchaob",code: "1001959",name: "梁超",sbu_id: 1,phone: '18600295379',title: '开发工程师',costcenter: '31T80001',level: 5,cost: 9999)
-User.create(email: 'a@dcits.com',password: "000000",password_confirmation: "000000",itcode: "a",code: "1001958",name: "张三",sbu_id: 2,phone: '1860747625',title: '网络工程师',costcenter: '31T80062',level: 3,cost: 8888)
-User.create(email: 'b@dcits.com',password: "000000",password_confirmation: "000000",itcode: "b",code: "1001957",name: "李四",sbu_id: 3,phone: '1860747655',title: '系统工程师',costcenter: '31T80053',level: 4,cost: 7777)
-User.create(email: 'c@dcits.com',password: "000000",password_confirmation: "000000",itcode: "c",code: "1001950",name: "王五",sbu_id: 1,phone: '1360347625',title: '项目经理',costcenter: '31T80001',level: 2,cost: 6666)
-User.create(email: 'd@dcits.com',password: "000000",password_confirmation: "000000",itcode: "d",code: "1001111",name: "王麻子",sbu_id: 1,phone: '1888888888',title: '大老板',costcenter: '31T80001',level: 6,cost: 5555)
+User.create(email: 'liangchaob@163.com',password: "000000",password_confirmation: "000000",admin: true,itcode: "liangchaob",code: "1001959",name: "梁超",sbu_id: 1,phone: '18600295379',title: '开发工程师',costcenter: '31T80001',level: 5,cost: 2000)
+User.create(email: 'a@dcits.com',password: "000000",password_confirmation: "000000",itcode: "a",code: "1001958",name: "张三",sbu_id: 2,phone: '1860747625',title: '网络工程师',costcenter: '31T80062',level: 3,cost: 1000)
+User.create(email: 'b@dcits.com',password: "000000",password_confirmation: "000000",itcode: "b",code: "1001957",name: "李四",sbu_id: 3,phone: '1860747655',title: '系统工程师',costcenter: '31T80053',level: 4,cost: 1000)
+User.create(email: 'c@dcits.com',password: "000000",password_confirmation: "000000",itcode: "c",code: "1001950",name: "王五",sbu_id: 1,phone: '1360347625',title: '项目经理',costcenter: '31T80001',level: 2,cost: 1000)
+User.create(email: 'd@dcits.com',password: "000000",password_confirmation: "000000",itcode: "d",code: "1001111",name: "王麻子",sbu_id: 1,phone: '1888888888',title: '大老板',costcenter: '31T80001',level: 6,cost: 1000)
 
 
 
@@ -30,17 +30,17 @@ week = WeeklyTemplate.create(year: 2017,month:12,week: 55,start_time: Time.local
 week.create_weeklies!
 
 
-Project.create(code: '000000',name:'认证考试')
-Project.create(code: '000001',name:'技术提升')
-Project.create(code: '000002',name:'部门工作')
-Project.create(code: '000003',name:'售前(临时)')
-Project.create(code: '000004',name:'售前(厂商交流)')
+Project.create(code: '000000',name:'#认证考试#',cost_plan: 100000)
+Project.create(code: '000001',name:'#技术提升#',cost_plan: 100000)
+Project.create(code: '000002',name:'#部门工作#',cost_plan: 100000)
+Project.create(code: '000003',name:'#售前(临时)#',cost_plan: 100000)
+Project.create(code: '000004',name:'#售前(厂商交流)#',cost_plan: 100000)
 
 
-Project.create(code: '000006',name:'工商银行银信通项目',sales_name: '小六',sbu: '金融6部',description:"",project_type: 'C类',start_time: Time.local(2017,5,18),end_time: Time.local(2018,5,18))
-Project.create(code: '000007',name:'支付宝网络升级改造',sales_name: '大西哥',sbu: '金融1部',description:"",project_type: 'A类',start_time: Time.local(2016,4,10),end_time: Time.local(2017,5,20),disable_workflow: true)
-Project.create(code: '000008',name:'华夏银行应用虚拟化',sales_name: '刘洋',sbu: '金融4部',description:"",project_type: 'B类',start_time: Time.local(2014,6,1),end_time: Time.local(2018,6,1))
-Project.create(code: '000009',name:'联通骨干网扩容',sales_name: '韩梅梅',sbu: '运营商1部',description:"",project_type: 'D类',start_time: Time.local(2017,1,10),end_time: Time.local(2020,5,18))
+Project.create(code: '000006',name:'工商银行银信通项目',sales_name: '小六',sbu: '金融6部',description:"",project_type: 'C类',start_time: Time.local(2017,5,18),end_time: Time.local(2018,5,18),cost_plan: 50000)
+Project.create(code: '000007',name:'支付宝网络升级改造',sales_name: '大西哥',sbu: '金融1部',description:"",project_type: 'A类',start_time: Time.local(2016,4,10),end_time: Time.local(2017,5,20),disable_workflow: true,cost_plan: 100000)
+Project.create(code: '000008',name:'华夏银行应用虚拟化',sales_name: '刘洋',sbu: '金融4部',description:"",project_type: 'B类',start_time: Time.local(2014,6,1),end_time: Time.local(2018,6,1),cost_plan: 100000)
+Project.create(code: '000009',name:'联通骨干网扩容',sales_name: '韩梅梅',sbu: '运营商1部',description:"",project_type: 'D类',start_time: Time.local(2017,1,10),end_time: Time.local(2020,5,18),cost_plan: 100000)
 
 
 # Skill.create(name: '其他')

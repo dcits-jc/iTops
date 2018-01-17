@@ -86,6 +86,10 @@ group :development do
   gem "rails-erd"
   # console美化器
   gem "awesome_rails_console"
+  gem "capistrano", "~> 3.4"
+  gem "capistrano-rvm"
+  gem "capistrano-rails"
+  
 end
 
 group :production do
