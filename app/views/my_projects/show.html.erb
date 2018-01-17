@@ -1,6 +1,7 @@
 <div class="col-md-2 text-right">
 
-    <h1>参与过的项目</h1>
+
+    <h1>我管理的项目</h1>
 
   
 </div>
@@ -12,13 +13,16 @@
 
   <ol class="breadcrumb">
     <li>
-      <%= link_to('项目',projects_path)%>
+      <%= link_to('项目',my_projects_path)%>
     </li>
     <li class="active"><%= @project.name %></li>
   </ol>
 
   <h1>
     <%= @project.code %>#<%= @project.name %>
+  <% if @project.cost_already>@project.cost_plan  %>
+    <span class="alert-danger">超支!!</span>
+   <%end%>
   </h1>
 
   <p>
@@ -37,15 +41,32 @@
 <% end %>  
 </p>
 
-  <br>
+<p>
   项目成员:
   <% @project.members.each do |member| %>
   <code><%= member.email %></code>
-  <% end %>
+  <% end %>  
+</p>
 
 
 
+<p>
+   已发生费用: <%= number_with_delimiter(@project.cost_already) %>/
+   <%= number_with_delimiter(@project.cost_plan) %>
+   元(预留)
+</p>
+<p>
+   剩余成本: 
+  <% if @project.cost_already>@project.cost_plan  %>
+    <span class="alert-danger"><%=number_with_delimiter(@project.cost_plan-@project.cost_already) %></span>
+    <%else%>
+    <span><%=number_with_delimiter(@project.cost_plan-@project.cost_already) %></span>
+    
+   <%end%>
+    元
 
+
+</p>
 
   <hr>
   <%#= link_to('报工',new_project_workflow_path(@project),class: "btn btn-primary")  %>

@@ -1,6 +1,7 @@
 <div class="col-md-2 text-right">
 
-    <h1>参与过的项目</h1>
+
+    <h1>我管理的项目</h1>
 
   
 </div>
@@ -25,7 +26,7 @@
     <tbody>
       <% @projects.each do |project| %>
       <tr>
-        <td><%= link_to(project.name,project_path(project)) %></td>
+        <td><%= link_to(project.name,my_project_path(project)) %></td>
         <td><%= project.description %></td>
       </tr>
       <% end %>

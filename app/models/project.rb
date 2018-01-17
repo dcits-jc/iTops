@@ -6,6 +6,12 @@ class Project < ApplicationRecord
   has_many :members, through: :project_relationships, source: :user
 
 
+  # 管理员关系
+  has_many :project_manages
+  has_many :managers, through: :project_manages, source: :user
+
+
+
   # 判断是否已经在项目组中
   def is_members?(user)
     members.include?(user)
@@ -17,6 +23,22 @@ class Project < ApplicationRecord
   def join!(user)
     members << user
   end
+
+
+
+  # 判断是否已经在项目组中
+  def is_managers?(user)
+    managers.include?(user)
+  end
+
+
+
+  # 成员加入项目
+  def join_manager!(user)
+    managers << user
+  end
+
+
 
 
   # 是否禁止报工
@@ -107,6 +129,13 @@ class Project < ApplicationRecord
 
 
 
+
+  def addCost!(cost)
+    self.cost_already.present? ? self.cost_already=self.cost_already+cost : self.cost_already=cost 
+    self.save
+  end
+
+
 end
 
 # == Schema Information
@@ -125,4 +154,6 @@ end
 #  sales_name       :string
 #  sbu              :string
 #  disable_workflow :boolean          default(FALSE)
+#  cost_plan        :integer
+#  cost_already     :integer
 #

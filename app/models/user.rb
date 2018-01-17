@@ -16,9 +16,13 @@ class User < ApplicationRecord
 
 
 
-
   has_many :project_relationships
   has_many :projects, through: :project_relationships, source: :project
+
+
+  has_many :project_manages
+  has_many :manage_projects, through: :project_manages, source: :project
+
 
 
   belongs_to :sbu
@@ -59,6 +63,7 @@ end
 #  level                  :integer
 #  cost                   :integer
 #  pm                     :boolean          default(FALSE)
+#  costcenter             :string
 #
 # Indexes
 #

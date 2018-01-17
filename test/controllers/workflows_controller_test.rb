@@ -4,7 +4,7 @@
 #
 #  id               :integer          not null, primary key
 #  description      :text
-#  hours            :integer
+#  hours            :float
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  project_id       :integer
@@ -17,6 +17,8 @@
 #  workflow_type_id :integer
 #  other_skill      :string
 #  other_company    :string
+#  project_sales    :string
+#  cost             :float
 #
 # Indexes
 #

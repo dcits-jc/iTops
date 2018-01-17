@@ -22,4 +22,6 @@ end
 #  sales_name       :string
 #  sbu              :string
 #  disable_workflow :boolean          default(FALSE)
+#  cost_plan        :integer
+#  cost_already     :integer
 #

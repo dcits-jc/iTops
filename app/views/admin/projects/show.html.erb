@@ -48,6 +48,15 @@
 <%= @workflow_user_groups.count %>人  
 </p>
 
+
+<p>
+项目经理:
+<% @project.managers.each do |manager| %>
+  <code><%= manager.itcode %></code>
+<% end %>  
+</p>
+
+
 <p>
 项目参与者:
 <% @project.members.each do |member| %>
@@ -58,6 +67,10 @@
 <p>当前工作量合计:
 <%= @project.hours_sum %>小时
 </p>
+
+<p>项目经理邀请链接: <%= link_to(  'http://localhost:3000'+invite_manager_project_path,invite_manager_project_path) %>
+  </p>
+
 
 <hr>
 <%= link_to('编辑',edit_admin_project_path(@project),class: "btn btn-primary")  %>

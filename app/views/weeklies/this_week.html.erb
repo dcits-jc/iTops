@@ -1,8 +1,12 @@
 <div class="col-md-2">
-  <%= link_to root_path do %>
+  <%#= link_to root_path do %>
+  <div class="text-right">
     <h1>本周周报</h1>
-    <p><strong>W<%= @current_weekly.week %></strong> <small>(<%= @start_time %> ~ <%= @end_time %>)</small></p>
-  <% end %>
+
+    <p><strong> Y<%= @current_weekly.year %></strong>-<strong>W<%= @current_weekly.week %></strong> 
+    </p>
+    <p> <small>(<%= @start_time %> ~ <%= @end_time %>)</small></p>
+  <%# end %>
   <p class="text-right">本周工作量:
 
   <% if @workload_sum==0 %>
@@ -14,7 +18,7 @@
    <%= @workload_sum %></strong> 小时 
 
   </p>
-  
+  </div>
 </div>
 <div class="col-md-10">
 
