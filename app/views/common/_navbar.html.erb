@@ -14,11 +14,11 @@
 
         
 
-        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Lv<%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/时)</p>
+        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/时)</p>
 
         <p class="navbar-text">工号:<%= current_user.code%>
           ITcode:<%=current_user.itcode%>
-          部门:<%=current_user.sbu.name%>  
+          部门:<%=current_user.sbu_name%>  
           成本中心:<%=current_user.costcenter%>  
         <% end %>
 

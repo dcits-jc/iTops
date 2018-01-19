@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108195859) do
+ActiveRecord::Schema.define(version: 20180118031107) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20180108195859) do
     t.boolean "disable_workflow", default: false
     t.integer "cost_plan"
     t.integer "cost_already"
+    t.string "project_class"
+    t.string "customer_company"
+    t.string "customer_name"
+    t.string "customer_phone"
+    t.string "pm_name"
+    t.string "area"
+    t.string "project_start_time"
+    t.string "project_end_time"
+    t.string "submit_plan"
+    t.string "other"
   end
 
   create_table "sbus", force: :cascade do |t|
@@ -94,8 +104,12 @@ ActiveRecord::Schema.define(version: 20180108195859) do
     t.integer "sbu_id"
     t.string "phone"
     t.string "title"
-    t.integer "level"
+    t.string "level"
     t.integer "cost"
+    t.string "sbu_name"
+    t.string "area"
+    t.string "status"
+    t.string "job_class"
     t.boolean "pm", default: false
     t.string "costcenter"
     t.index ["email"], name: "index_users_on_email", unique: true

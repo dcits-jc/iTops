@@ -22,8 +22,12 @@
 #  sbu_id                 :integer
 #  phone                  :string
 #  title                  :string
-#  level                  :integer
+#  level                  :string
 #  cost                   :integer
+#  sbu_name               :string
+#  area                   :string
+#  status                 :string
+#  job_class              :string
 #  pm                     :boolean          default(FALSE)
 #  costcenter             :string
 #

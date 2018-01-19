@@ -22,6 +22,7 @@ class Admin::UsersController < ApplicationController
 
   def create
     @user = user.new(user_params)
+    @user.create_currentweekly
     if @user.save
       flash[:notice] = '用户新建成功!'
       redirect_to admin_users_path

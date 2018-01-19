@@ -49,6 +49,10 @@ class WeekliesController < ApplicationController
 
   def this_week
     @user = current_user
+    if current_user.weeklies.blank?
+      current_user.create_currentweekly!
+    end
+    
     @current_weekly = current_user.weeklies.last
     @workflow = Workflow.new
     
@@ -72,6 +76,9 @@ class WeekliesController < ApplicationController
   end
 
   def current_week
+    if current_user.weeklies.blank?
+      current_user.create_currentweekly!
+    end
     @current_weekly = current_user.weeklies.last
     @start_time =@current_weekly.start_time.strftime("%Y-%m-%d")
     @end_time =@current_weekly.end_time.strftime("%Y-%m-%d")
