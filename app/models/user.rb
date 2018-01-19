@@ -25,13 +25,25 @@ class User < ApplicationRecord
 
 
 
-  belongs_to :sbu
+  # belongs_to :sbu
 
 
   def is_admin?
     admin
   end
 
+  def create_currentweekly!
+    current_weektemplate = WeeklyTemplate.last
+    weekly = Weekly.new
+    weekly.year = current_weektemplate.year
+    weekly.month = current_weektemplate.month
+    weekly.week = current_weektemplate.week
+    weekly.start_time = current_weektemplate.start_time
+    weekly.end_time = current_weektemplate.end_time
+    weekly.user = self
+    weekly.weekly_template = current_weektemplate
+    weekly.save
+  end
 
 
 end
@@ -60,8 +72,12 @@ end
 #  sbu_id                 :integer
 #  phone                  :string
 #  title                  :string
-#  level                  :integer
+#  level                  :string
 #  cost                   :integer
+#  sbu_name               :string
+#  area                   :string
+#  status                 :string
+#  job_class              :string
 #  pm                     :boolean          default(FALSE)
 #  costcenter             :string
 #

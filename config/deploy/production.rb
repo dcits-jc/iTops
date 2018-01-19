@@ -1,3 +1,7 @@
+server "ubuntu-huawei04", user: "alan", roles: %w{app db web}, my_property: :my_value
+
+set :branch, 'master' 
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

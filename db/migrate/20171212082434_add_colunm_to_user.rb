@@ -6,8 +6,12 @@ class AddColunmToUser < ActiveRecord::Migration[5.1]
     add_column :users, :sbu_id, :integer
     add_column :users, :phone, :string
     add_column :users, :title, :string
-    add_column :users, :level, :integer
+    add_column :users, :level, :string
     add_column :users, :cost, :integer
+    add_column :users, :sbu_name, :string
+    add_column :users, :area, :string
+    add_column :users, :status, :string
+    add_column :users, :job_class, :string
     add_column :users, :pm, :boolean,default: false
   end
 end

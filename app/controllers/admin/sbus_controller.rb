@@ -7,7 +7,7 @@ class Admin::SbusController < ApplicationController
 
   def show
     @sbu = Sbu.find(params[:id])
-    @users = @sbu.users
+    @users = User.where(sbu_name: @sbu.name)
   end
 
 end
