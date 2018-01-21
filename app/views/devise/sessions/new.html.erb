@@ -1,30 +1,70 @@
-<div class="container jumbotron">
-  <div class="row registraion_devise">
-    <div class="left_description col-md-8">
-      <!-- 描述内容 -->
-    </div>
-    <div class="right_form col-md-4 ">      
-        <h2 class="text-center"><%= t(".sign_in") %></h2>
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-          <div class="form-inputs">
-            <%= f.input :email, required: false, autofocus: true,  label: false,placeholder: "登录邮箱" %>
-            <%= f.input :password, required: false,  label: false,placeholder: "密码" %>
-            <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            <span class="new-password-link">
-              <%= link_to("忘记密码",new_user_password_path) %>
-            </span> 
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit, t(".sign_in"), class: "btn-block" %>
-          </div>
-        <% end %>
-        <%#= render "devise/shared/links" %>
-        <h5 class="text-left">还没有账号? <%= link_to("注册",new_user_registration_path) %></h5>
-      <%#= render "devise/shared/links" %>
-    </div>
-  </div>
-</div>
+
+
+<%#= render "devise/shared/links" %>
+
+
+
+
+<!-- <script src="http://odor1hjie.bkt.clouddn.com/particles.js"></script> -->
+<style>
+/*————————— 背景设置require ———————————*/
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+  background-color: #aaa;
+}
+
+
+</style>
+
+
+
+
+  <!-- 核心内容   -->
+  <article>
+    <!-- 页头 -->
+    <header>
+      <!-- Logo或标题  -->
+      <div class="text-center">
+        <!-- 标题 -->
+        <h1 id="title">
+          <span><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><strong>Daily</strong></span>
+        </h1>
+        <!-- <br> -->
+        <!-- 描述 -->
+        <h5 id="description">集成解决方案SBU周报系统</h5> 
+        <br> 
+      </div>        
+    </header>
+    <!--  -->
+
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%#= f.input :email, required: false, autofocus: true,  label: false,placeholder: "登录邮箱" %>
+        <%= f.input :itcode, required: false, autofocus: true,  label: false,placeholder: "itcode" %>
+        <%= f.input :password, required: false,  label: false,placeholder: "密码" %>
+        <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+        <!-- <span class="new-password-link"> -->
+          <%#= link_to("忘记密码",new_user_password_path) %>
+        <!-- </span>  -->
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, t(".sign_in"), class: "btn-block" %>
+      </div>
+    <% end %>
+
+
+
+
+  </article>
+  <!--  -->
+
+
+
+
 <style>
   .right_form{
     padding-top: 5%;
@@ -33,4 +73,62 @@
   .new-password-link{
     float: right;
   }
+
+  footer{
+    position: absolute;
+    /*bottom: 5%;*/
+    left: 0;  
+    right: 0; 
+    bottom: 0;
+    margin: auto;
+    /*width: 280px;*/
+  }
+
+
+
+/*/*  ————————————————— 调整框架位置 ———————————————————   */
+/*居中*/
+article{
+  position: absolute;
+  left: 0;  
+  right: 0; 
+  bottom: 0;
+  margin: auto;
+  width: 280px;
+}
+
+
+footer{
+  position: absolute;
+  left: 0;  
+  right: 0; 
+  bottom: 0;
+  margin: auto;
+}
+
+
+
+article{
+  top: 30%;
+}*/
+
+footer{
+  top: 90%;
+}
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

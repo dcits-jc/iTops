@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,:authentication_keys => [:itcode]
 
   has_many :workflows
   has_many :weeklies
@@ -27,6 +27,11 @@ class User < ApplicationRecord
 
   # belongs_to :sbu
 
+  def generate_itcode
+   self.itcode = (self.email.split(/@/))[0]
+  end
+
+
 
   def is_admin?
     admin
@@ -45,6 +50,12 @@ class User < ApplicationRecord
     weekly.save
   end
 
+
+
+  # 关闭强制邮箱登录
+  def email_required?
+    false
+  end
 
 end
 
@@ -80,6 +91,7 @@ end
 #  job_class              :string
 #  pm                     :boolean          default(FALSE)
 #  costcenter             :string
+#  is_logined             :boolean          default(FALSE)
 #
 # Indexes
 #

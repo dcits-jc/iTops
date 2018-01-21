@@ -14,6 +14,7 @@ class WorkflowsController < ApplicationController
 
     @skills = Skill.all
     @companies = Company.all
+    @select_projects = Project.pluck(:id,:name)
 
     @workflow_types = {}
 
