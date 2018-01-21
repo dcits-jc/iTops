@@ -27,20 +27,20 @@
                        "部门工作" => 15,
               } %>
 
+ 
 
-
-
-            <%= f.input :project_id,label: false,as: :hidden%>
-            <%#= f.input :project_id,label: '项目名', collection: @project_names %>
-
-            
 
 
 
             <div class="form-group hidden" id="project_number">
-              <label for="search_project_blank">* 项目号</label>
-              <div id="project_info"></div>
-              <input type="text" class="form-control" id="search_project_blank" placeholder="">
+
+              <label>项目名</label>
+              <select data-live-search="true" data-size=10  name="workflow[project_id]" id="workflow_project_id" class="selectpicker form-control select required" >
+                <option value=0>--</option>
+                <% @projects.each do |p| %>
+                  <option value=<%=p.id%>><%= p.code %>#<%= p.name %></option>
+                <% end %>
+              </select>
               
             </div>
 
@@ -146,49 +146,7 @@ $(document).ready(function(){
 });
 
 
-function searchProject(code) {
-  $.ajax({
-    url: '/api/v1/projects/'+code,
-    type: 'GET',
-    dataType: 'json',
-    // 加入动画
-    beforeSend: function() {
-      $("#loader").remove();
-      $("#project_info").append('<div id="loader" class="loader"><span class="loader-inner">Loading...</span></div>');
-    },
 
-    complete: function() {
-      $("#loader").remove();
-      // 如果能成功加载信息再显示新浪
-      // 从新浪获取价格
-      // 如果第一位是6,则为沪市
-    },
-    success: function (data_obj) {
-      if (data_obj['stat']==1) {
-        console.log(data_obj['data']);
-        $('#workflow_project_id').val(data_obj['data']['id'])
-        $('#project_info').html('<p>'+data_obj['data']['code']+'#'+data_obj['data']['name']+'#'+data_obj['data']['project_type']+'#'+data_obj['data']['sbu']+'#'+data_obj['data']['sales_name']+'</p>')
-      }else if((data_obj['stat']==2)){
-        $('#workflow_project_id').val(data_obj['data']['id'])
-        $('#search_project_blank').css("background-color","#CC3333");
-        $('#project_info').html('<p class="text-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true">'+data_obj['data']['code']+'#'+data_obj['data']['name']+'#'+data_obj['data']['project_type']+'#'+data_obj['data']['sbu']+'#'+data_obj['data']['sales_name']+'(该项目已禁止继续派工)</p>')
-      }else{
-        console.log('项目号不存在');
-        $('#workflow_project_id').val('');
-        $('#search_project_blank').css("background-color","#CC3333");
-
-        $('#project_info').html('<p class="text-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true">项目号不存在</span></p>')
-      }
-    },
-    error: function() {
-      /* Act on the event */
-      console.log("error");
-    }
-  });
-
-
-}
- 
 
 
 

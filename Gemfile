@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 # bootstrap样式集
 gem 'bootstrap-sass'
+
+gem 'bootstrap-select-rails'
 # 图标库
 gem 'font-awesome-sass', '~> 4.7.0'
 # 智能表单
