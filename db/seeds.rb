@@ -18,41 +18,32 @@ Sbu.create(name: '业务发展部')
 Sbu.create(name: '运营商BU')
 
 
-User.create(email: 'liangchaob@dcits.com',password: "23664561Da",password_confirmation: "23664561Da",admin: true,itcode: "liangchaob",code: "1001959",name: "梁超",sbu_id: 1,phone: '18600295379',title: '开发工程师',costcenter: '31T80001',level: 5,cost: 2000)
-User.create(email: 'a@dcits.com',password: "000000",password_confirmation: "000000",itcode: "a",code: "1001958",name: "张三",sbu_id: 2,phone: '1860747625',title: '网络工程师',costcenter: '31T80062',level: 3,cost: 1000)
-User.create(email: 'b@dcits.com',password: "000000",password_confirmation: "000000",itcode: "b",code: "1001957",name: "李四",sbu_id: 3,phone: '1860747655',title: '系统工程师',costcenter: '31T80053',level: 4,cost: 1000)
-User.create(email: 'c@dcits.com',password: "000000",password_confirmation: "000000",itcode: "c",code: "1001950",name: "王五",sbu_id: 1,phone: '1360347625',title: '项目经理',costcenter: '31T80001',level: 2,cost: 1000)
-User.create(email: 'd@dcits.com',password: "000000",password_confirmation: "000000",itcode: "d",code: "1001111",name: "王麻子",sbu_id: 1,phone: '1888888888',title: '大老板',costcenter: '31T80001',level: 6,cost: 1000)
+# User.create(email: 'liangchaob@dcits.com',password: "23664561Da",password_confirmation: "23664561Da",admin: true,itcode: "liangchaob",code: "1001959",name: "梁超",sbu_id: 1,phone: '18600295379',title: '开发工程师',costcenter: '31T80001',level: 5,cost: 2000)
+# User.create(email: 'a@dcits.com',password: "000000",password_confirmation: "000000",itcode: "a",code: "1001958",name: "张三",sbu_id: 2,phone: '1860747625',title: '网络工程师',costcenter: '31T80062',level: 3,cost: 1000)
+# User.create(email: 'b@dcits.com',password: "000000",password_confirmation: "000000",itcode: "b",code: "1001957",name: "李四",sbu_id: 3,phone: '1860747655',title: '系统工程师',costcenter: '31T80053',level: 4,cost: 1000)
+# User.create(email: 'c@dcits.com',password: "000000",password_confirmation: "000000",itcode: "c",code: "1001950",name: "王五",sbu_id: 1,phone: '1360347625',title: '项目经理',costcenter: '31T80001',level: 2,cost: 1000)
+# User.create(email: 'd@dcits.com',password: "000000",password_confirmation: "000000",itcode: "d",code: "1001111",name: "王麻子",sbu_id: 1,phone: '1888888888',title: '大老板',costcenter: '31T80001',level: 6,cost: 1000)
 
 
 
-week = WeeklyTemplate.create(year: 2017,month:11,week: 51,start_time: Time.local(2017,11,27),end_time: Time.local(2017,11,27)+7.days-1.seconds)
-week.create_weeklies!
-week = WeeklyTemplate.create(year: 2017,month:12,week: 52,start_time: Time.local(2017,12,4),end_time: Time.local(2017,12,4)+7.days-1.seconds)
-week.create_weeklies!
-week = WeeklyTemplate.create(year: 2017,month:12,week: 53,start_time: Time.local(2017,12,11),end_time: Time.local(2017,12,11)+7.days-1.seconds)
-week.create_weeklies!
-week = WeeklyTemplate.create(year: 2017,month:12,week: 54,start_time: Time.local(2017,12,18),end_time: Time.local(2017,12,18)+7.days-1.seconds)
-week.create_weeklies!
-week = WeeklyTemplate.create(year: 2017,month:12,week: 55,start_time: Time.local(2017,12,25),end_time: Time.local(2017,12,25)+7.days-1.seconds)
-week.create_weeklies!
+# week = WeeklyTemplate.create(year: 2017,month:11,week: 51,start_time: Time.local(2017,11,27),end_time: Time.local(2017,11,27)+7.days-1.seconds)
+# week.create_weeklies!
+# week = WeeklyTemplate.create(year: 2017,month:12,week: 52,start_time: Time.local(2017,12,4),end_time: Time.local(2017,12,4)+7.days-1.seconds)
+# week.create_weeklies!
+# week = WeeklyTemplate.create(year: 2017,month:12,week: 53,start_time: Time.local(2017,12,11),end_time: Time.local(2017,12,11)+7.days-1.seconds)
+# week.create_weeklies!
+# week = WeeklyTemplate.create(year: 2017,month:12,week: 54,start_time: Time.local(2017,12,18),end_time: Time.local(2017,12,18)+7.days-1.seconds)
+# week.create_weeklies!
+# week = WeeklyTemplate.create(year: 2017,month:12,week: 55,start_time: Time.local(2017,12,25),end_time: Time.local(2017,12,25)+7.days-1.seconds)
+# week.create_weeklies!
 
 
-Project.create(code: '000000',name:'#认证考试#',cost_plan: 100000)
-Project.create(code: '000001',name:'#技术提升#',cost_plan: 100000)
-Project.create(code: '000002',name:'#部门工作#',cost_plan: 100000)
-Project.create(code: '000003',name:'#售前(临时)#',cost_plan: 100000)
-Project.create(code: '000004',name:'#售前(厂商交流)#',cost_plan: 100000)
+Project.create(code: '0',name:'#认证考试#',cost_plan: 100000)
+Project.create(code: '1',name:'#技术提升#',cost_plan: 100000)
+Project.create(code: '2',name:'#部门工作#',cost_plan: 100000)
+Project.create(code: '3',name:'#售前(临时)#',cost_plan: 100000)
+Project.create(code: '4',name:'#售前(厂商交流)#',cost_plan: 100000)
 
-
-Project.create(code: '000006',name:'工商银行银信通项目',sales_name: '小六',sbu: '金融6部',description:"",project_type: 'C类',start_time: Time.local(2017,5,18),end_time: Time.local(2018,5,18),cost_plan: 50000)
-Project.create(code: '000007',name:'支付宝网络升级改造',sales_name: '大西哥',sbu: '金融1部',description:"",project_type: 'A类',start_time: Time.local(2016,4,10),end_time: Time.local(2017,5,20),disable_workflow: true,cost_plan: 100000)
-Project.create(code: '000008',name:'华夏银行应用虚拟化',sales_name: '刘洋',sbu: '金融4部',description:"",project_type: 'B类',start_time: Time.local(2014,6,1),end_time: Time.local(2018,6,1),cost_plan: 100000)
-Project.create(code: '000009',name:'联通骨干网扩容',sales_name: '韩梅梅',sbu: '运营商1部',description:"",project_type: 'D类',start_time: Time.local(2017,1,10),end_time: Time.local(2020,5,18),cost_plan: 100000)
-
-
-
-Project.cereat(code: 'AT0AA70130A1-售前',name: '中委合资广东石化2000万吨／年重质原油加工工程服务器-售前',project_type: '集成售前',project_class: 'C',customer_company: '中国石油天然气股份有限公司广东石化分公司',customer_name: '',customer_phone: '',pm_name: '张宏淼',sales_name: '任亮',area: '北京',sbu: '能源事业部',submit_plan: 'N',other: '售前')
 
 
 

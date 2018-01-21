@@ -38,6 +38,7 @@ end
 #  job_class              :string
 #  pm                     :boolean          default(FALSE)
 #  costcenter             :string
+#  is_logined             :boolean          default(FALSE)
 #
 # Indexes
 #

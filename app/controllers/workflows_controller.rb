@@ -14,6 +14,7 @@ class WorkflowsController < ApplicationController
 
     @skills = Skill.all
     @companies = Company.all
+    @select_projects = Project.pluck(:id,:name)
 
     @workflow_types = {}
 
@@ -25,26 +26,27 @@ class WorkflowsController < ApplicationController
 
 
   def create
-    # binding.pry
+
     @weekly = Weekly.find(params[:weekly_id])
     # 如果销售名存在,则看情况给个独立的 project, 否则
+
     # 部门工作
     if workflow_params[:workflow_type_id]=='15'
-      @project = Project.third
+      @project = Project.find_by_code('2')
     elsif workflow_params[:project_sales].present?
       case workflow_params[:workflow_type_id]
       when '11'
         # 考试
-        @project = Project.first
+        @project = Project.find_by_code('0')
       when '12'
         # 技术提升
-        @project = Project.second
+        @project = Project.find_by_code('1')
       when '13'
         # 售前(临时)
-        @project = Project.fourth
+        @project = Project.find_by_code('3')
       when '14'
         # 售前(厂商交流)
-        @project = Project.fifth
+        @project = Project.find_by_code('4')
       end
     else
       @project = Project.find(workflow_params[:project_id])

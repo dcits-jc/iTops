@@ -1,9 +1,6 @@
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-
-        
-        <% if current_user.present? %>
         <div class="navbar-header">
             <a class="navbar-brand" href="<%= root_path %>">
                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
@@ -13,11 +10,15 @@
         </div>
 
         
+        <% if current_user.present? %>
 
-        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%=current_user.level%><%= current_user.title %>   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost %>(元/时)</p>
 
-        <p class="navbar-text">工号:<%= current_user.code%>
-          ITcode:<%=current_user.itcode%>
+        
+
+        <p class="navbar-text"><%= current_user.name %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%= current_user.title %>(<%=  current_user.level==''  ?  '--' : current_user.level %>)   <span class="glyphicon glyphicon-yen" aria-hidden="true"></span><%= current_user.cost || '--' %>(元/时)</p>
+
+        <p class="navbar-text"><%=current_user.itcode%>#<%= current_user.code%>
+         
           部门:<%=current_user.sbu_name%>  
           成本中心:<%=current_user.costcenter%>  
         <% end %>

@@ -16,6 +16,8 @@
     </tr>
   </thead>
   <tbody>
+
+
     <% @workflows.each do |workflow| %>
       <tr>
         <td rowspan="<%= workflow[1].count+1 %>"><%= workflow[0].code %></td>
@@ -50,8 +52,9 @@
     <% end %>
   </tbody>
 </table>
-
-
+<% if @workflows.blank? %>
+  <div class="alert alert-warning" role="alert">本周还没有提交周报哦!</div>
+<% end %>
 
 <style>
 .table{
