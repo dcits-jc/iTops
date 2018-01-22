@@ -1,3 +1,13 @@
+<%= search_form_for ['admin',@q], html: {class: "navbar-form navbar-left"} do |f|  %>
+  <div class="form-group">
+    <%= f.search_field :code_or_name_cont, class: "form-control", placeholder: "输入公司名"  %>
+    <%= f.submit "搜索", class: "btn btn-warning"  %>
+    <%#=sort_link(@q, :name)  %>
+  </div>
+<% end %>
+
+<div class="row"></div>
+
 <%= link_to('新建项目',new_admin_project_path,class: 'btn btn-primary') %>
 
 
@@ -30,6 +40,6 @@
   </tbody>
 </table>
 
-      <div class="text-center">
-        <%= will_paginate @projects %>
-      </div>
+<div class="text-center">
+  <%= will_paginate @projects %>
+</div>
