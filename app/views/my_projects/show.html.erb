@@ -20,9 +20,11 @@
 
   <h1>
     <%= @project.code %>#<%= @project.name %>
-  <% if @project.cost_already>@project.cost_plan  %>
-    <span class="alert-danger">超支!!</span>
-   <%end%>
+    <% if @project.cost_already.present?  %>
+      <% if @project.cost_already>@project.cost_plan  %>
+        <span class="alert-danger">超支!!</span>
+      <%end%>
+    <% end %>
   </h1>
 
   <p>
@@ -57,13 +59,15 @@
 </p>
 <p>
    剩余成本: 
-  <% if @project.cost_already>@project.cost_plan  %>
-    <span class="alert-danger"><%=number_with_delimiter(@project.cost_plan-@project.cost_already) %></span>
-    <%else%>
-    <span><%=number_with_delimiter(@project.cost_plan-@project.cost_already) %></span>
-    
-   <%end%>
-    元
+   <%  if @project.cost_already.present? %>
+    <% if @project.cost_already>@project.cost_plan  %>
+      <span class="alert-danger"><%=number_with_delimiter(@project.cost_plan-@project.cost_already) %></span>
+      <%else%>
+      <span><%=number_with_delimiter(@project.cost_plan-@project.cost_already) %></span>
+      
+     <%end%>
+      元
+  <% end %>
 
 
 </p>
