@@ -1,7 +1,7 @@
 class Admin::ProjectsController < ApplicationController
   layout "admin"
   def index
-    @projects = Project.all
+    @projects = Project.all.paginate(:page => params[:page], :per_page => 20)
   end
 
   def new
