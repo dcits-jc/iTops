@@ -13,6 +13,7 @@
       <td>技术方向</td>
       <td>工作量(小时)</td>
       <td>时间</td>
+      <!-- <td>操作</td> -->
     </tr>
   </thead>
   <tbody>
@@ -46,7 +47,12 @@
           <td><%= companies %></td>
           <td><%= skills %></td>
           <td><%= w.hours %>h</td>
-          <td><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></td>        
+          <td><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></td>
+          <% if w.user == current_user %>
+            <td><%= link_to '删除',weekly_workflow_path(@current_weekly.id,w.id),method: 'DELETE',class: 'btn btn-danger btn-xs' , data: { confirm: "确认删除这条工作流?" }%></td> 
+          <% end %>
+
+                
         </tr>
       <% end %>
     <% end %>

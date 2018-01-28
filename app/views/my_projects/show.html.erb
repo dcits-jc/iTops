@@ -39,14 +39,14 @@
 <p>
 项目经理:
 <% @project.managers.each do |manager| %>
-  <code><%= manager.itcode %></code>
+  <code><%= manager.name %></code>
 <% end %>  
 </p>
 
 <p>
   项目成员:
   <% @project.members.each do |member| %>
-  <code><%= member.email %></code>
+  <code><%= member.name %></code>
   <% end %>  
 </p>
 

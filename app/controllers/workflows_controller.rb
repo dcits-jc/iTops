@@ -81,6 +81,17 @@ class WorkflowsController < ApplicationController
   end
 
 
+  def destroy
+    @weekly = Workflow.find(params[:id])
+    if @weekly.destroy
+      flash[:notice] = '工作流删除成功!'     
+    else
+      flash[:alert] = '工作流删除失败'
+    end
+    redirect_to root_path
+  end
+
+
   # 确认报工
   def confirm
     @project = Project.find(params[:project_id])
