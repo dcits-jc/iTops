@@ -15,6 +15,19 @@
         <div class="col-md-2 btn btn-default">
           <p><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,weekly_path(weekly))  %></p>
           <p><%= weekly.start_time.strftime("%Y-%m-%d") %>~<%= weekly.end_time.strftime("%Y-%m-%d") %></p>
+
+          <h4>
+            <strong>
+              <% if weekly.workload_sum.present?  %>
+                <span style="color: #f00">
+                <%= weekly.workload_sum %>h
+                </span>
+              <% else %>
+                0h
+              <% end %>
+            </strong>
+          </h4>
+          
         </div>
       <% end %>
     <% end %>

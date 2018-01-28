@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li><%= link_to(@user.sbu.name,admin_sbus_path(@user.sbu)) %></li>
+  <li><%#= link_to(@user.sbu_name,admin_sbus_path(@user.sbu)) %></li>
   <li class="active"><%= @user.email %></li>
 </ol>
 
@@ -7,7 +7,7 @@
 <h1><%= @user.name %></h1>
 <p>员工编号:<%= @user.code %></p>
 <p>ITcode:<%= @user.itcode %></p>
-<p>所属部门:<%= @user.sbu %></p>
+<p>所属部门:<%= @user.sbu_name %></p>
 <p>联系方式:<%= @user.phone %></p>
 <p>职位:<%= @user.title %></p>
 <p>级别:<%= @user.level %></p>
