@@ -2,14 +2,25 @@
   <div class="form-group">
     <%= f.input :code,label: '项目号', input_html: { class: "form-control"} %>
     <%= f.input :name,label: '项目名', input_html: { class: "form-control"} %>
-    <%= f.input :project_type,label: '项目类型', input_html: { class: "form-control"} %>
+    <%= f.input :project_type,label: '项目类型',collection: ['集成','供货','集成售前','解决方案售前','单次服务','服务'], input_html: { class: "form-control"} %>
+    <%= f.input :project_class,label: '项目级别',collection: ['A','B','C','D','W'], input_html: { class: "form-control"} %>
     <%= f.input :sales_name,label: '销售', input_html: { class: "form-control"} %>
     <%= f.input :sbu,label: '所属部门', input_html: { class: "form-control"} %>
+    <%= f.input :customer_company,label: '客户公司名', input_html: { class: "form-control"} %>
+    <%= f.input :customer_name,label: '客户联系人', input_html: { class: "form-control"} %>
+    <%= f.input :customer_phone,label: '客户联系方式', input_html: { class: "form-control"} %>
+    <%= f.input :area,label: '地区', input_html: { class: "form-control"} %>
+    <%= f.input :pm_name,label: 'PM姓名', input_html: { class: "form-control"} %>
 
     <%= f.input :cost_plan,label: '预留费用(元)', input_html: { class: "form-control"} %>
 
+    <%= f.input :submit_plan,label: '是否提交项目计划',collection: ['N','Y'], input_html: { class: "form-control"} %>
 
-    <%= f.input :description,label: '项目描述', input_html: { class: "form-control"} %>
+    <%= f.input :description,label: '项目描述',as: :text, input_html: { class: "form-control"} %>
+
+    
+    <%= f.input :other,label: '其他',as: :text, input_html: { class: "form-control"} %>
+
     <label for="">开始日期</label>
 
     <%= f.datetime_select :start_time,:discard_hour => true %>
@@ -18,6 +29,8 @@
     <label for="">结束日期</label>
 
     <%= f.datetime_select :end_time,:discard_hour => true %>
+
+
 
   </div>
   <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交中..." } %>
