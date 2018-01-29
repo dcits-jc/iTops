@@ -1,0 +1,95 @@
+<hr>
+
+  <% @workflows.each do |workflow| %>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <kbd><%= workflow[0].code %></kbd> # <kbd><%= workflow[0].sbu %></kbd>
+      <h4><%= workflow[0].name %></h4>
+      
+    </div>
+    <div class="panel-body">
+      
+     <table class="table">
+
+
+    <% workflow[1].each do |w| %>
+
+    <tr>
+      <td>
+        
+        <% companies = w.companies.map {|s| s.name} %>
+        <% skills = w.skills.map {|s| s.name} %>
+        <!-- 把其他情况加进去 -->
+        <% if w.other_company.present?
+          companies.push(w.other_company)
+        end %>
+
+        <% if w.other_skill.present?
+          skills.push(w.other_skill)
+        end %>
+
+
+
+
+
+
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-2">
+          <h2 class="text-center"><%= w.hours %>h</h2>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8">
+          <p><em> <small><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></small></em> </p>
+          
+          <% if w.description.present? %>
+            <blockquote>
+              <p><%= w.description %></p>
+            </blockquote>
+            
+          <% end %>
+          <p><code><%= companies %></code> <code><%= skills %></code></p>
+          <p><mark><%= w.workflow_type.name %></mark>  销售: <%= w.project_sales %></p>
+          
+        </div>
+   
+
+        <div class="col-md-2 col-sm-2 col-xs-2 text-center">
+          <%= link_to '删除',weekly_workflow_path(@current_weekly.id,w.id),method: 'DELETE',class: 'btn btn-danger btn-xs' , data: { confirm: "确认删除这条工作流?" }%>
+        </div>
+        
+      </div>
+
+
+
+      </td>
+    </tr>
+
+
+
+      
+
+
+
+    <% end %>
+
+
+
+
+       
+     </table>   
+      
+
+
+
+
+    </div>
+  </div>
+
+<% end %>
+
+
+
+
+
+
