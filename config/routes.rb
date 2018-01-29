@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     end
     resources :weekly_templates
     resources :sbus
+    resources :units
   end
 
 

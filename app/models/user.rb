@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:authentication_keys => [:itcode]
 
+  # 一个用户可能管理多个部门
+  has_many :user_leader_units
+  has_many :leading_units, through: :user_leader_units, source: :unit
+
+
 
   # 用户周报1:n
   has_many :workflows

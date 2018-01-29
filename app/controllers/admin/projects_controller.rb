@@ -58,7 +58,7 @@ class Admin::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:code,:name,:description,:sales_name,:cost_plan,:sbu,:project_type,:start_time,:end_time)
+    params.require(:project).permit(:code,:name,:description,:sales_name,:cost_plan,:sbu,:project_type,:start_time,:end_time,:project_class,:customer_company,:customer_name,:customer_phone,:pm_name,:area,:submit_plan,:other)
   end
 
 
