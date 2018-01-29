@@ -48,9 +48,7 @@
           <td><%= skills %></td>
           <td><%= w.hours %>h</td>
           <td><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></td>
-          <% if w.user == current_user %>
-            <td><%= link_to '删除',weekly_workflow_path(@current_weekly.id,w.id),method: 'DELETE',class: 'btn btn-danger btn-xs' , data: { confirm: "确认删除这条工作流?" }%></td> 
-          <% end %>
+
 
                 
         </tr>
