@@ -4,22 +4,30 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:authentication_keys => [:itcode]
 
+
+  # 用户周报1:n
   has_many :workflows
+  # 用户工作流1:n
   has_many :weeklies
 
 
+
+
+  # 员工产品 n:n
   has_many :user_company_relationships
   has_many :companies, through: :user_company_relationships, source: :company
 
+  # 员工技能 n:n
   has_many :user_skill_relationships
   has_many :skills, through: :user_skill_relationships, source: :skill
 
 
-
+  # 员工项目 n:n
   has_many :project_relationships
   has_many :projects, through: :project_relationships, source: :project
 
 
+  # 员工项目管理 n:n
   has_many :project_manages
   has_many :manage_projects, through: :project_manages, source: :project
 
