@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   # 管理员路由
   namespace :admin do
+    resources :workflows
     resources :users do
       member do 
         post :set_admin
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
       end 
 
       resources :weeklies
+
     end
     resources :projects do
       member do
