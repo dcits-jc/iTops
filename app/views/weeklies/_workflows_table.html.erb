@@ -11,7 +11,7 @@
     </div>
     <div class="panel-body">
       
-     <table class="table">
+     <table class="table table-condensed table-hover">
 
 
     <% workflow[1].each do |w| %>
@@ -89,7 +89,9 @@
 <% end %>
 
 
-
+<% if @workflows.blank? %>
+  <div class="alert alert-warning" role="alert">本周还没有提交周报哦!</div>
+<% end %>
 
 
 
