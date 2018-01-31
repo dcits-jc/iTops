@@ -2,7 +2,7 @@
 <% @workflows.each do |w| %>
   <tr>
     <td>
-      <%= link_to w.user.name, admin_user_path(w.user) %> 在 <%=link_to 'Y' + w.weekly.year.to_s + 'w' + w.weekly.week.to_s ,admin_user_weekly_path(w.user,w)%> 提交了一条工作流
+      <%= link_to w.user.name, admin_user_path(w.user) %> 在 <%=link_to 'Y' + w.weekly.year.to_s + 'w' + w.weekly.week.to_s ,admin_user_weekly_path(w.user,w.weekly)%> 提交了一条工作流
     </td>
     <td>
       <%= w.created_at %>
