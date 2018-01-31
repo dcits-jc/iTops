@@ -60,7 +60,9 @@ class WorkflowsController < ApplicationController
       @workflow.weekly = @weekly
       @workflow.user = current_user
       @workflow.project = @project
-      @workflow.cost = current_user.cost*@workflow.hours
+      current_user.cost.present? ? current_cost = current_user.cost : current_cost = 0
+
+      @workflow.cost = current_cost*@workflow.hours
       # 如果项目有销售名,就把销售名写入工作流
       if @project.sales_name.present?
         @workflow.project_sales = @project.sales_name
