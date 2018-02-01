@@ -26,40 +26,57 @@ class WorkflowsController < ApplicationController
 
 
   def create
+    # 如果工作时长或者内容为空,提示
+    # 如果不为空->
+      # 如果类型是部门工作,销售和项目号不用填
 
-    @weekly = Weekly.find(params[:weekly_id])
-    # 如果销售名存在,则看情况给个独立的 project, 否则
+      # 如果销售名存在,则选个项目号
 
-    # 部门工作
-    if workflow_params[:workflow_type_id]=='15'
-      @project = Project.find_by_code('2')
-    elsif workflow_params[:project_sales].present?
-      case workflow_params[:workflow_type_id]
-      when '11'
-        # 考试
-        @project = Project.find_by_code('0')
-      when '12'
-        # 技术提升
-        @project = Project.find_by_code('1')
-      when '13'
-        # 售前(临时)
-        @project = Project.find_by_code('3')
-      when '14'
-        # 售前(厂商交流)
-        @project = Project.find_by_code('4')
-      end
+
+    # 工作时长与内容必填
+    if workflow_params[:hours]==''
+      flash[:alert] = '报工失败,未填写工作时长!'
+      redirect_to root_path
+    elsif workflow_params[:description]==''
+      flash[:alert] = '报工失败,未填写工作内容!'
+      redirect_to root_path
     else
-      if workflow_params[:project_id]=='0'
-        flash[:alert] = '报工失败,未选择指定项目!'
-        redirect_to root_path  
-      elsif workflow_params[:hours]==''
-        flash[:alert] = '报工失败,未填写工作时长!'
-        redirect_to root_path
-      elsif workflow_params[:description]==''
-        flash[:alert] = '报工失败,未填写工作内容!'
+      # 如果类型是部门工作,销售和项目号不用填
+      if workflow_params[:workflow_type_id]=='15'
+        @project = Project.find_by_code('2')
+      end
+
+      # 如果销售名存在,则选个项目号
+      if workflow_params[:project_sales].present?
+        case workflow_params[:workflow_type_id]
+        when '11'
+          # 考试
+          @project = Project.find_by_code('0')
+        when '12'
+          # 技术提升
+          @project = Project.find_by_code('1')
+        when '13'
+          # 售前(临时)
+          @project = Project.find_by_code('3')
+        when '14'
+          # 售前(厂商交流)
+          @project = Project.find_by_code('4')
+        end
+      end
+
+      # 如果前面的判断没有类似情况
+      if @project.blank? and workflow_params[:project_id]=='0'
+        # 检查是否填写了项目号
+        flash[:alert] = '报工失败,未填写项目号!'
         redirect_to root_path
       else
-        @project = Project.find(workflow_params[:project_id])
+
+        # 如果没填写,就给个项目号
+        @project ||= Project.find(workflow_params[:project_id])  
+
+        # 找到指定的周
+        @weekly = Weekly.find(params[:weekly_id])
+
         if @project.workflow_disabled?
           flash[:alert] = '报工失败,该项目已禁止报工!'
           redirect_to root_path 
@@ -88,11 +105,8 @@ class WorkflowsController < ApplicationController
             redirect_to root_path    
           end
         end
-       
       end
-      
     end
-    
   end
 
 
