@@ -55,7 +55,7 @@ class WorkflowsController < ApplicationController
         when '12'
           # 技术提升
           @project = Project.find_by_name('#技术提升#')
-          binding.pry
+          # binding.pry
         when '13'
           # 售前(临时)
           @project = Project.find_by_name('#售前(临时)#')
