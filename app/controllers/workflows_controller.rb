@@ -43,7 +43,7 @@ class WorkflowsController < ApplicationController
     else
       # 如果类型是部门工作,销售和项目号不用填
       if workflow_params[:workflow_type_id]=='15'
-        @project = Project.find_by_code('2')
+        @project = Project.find_by_name('#部门工作#')
       end
 
       # 如果销售名存在,则选个项目号
@@ -51,19 +51,21 @@ class WorkflowsController < ApplicationController
         case workflow_params[:workflow_type_id]
         when '11'
           # 考试
-          @project = Project.find_by_code('0')
+          @project = Project.find_by_name('#认证考试#')
         when '12'
           # 技术提升
-          @project = Project.find_by_code('1')
+          @project = Project.find_by_name('#技术提升#')
+          binding.pry
         when '13'
           # 售前(临时)
-          @project = Project.find_by_code('3')
+          @project = Project.find_by_name('#售前(临时)#')
         when '14'
           # 售前(厂商交流)
-          @project = Project.find_by_code('4')
+          @project = Project.find_by_name('#售前(厂商交流)#')
         end
       end
 
+      # binding.pry
       # 如果前面的判断没有类似情况
       if @project.blank? and workflow_params[:project_id]=='0'
         # 检查是否填写了项目号
