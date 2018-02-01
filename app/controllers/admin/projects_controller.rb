@@ -39,6 +39,21 @@ class Admin::ProjectsController < ApplicationController
   end
 
 
+  def update
+    @project = Project.find(params[:id])
+    @project.update(project_params)
+    if @project.save
+      flash[:notice] = '项目更新成功!'
+      redirect_to admin_project_path(@project)
+    else
+      flash[:alert] = '项目更新失败'
+      render admin_project_path(@project)    
+    end      
+  end
+
+
+
+
   # 禁止报工
   def disable_workflow
     @project = Project.find(params[:id])
