@@ -49,37 +49,50 @@ class WorkflowsController < ApplicationController
         @project = Project.find_by_code('4')
       end
     else
-      @project = Project.find(workflow_params[:project_id])
-    end
-    
-    if @project.workflow_disabled?
-      flash[:alert] = '报工失败,该项目已禁止报工!'
-      redirect_to root_path 
-    else
-      @workflow = Workflow.new(workflow_params)
-      @workflow.weekly = @weekly
-      @workflow.user = current_user
-      @workflow.project = @project
-      current_user.cost.present? ? current_cost = current_user.cost : current_cost = 0
-
-      @workflow.cost = current_cost*@workflow.hours
-      # 如果项目有销售名,就把销售名写入工作流
-      if @project.sales_name.present?
-        @workflow.project_sales = @project.sales_name
-      end
-      # binding.pry
-      if @workflow.save
-        if !@project.is_members?(current_user)
-          @project.join!(current_user)
-        end
-        @project.addCost!(@workflow.cost)
-        flash[:notice] = '报工成功!'
+      if workflow_params[:project_id]=='0'
+        flash[:alert] = '报工失败,未选择指定项目!'
+        redirect_to root_path  
+      elsif workflow_params[:hours]==''
+        flash[:alert] = '报工失败,未填写工作时长!'
+        redirect_to root_path
+      elsif workflow_params[:description]==''
+        flash[:alert] = '报工失败,未填写工作内容!'
         redirect_to root_path
       else
-        flash[:alert] = '报工失败'
-        redirect_to root_path    
+        @project = Project.find(workflow_params[:project_id])
+        if @project.workflow_disabled?
+          flash[:alert] = '报工失败,该项目已禁止报工!'
+          redirect_to root_path 
+        else
+          @workflow = Workflow.new(workflow_params)
+          @workflow.weekly = @weekly
+          @workflow.user = current_user
+          @workflow.project = @project
+          current_user.cost.present? ? current_cost = current_user.cost : current_cost = 0
+
+          @workflow.cost = current_cost*@workflow.hours
+          # 如果项目有销售名,就把销售名写入工作流
+          if @project.sales_name.present?
+            @workflow.project_sales = @project.sales_name
+          end
+          # binding.pry
+          if @workflow.save
+            if !@project.is_members?(current_user)
+              @project.join!(current_user)
+            end
+            @project.addCost!(@workflow.cost)
+            flash[:notice] = '报工成功!'
+            redirect_to root_path
+          else
+            flash[:alert] = '报工失败'
+            redirect_to root_path    
+          end
+        end
+       
       end
+      
     end
+    
   end
 
 
