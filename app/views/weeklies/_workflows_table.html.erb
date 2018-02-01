@@ -3,7 +3,7 @@
   <% @workflows.each do |workflow| %>
 
 
-  <div class="panel panel-default">
+  <div class="panel panel-default" style="font-size: 0.5em">
     <div class="panel-heading">
       <kbd><%= workflow[0].code %></kbd> # <kbd><%= workflow[0].sbu %></kbd>
       <h4><%= workflow[0].name %></h4>
@@ -37,7 +37,7 @@
 
       <div class="row">
         <div class="col-md-2 col-sm-2 col-xs-2">
-          <h2 class="text-center"><%= w.hours %>h</h2>
+          <h3 class="text-center"><%= w.hours %>h</h3>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-8">
           <p><em> <small><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></small></em> </p>
@@ -48,8 +48,26 @@
             </blockquote>
             
           <% end %>
-          <p><code><%= companies %></code> <code><%= skills %></code></p>
-          <p><mark><%= w.workflow_type.name %></mark>  销售: <%= w.project_sales %></p>
+          <p>
+            <span class="glyphicon glyphicon-tags" aria-hidden="true"> </span> 
+            <% if companies.present? %>
+              <% companies.each do |c|%>
+                <kbd><%= c %></kbd>
+              <% end %>
+            <% else %>
+             -
+            <% end %>
+
+            <% if skills.present? %>
+              <% skills.each do |s|%>
+                <kbd><%= s %></kbd>
+              <% end %>
+            <% else %>
+             -
+            <% end %>
+
+          </p>
+          <p>工作类型: <mark><%= w.workflow_type.name %></mark>  销售: <%= w.project_sales %></p>
           
         </div>
    
