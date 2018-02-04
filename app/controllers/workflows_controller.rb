@@ -91,7 +91,7 @@ class WorkflowsController < ApplicationController
 
           @workflow.cost = current_cost*@workflow.hours
           # 如果项目有销售名,就把销售名写入工作流
-          if @project.sales_name.present?
+          if @project.sales_name.present? and @project.sales_name != '--'
             @workflow.project_sales = @project.sales_name
           end
           # binding.pry
