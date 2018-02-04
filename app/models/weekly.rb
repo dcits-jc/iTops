@@ -8,6 +8,7 @@ class Weekly < ApplicationRecord
   belongs_to :weekly_template
 
   scope :order_by_created_at, -> { order("created_at DESC") }
+
   # def current_week
   #   current_user.weeklies.last
   # end
@@ -15,7 +16,7 @@ class Weekly < ApplicationRecord
 
 
   def workflows_group_by_project
-    self.workflows.group_by{|w| w.project}
+    self.workflows.order_by_start_time.group_by{|w| w.project}
   end
 
 

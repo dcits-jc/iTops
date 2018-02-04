@@ -28,6 +28,9 @@ class Workflow < ApplicationRecord
 
   scope :order_by_created_at, -> { order("created_at DESC") }
 
+  # 按开始时间排序
+  scope :order_by_start_time, -> { order("start_time DESC") }
+
 
   # 加入状态机
   include AASM
