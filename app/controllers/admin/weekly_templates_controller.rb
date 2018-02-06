@@ -14,7 +14,9 @@ class Admin::WeeklyTemplatesController < ApplicationController
     # 所有的 workflows 筛选出此周匹配的的
     @workflows = Workflow.includes(:weekly).includes(:user).where(weeklies: {year: @weekly_template.year,week: @weekly_template.week})
 
-    @workflows_user = @workflows.order_by_user_id
+    @workflows_user = @workflows.order_by_user_id.paginate(:page => params[:page], :per_page => 30)
+
+    @workflows_user_xls = @workflows.order_by_user_id
 
     respond_to do |format|
       format.html
