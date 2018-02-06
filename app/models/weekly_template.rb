@@ -2,6 +2,24 @@ class WeeklyTemplate < ApplicationRecord
 
   has_many :weeklies, dependent: :destroy
 
+  # 合计提交人数
+  def user_submitcount
+    workflows = Workflow.includes(:weekly).where(weeklies: {year: self.year,week: self.week})
+    user_count = workflows.group_by{|w| w.user_id}.count
+  end
+
+  # 合计工时
+  def weekly_workload_total
+    workflows = Workflow.includes(:weekly).where(weeklies: {year: self.year,week: self.week})
+    workflows.inject(0){|sum,e| sum+= e.hours }
+  end
+
+  # 合计费用
+  def weekly_cost_total
+    workflows = Workflow.includes(:weekly).where(weeklies: {year: self.year,week: self.week})
+    workflows.inject(0){|sum,e| sum+= e.cost }
+  end
+
 
   def create_weeklies!
     users = User.all
