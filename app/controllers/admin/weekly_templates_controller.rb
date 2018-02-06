@@ -22,9 +22,7 @@ class Admin::WeeklyTemplatesController < ApplicationController
         # 设置文件名
         headers["Content-Disposition"]="attachment; filename=\""+ 'Y'+@weekly_template.year.to_s+'-W'+@weekly_template.week.to_s+".xls" +  "\""
       }  
-
-
-       # { send_data @products.to_csv(col_sep: "\t") }
+      # { send_data @products.to_csv(col_sep: "\t") }
     end
     
   end
