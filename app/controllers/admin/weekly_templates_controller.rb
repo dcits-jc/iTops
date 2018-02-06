@@ -8,13 +8,25 @@ class Admin::WeeklyTemplatesController < ApplicationController
 
   def show
     @weekly_template = WeeklyTemplate.find(params[:id])
-    @weeklies = @weekly_template.weeklies
-    @workflows = []
-    @weeklies.each do |week|
-      week.workflows.each do |workflow|
-        @workflows.push(workflow)
-      end
+    @weeklies = @weekly_template.weeklies.includes(:user)
+
+
+    # 所有的 workflows 筛选出此周匹配的的
+    @workflows = Workflow.includes(:weekly).includes(:user).where(weeklies: {year: @weekly_template.year,week: @weekly_template.week})
+
+    @workflows_user = @workflows.order_by_user_id
+
+    respond_to do |format|
+      format.html
+      format.xls{ 
+        # 设置文件名
+        headers["Content-Disposition"]="attachment; filename=\""+ 'Y'+@weekly_template.year.to_s+'-W'+@weekly_template.week.to_s+".xls" +  "\""
+      }  
+
+
+       # { send_data @products.to_csv(col_sep: "\t") }
     end
+    
   end
 
   def new

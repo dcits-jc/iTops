@@ -30,6 +30,9 @@ class Weekly < ApplicationRecord
   end
 
 
+
+
+
 end
 
 # == Schema Information

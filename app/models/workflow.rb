@@ -31,6 +31,24 @@ class Workflow < ApplicationRecord
   # 按开始时间排序
   scope :order_by_start_time, -> { order("start_time DESC") }
 
+  # 联合查询时候按用户名排序
+  scope :order_by_user_id, -> { order("workflows.user_id DESC") }
+
+
+
+  def self.to_csv(options = {})
+    # CSV.generate_line(self, options)
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |product|
+        csv << product.attributes.values_at(*column_names)
+      end
+    end
+  end
+
+
+
+
 
   # 加入状态机
   include AASM

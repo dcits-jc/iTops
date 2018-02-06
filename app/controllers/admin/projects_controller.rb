@@ -6,6 +6,13 @@ class Admin::ProjectsController < ApplicationController
     @projects = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10)
 
     # @projects = Project.all.paginate(:page => params[:page], :per_page => 20)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @projects.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
+    
   end
 
   def new

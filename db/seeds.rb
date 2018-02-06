@@ -115,7 +115,7 @@ WorkflowType.create(name: '售前(临时)')
 # 14
 WorkflowType.create(name: '售前(厂商交流)')
 # 15
-WorkflowType.create(name: '售前(临时)')
+WorkflowType.create(name: '部门工作')
 
 
 
