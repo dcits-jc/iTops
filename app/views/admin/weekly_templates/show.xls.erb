@@ -21,7 +21,7 @@
         <Cell><Data ss:Type="String">开始时间</Data></Cell>
         <Cell><Data ss:Type="String">结束时间</Data></Cell>
       </Row>
-    <% @workflows_user.each do |workflow| %>
+    <% @workflows_user_xls.each do |workflow| %>
 
         <% companies = workflow.companies.map {|s| s.name} %>
         <% skills = workflow.skills.map {|s| s.name} %>
