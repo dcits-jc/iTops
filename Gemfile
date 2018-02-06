@@ -72,6 +72,9 @@ gem "capistrano-passenger"
 gem 'will_paginate'
 
 
+# 可以用 markdown格式写网页
+gem 'markdown-rails'
+
 # gem 'csv'
 
 

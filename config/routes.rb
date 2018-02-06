@@ -56,6 +56,15 @@ Rails.application.routes.draw do
   end
   resources :users
 
+  # 其他页面
+  resources :landingpage do
+    collection do
+      # 帮助
+      get :faq
+    end
+  end
+
+
 
   namespace :api, :defaults => { :format => :json } do
     namespace :v1 do
