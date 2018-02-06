@@ -72,7 +72,7 @@ gem "capistrano-passenger"
 gem 'will_paginate'
 
 
-# gem 'csv'
+gem 'csv'
 
 
 group :development, :test do

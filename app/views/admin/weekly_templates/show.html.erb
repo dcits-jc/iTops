@@ -1,30 +1,59 @@
+<ol class="breadcrumb">
+  <li><%= link_to '全部日期',admin_weekly_templates_path %></li>
+  <li class="active"><%= 'Y'+@weekly_template.year.to_s+'-W'+@weekly_template.week.to_s %> | <%= link_to "导出", admin_weekly_template_path(@weekly_template,format: "xls"),class: 'btn btn-primary btn-xs' %></li>
+</ol>
+
+
+
+
 <table class="table">
   <thead>
     <tr>
+      <td>用户名</td>
+      <td>项目号</td>
       <td>项目名</td>
-      <td>任务名</td>
+      <td>事业部</td>
+      <td>销售</td>
+      <td>工作内容描述</td>
+      <td>工作类型</td>
+      <td>涉及厂商</td>
+      <td>技术方向</td>
       <td>工作量(小时)</td>
-      <td>状态</td>
+      <td>费用</td>
+      <td>开始时间</td>
+      <td>结束时间</td>
     </tr>
   </thead>
   <tbody>
-    <% @workflows.each do |workflow| %>
-      <tr>
-        <td><%= workflow.project.name %></td>
-        <td><%= workflow.name %></td>
-        <td><%= workflow.hours %></td>
-        <td>
-          <% case workflow.aasm_state %>
-            <% when 'processing' %>
-              <i class="fa fa-gavel" aria-hidden="true"> 待确认 </i>
-            <% when 'confirmed' %>
-              <i class="fa fa-money" aria-hidden="true"> 已确认! </i>
-            <% else %>
-              <i class="fa fa-question" aria-hidden="true"> Invalid </i>
-          <% end %>        
-        </td>
+    <% @workflows_user.each do |workflow| %>
 
-      </tr>
+        <% companies = workflow.companies.map {|s| s.name} %>
+        <% skills = workflow.skills.map {|s| s.name} %>
+        <!-- 把其他情况加进去 -->
+        <% if workflow.other_company.present?
+          companies.push(workflow.other_company)
+        end %>
+
+        <% if workflow.other_skill.present?
+          skills.push(workflow.other_skill)
+        end %>
+    <tr>
+      <td><%= workflow.user.name %></td>
+      <td><%= workflow.project.code %></td>
+      <td><%= workflow.project.name %></td>
+      <td><%= workflow.project.sbu %></td>
+      <td><%= workflow.project_sales %></td>
+      <td><%= workflow.description %></td>
+      <td><%= workflow.workflow_type.name %></td>
+      <td><%= companies.join(',') %></td>
+      <td><%= skills.join(',') %></td>
+      <td><%= workflow.hours %></td>
+      <td><%= workflow.cost %></td>
+      <td><%= workflow.start_time.strftime("%Y-%m-%d") %></td>
+      <td><%= workflow.end_time.strftime("%Y-%m-%d") %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+
+
