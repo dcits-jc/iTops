@@ -12,6 +12,8 @@ class WorkflowsController < ApplicationController
     # end
     @workflow = Workflow.new
 
+    @units = Unit.all
+
     @skills = Skill.all
     @companies = Company.all
     @select_projects = Project.pluck(:id,:name)
@@ -136,7 +138,7 @@ class WorkflowsController < ApplicationController
   private
 
   def workflow_params
-    params.require(:workflow).permit(:description,:hours,:project_id,:start_time,:end_time,:remaining_issue,:workflow_type_id,:other_company,:other_skill,:project_sales,company_ids: [],skill_ids: [])
+    params.require(:workflow).permit(:description,:hours,:project_id,:start_time,:end_time,:remaining_issue,:workflow_type_id,:other_company,:other_skill,:project_name,:project_unit,:project_sales,company_ids: [],skill_ids: [])
   end
 
 end

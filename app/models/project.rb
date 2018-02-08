@@ -128,6 +128,25 @@ class Project < ApplicationRecord
   end
 
 
+  # 搜索常规项目
+  def self.search_normal(search)
+    if search
+      where('name LIKE ? and is_temp = ?',"%#{search}%",false)
+    else
+      scoped
+    end
+  end
+
+  # 搜索常规项目
+  def self.search_temp(search)
+    if search
+      where('name LIKE ? and is_temp ?', "%#{search}%",true)
+    else
+      scoped
+    end
+  end
+
+
 
 
   def addCost!(cost)
@@ -137,14 +156,14 @@ class Project < ApplicationRecord
 
 
 
-  def self.to_csv(options = {})
-    CSV.generate(options) do |csv|
-      csv << column_names
-      all.each do |project|
-        csv << project.attributes.values_at(*column_names)
-      end
-    end.encode('gb2312', :invalid => :replace, :undef => :replace, :replace => "?") 
-  end
+  # def self.to_csv(options = {})
+  #   CSV.generate(options) do |csv|
+  #     csv << column_names
+  #     all.each do |project|
+  #       csv << project.attributes.values_at(*column_names)
+  #     end
+  #   end.encode('gb2312', :invalid => :replace, :undef => :replace, :replace => "?") 
+  # end
 
 end
 
@@ -176,4 +195,5 @@ end
 #  project_end_time   :string
 #  submit_plan        :string
 #  other              :string
+#  is_temp            :boolean          default(FALSE)
 #

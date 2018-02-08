@@ -18,8 +18,9 @@ class Unit < ApplicationRecord
   has_many :sons, through: :son_relationships, source: :son                               
   has_one :father, through: :father_relationships, source: :father
 
+  has_many :workflows
 
-
+  
   
 end
 

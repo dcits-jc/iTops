@@ -62,6 +62,7 @@ class WeekliesController < ApplicationController
 
     @projects = Project.all
 
+    @units = Unit.all
     sum_workhours = 0
     @current_weekly.workflows.each do |workflow|
       sum_workhours = sum_workhours + workflow.hours

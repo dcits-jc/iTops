@@ -33,7 +33,57 @@ namespace :build do
   end
 
 
-
+  desc "build units"
+  task :units => :environment do
+    Unit.create(name: "经营管理部-政府公安事业部")
+    Unit.create(name: "经营管理部-军队事业部")
+    Unit.create(name: "经营管理部-广西业务部")
+    Unit.create(name: "经营管理部-军工解决方案业务部")
+    Unit.create(name: "经营管理部-金税业务部")
+    Unit.create(name: "技术中心-综合管理部")
+    Unit.create(name: "技术中心-技术管理部")
+    Unit.create(name: "第一金融BU-金融北区业务一部")
+    Unit.create(name: "第一金融BU-金融北区事业二部")
+    Unit.create(name: "第一金融BU-金融华东事业部")
+    Unit.create(name: "第一金融BU-金融北区新业务发展部")
+    Unit.create(name: "第一金融BU-第一金融技术部")
+    Unit.create(name: "第二金融BU-金融业务拓展事业一部")
+    Unit.create(name: "第二金融BU-金融业务拓展事业二部")
+    Unit.create(name: "第二金融BU-金融业务拓展事业三部")
+    Unit.create(name: "第二金融BU-金融核心客户事业部")
+    Unit.create(name: "第二金融BU-金融南区事业部")
+    Unit.create(name: "第二金融BU-第二金融技术部")
+    Unit.create(name: "运营商BU-运营商中央区事业部")
+    Unit.create(name: "运营商BU-运营商新业务事业部")
+    Unit.create(name: "运营商BU-运营商政企业务一部")
+    Unit.create(name: "运营商BU-运营商西区业务部")
+    Unit.create(name: "运营商BU-运营商人防业务部")
+    Unit.create(name: "运营商BU-运营商智能制造业务部")
+    Unit.create(name: "运营商BU-运营商业务拓展一部")
+    Unit.create(name: "运营商BU-运营商业务拓展二部")
+    Unit.create(name: "运营商BU-运营商技术部")
+    Unit.create(name: "大客户BU-大客户华南区事业部")
+    Unit.create(name: "大客户BU-大客户中南区事业部")
+    Unit.create(name: "大客户BU-大客户中央区事业部")
+    Unit.create(name: "大客户BU-大客户北方区事业部")
+    Unit.create(name: "大客户BU-大客户新业务事业部")
+    Unit.create(name: "大客户BU-大客户技术部")
+    Unit.create(name: "第一政企BU-互联网北区事业部")
+    Unit.create(name: "第一政企BU-互联网东区事业部")
+    Unit.create(name: "第一政企BU-大企业事业部")
+    Unit.create(name: "第一政企BU-华东集成应用事业部")
+    Unit.create(name: "第一政企BU-量子拓展事业部")
+    Unit.create(name: "第一政企BU-IDC业务部")
+    Unit.create(name: "第一政企BU-第一政企技术部")
+    Unit.create(name: "第二政企BU-金融系统及安全事业部")
+    Unit.create(name: "第二政企BU-电力南区事业部")
+    Unit.create(name: "第二政企BU-政企事业四部")
+    Unit.create(name: "第二政企BU-电力北区业务一部")
+    Unit.create(name: "第二政企BU-电力北区业务二部")
+    Unit.create(name: "第二政企BU-电力华东业务部")
+    Unit.create(name: "第二政企BU-能源业务部")
+    Unit.create(name: "第二政企BU-第二政企技术部")
+  end
 
 
 

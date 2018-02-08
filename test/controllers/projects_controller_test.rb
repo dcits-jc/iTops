@@ -26,6 +26,7 @@
 #  project_end_time   :string
 #  submit_plan        :string
 #  other              :string
+#  is_temp            :boolean          default(FALSE)
 #
 
 require 'test_helper'
