@@ -24,7 +24,7 @@ class Workflow < ApplicationRecord
 
   belongs_to :workflow_type
 
-
+  scope :order_by_project_id, -> { order("project_id DESC") }
 
   scope :order_by_created_at, -> { order("created_at DESC") }
 

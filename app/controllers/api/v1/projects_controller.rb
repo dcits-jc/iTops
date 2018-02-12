@@ -49,7 +49,8 @@ class Api::V1::ProjectsController < ApiController
         }  
     else
       render json: {
-        stat: 0
+        stat: 0,
+        data: []
       }  
     end  
     

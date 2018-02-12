@@ -3,7 +3,7 @@ class Admin::ProjectsController < ApplicationController
   def index
 
     @q = Project.ransack(params[:q])
-    @projects = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10)
+    @projects = @q.result(distinct: true).order_by_created_at.paginate(:page => params[:page], :per_page => 10)
 
     # @projects = Project.all.paginate(:page => params[:page], :per_page => 20)
 
@@ -17,6 +17,8 @@ class Admin::ProjectsController < ApplicationController
 
   def new
      @project = Project.new
+     @units = Unit.pluck(:name)
+     @following_sbus = Sbu.pluck(:name)
   end
 
   def create

@@ -4,7 +4,7 @@
   <li class="active">全部用户</li>
 </ol>
 
-<%= search_form_for @q, html: {class: "navbar-form navbar-left"} do |f|  %>
+<%= search_form_for ['admin',@q], html: {class: "navbar-form navbar-left"} do |f|  %>
   <div class="form-group">
     <%= f.search_field :itcode_or_name_cont, class: "form-control", placeholder: "输入用户名或 itcode"  %>
     <%= f.submit "搜索", class: "btn btn-warning"  %>

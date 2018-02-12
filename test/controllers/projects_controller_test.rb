@@ -27,6 +27,7 @@
 #  submit_plan        :string
 #  other              :string
 #  is_temp            :boolean          default(FALSE)
+#  following_sbu      :string
 #
 
 require 'test_helper'

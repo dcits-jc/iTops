@@ -11,6 +11,8 @@ class Project < ApplicationRecord
   has_many :managers, through: :project_manages, source: :user
 
 
+  scope :order_by_created_at, -> { order("created_at DESC") }
+
 
   # 判断是否已经在项目组中
   def is_members?(user)
@@ -131,7 +133,7 @@ class Project < ApplicationRecord
   # 搜索常规项目
   def self.search_normal(search)
     if search
-      where('name LIKE ? and is_temp = ?',"%#{search}%",false)
+      where('name LIKE ? or code LIKE ? or sales_name like ?',"%#{search}%","%#{search}%","%#{search}%")
     else
       scoped
     end
@@ -140,7 +142,7 @@ class Project < ApplicationRecord
   # 搜索常规项目
   def self.search_temp(search)
     if search
-      where('name LIKE ? and is_temp ?', "%#{search}%",true)
+      where('name LIKE ? and is_temp = ?', "%#{search}%",true)
     else
       scoped
     end
@@ -196,4 +198,5 @@ end
 #  submit_plan        :string
 #  other              :string
 #  is_temp            :boolean          default(FALSE)
+#  following_sbu      :string
 #

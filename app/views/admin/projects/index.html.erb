@@ -1,6 +1,6 @@
 <%= search_form_for ['admin',@q], html: {class: "navbar-form navbar-left"} do |f|  %>
   <div class="form-group">
-    <%= f.search_field :code_or_name_cont, class: "form-control", placeholder: "输入公司名"  %>
+    <%= f.search_field :code_or_name_cont, class: "form-control", placeholder: "输入项目名或项目号"  %>
     <%= f.submit "搜索", class: "btn btn-warning"  %>
     <%#=sort_link(@q, :name)  %>
   </div>
@@ -14,8 +14,9 @@
 <table class="table">
   <thead>
     <tr>
+      <td>项目号</td>
       <td>项目名</td>
-      <td>项目描述</td>
+      <td>项目经理</td>
       <td>状态</td>
     </tr>
   </thead>
@@ -26,9 +27,13 @@
       <% else %>
         <tr class="alert alert-success">
       <% end %>
-      
+        <td><%= link_to(project.code,admin_project_path(project)) %></td>
         <td><%= link_to(project.name,admin_project_path(project)) %></td>
-        <td><%= project.description %></td>
+        <td>
+          <% project.managers.each do |manager| %>
+            <code><%= manager.itcode %></code>
+          <% end %>  
+        </td>
         <td>
           <% if project.workflow_disabled?  %>
             已停止报工
