@@ -54,19 +54,19 @@ class User < ApplicationRecord
   # 部门工作
   def sbu_work
     # current_sbu= Sbu.find_by_name(self.sbu_name)
-    sbu_project = Project.find_by(name: self.sbu_name,project_type: "部门工作")
+    sbu_project = Project.find_by(following_sbu: self.sbu_name,project_type: "部门工作")
   end
 
   # 厂商交流
   def company_communion
     # current_sbu= Sbu.find_by_name(self.sbu_name)
-    sbu_project = Project.find_by(name: self.sbu_name,project_type: "厂商交流")
+    sbu_project = Project.find_by(following_sbu: self.sbu_name,project_type: "厂商交流")
   end
 
   # 技术提升
   def tech_growth
     # current_sbu= Sbu.find_by_name(self.sbu_name)
-    sbu_project = Project.find_by(name: self.sbu_name,project_type: "技术提升")
+    sbu_project = Project.find_by(following_sbu: self.sbu_name,project_type: "技术提升")
   end
 
 
