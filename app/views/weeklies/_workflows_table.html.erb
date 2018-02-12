@@ -42,18 +42,23 @@
         <div class="col-md-8 col-sm-8 col-xs-8">
           <p><em> <small><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></small></em> </p>
           <blockquote>
+
+          <p style="font-size: 0.5em"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"> </span>  <kbd><%= w.workflow_type.name %></kbd> </p>
+            
             <% if w.description.present? %>
               
               <p><%= w.description %></p>
             <% else  %>
               <p>--</p>
             <% end %>
+          
+
 
           <p style="font-size: 0.5em">
             <span class="glyphicon glyphicon-tags" aria-hidden="true"> </span> 
             <% if companies.present? %>
               <% companies.each do |c|%>
-                <kbd><%= c %></kbd>
+                <code><%= c %></code>
               <% end %>
             <% else %>
              -
@@ -61,7 +66,7 @@
 
             <% if skills.present? %>
               <% skills.each do |s|%>
-                <kbd><%= s %></kbd>
+                <code><%= s %></code>
               <% end %>
             <% else %>
              -
@@ -69,7 +74,7 @@
 
           </p>
 
-          <p style="font-size: 0.5em">工作类型: <mark><%= w.workflow_type.name %></mark>  销售: <%= w.project_sales %></p>
+          
 
            </blockquote>
 

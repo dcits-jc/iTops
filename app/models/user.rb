@@ -45,6 +45,30 @@ class User < ApplicationRecord
   end
 
 
+  # 认证考试
+  # 每年全 sbu 就一个
+  def exam_work
+    Project.where(project_type: '认证考试').last
+  end
+
+  # 部门工作
+  def sbu_work
+    # current_sbu= Sbu.find_by_name(self.sbu_name)
+    sbu_project = Project.find_by(name: self.sbu_name,project_type: "部门工作")
+  end
+
+  # 厂商交流
+  def company_communion
+    # current_sbu= Sbu.find_by_name(self.sbu_name)
+    sbu_project = Project.find_by(name: self.sbu_name,project_type: "厂商交流")
+  end
+
+  # 技术提升
+  def tech_growth
+    # current_sbu= Sbu.find_by_name(self.sbu_name)
+    sbu_project = Project.find_by(name: self.sbu_name,project_type: "技术提升")
+  end
+
 
   def is_admin?
     admin

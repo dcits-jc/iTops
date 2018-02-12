@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129180716) do
+ActiveRecord::Schema.define(version: 20180212200243) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20180129180716) do
     t.string "project_end_time"
     t.string "submit_plan"
     t.string "other"
+    t.boolean "is_temp", default: false
+    t.string "following_sbu"
   end
 
   create_table "sbus", force: :cascade do |t|
@@ -197,6 +199,9 @@ ActiveRecord::Schema.define(version: 20180129180716) do
     t.string "other_company"
     t.string "project_sales"
     t.float "cost"
+    t.integer "unit_id"
+    t.string "project_name"
+    t.integer "project_unit"
     t.index ["aasm_state"], name: "index_workflows_on_aasm_state"
   end
 

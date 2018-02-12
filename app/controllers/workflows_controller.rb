@@ -12,6 +12,8 @@ class WorkflowsController < ApplicationController
     # end
     @workflow = Workflow.new
 
+    @units = Unit.all
+
     @skills = Skill.all
     @companies = Company.all
     @select_projects = Project.pluck(:id,:name)
@@ -29,10 +31,7 @@ class WorkflowsController < ApplicationController
     # 如果工作时长或者内容为空,提示
     # 如果不为空->
       # 如果类型是部门工作,销售和项目号不用填
-
       # 如果销售名存在,则选个项目号
-
-
     # 工作时长与内容必填
     if workflow_params[:hours]==''
       flash[:alert] = '报工失败,未填写工作时长!'
@@ -43,42 +42,25 @@ class WorkflowsController < ApplicationController
     else
       # 如果类型是部门工作,销售和项目号不用填
       if workflow_params[:workflow_type_id]=='15'
-        @project = Project.find_by_name('#部门工作#')
+        # @project = Project.find_by_name('#部门工作#')
+        @project = current_user.sbu_work
+      elsif workflow_params[:workflow_type_id]=='11'
+        # @project = Project.find_by_name('#认证考试#')
+        @project = current_user.exam_work
+      elsif workflow_params[:workflow_type_id]=='12'
+        @project = current_user.tech_growth
       end
-
-      # 如果销售名存在,则选个项目号
-      if workflow_params[:project_sales].present?
-        case workflow_params[:workflow_type_id]
-        when '11'
-          # 考试
-          @project = Project.find_by_name('#认证考试#')
-        when '12'
-          # 技术提升
-          @project = Project.find_by_name('#技术提升#')
-          # binding.pry
-        when '13'
-          # 售前(临时)
-          @project = Project.find_by_name('#售前(临时)#')
-        when '14'
-          # 售前(厂商交流)
-          @project = Project.find_by_name('#售前(厂商交流)#')
-        end
-      end
-
       # binding.pry
       # 如果前面的判断没有类似情况
-      if @project.blank? and workflow_params[:project_id]=='0'
+      if workflow_params[:project_id].blank? and @project.blank? 
         # 检查是否填写了项目号
         flash[:alert] = '报工失败,未填写项目号!'
         redirect_to root_path
       else
-
         # 如果没填写,就给个项目号
         @project ||= Project.find(workflow_params[:project_id])  
-
         # 找到指定的周
         @weekly = Weekly.find(params[:weekly_id])
-
         if @project.workflow_disabled?
           flash[:alert] = '报工失败,该项目已禁止报工!'
           redirect_to root_path 
@@ -136,7 +118,7 @@ class WorkflowsController < ApplicationController
   private
 
   def workflow_params
-    params.require(:workflow).permit(:description,:hours,:project_id,:start_time,:end_time,:remaining_issue,:workflow_type_id,:other_company,:other_skill,:project_sales,company_ids: [],skill_ids: [])
+    params.require(:workflow).permit(:description,:hours,:project_id,:start_time,:end_time,:remaining_issue,:workflow_type_id,:other_company,:other_skill,:project_name,:project_unit,:project_sales,company_ids: [],skill_ids: [])
   end
 
 end

@@ -12,7 +12,7 @@ class Workflow < ApplicationRecord
 
   belongs_to :weekly
 
-
+  # belongs_to :unit
 
 
   has_many :workflow_skill_relationships
@@ -24,7 +24,7 @@ class Workflow < ApplicationRecord
 
   belongs_to :workflow_type
 
-
+  scope :order_by_project_id, -> { order("project_id DESC") }
 
   scope :order_by_created_at, -> { order("created_at DESC") }
 
@@ -46,6 +46,10 @@ class Workflow < ApplicationRecord
     end
   end
 
+
+  def workfor_unit_name
+    Unit.find(self.project_unit).name
+  end
 
 
 
@@ -87,6 +91,9 @@ end
 #  other_company    :string
 #  project_sales    :string
 #  cost             :float
+#  unit_id          :integer
+#  project_name     :string
+#  project_unit     :integer
 #
 # Indexes
 #

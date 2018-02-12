@@ -27,6 +27,9 @@ end
 #  other_company    :string
 #  project_sales    :string
 #  cost             :float
+#  unit_id          :integer
+#  project_name     :string
+#  project_unit     :integer
 #
 # Indexes
 #

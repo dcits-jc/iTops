@@ -7,146 +7,168 @@
       </div>
       <div class="modal-body">
         
-          <div class="form-group">
+        <div class="form-group">
 
-            <%= f.input :workflow_type_id,class: 'workflowtype_selection',label: '工作类别',  collection: {
-                   "售前(客户交流)" => 1,
-                  "售前(招标书编写)" => 2,
-                  "售前(投标书编写)" => 3,
-                  "售前(解决方案编写)" => 4,
-                  "售前(投标或讲标)" => 5,
-                  "售前(厂商交流)" => 14,
-                    "售前(临时)" => 13,
-                         "售中" => 6,
-                         "售后" => 7,
-                         "供货" => 8,
-                       "单次服务" => 9,
-                         "集成" => 10,
-                       "认证考试" => 11,
-                       "技术提升" => 12,
-                       "部门工作" => 15,
-              } %>
+          <%= f.input :workflow_type_id,class: 'workflowtype_selection',label: '工作类别',  collection: {
+                 "售前(客户交流)" => 1,
+                "售前(招标书编写)" => 2,
+                "售前(投标书编写)" => 3,
+                "售前(解决方案编写)" => 4,
+                "售前(投标或讲标)" => 5,
+                       "售中" => 6,
+                       "售后" => 7,
+                       "供货" => 8,
+                     "单次服务" => 9,
+                       "集成" => 10,
+                    "厂商交流" => 14,
+                     "认证考试" => 11,
+                     "技术提升" => 12,
+                     "部门工作" => 15,
+            } %>
 
- 
+          <div class="form-group" id="project_number">
 
-
-
-
-            <div class="form-group hidden" id="project_number">
-
-              <label>项目名</label>
-              <select data-live-search="true" data-size=10  name="workflow[project_id]" id="workflow_project_id" class="selectpicker form-control select required" >
-                <option value=0>--</option>
-                <% @projects.each do |p| %>
-                  <option value=<%=p.id%>><%= p.code %>#<%= p.name %></option>
-                <% end %>
-              </select>
-              
-            </div>
+            <label>* 项目</label>
+            <select data-live-search="true" data-size=10  name="workflow[project_id]" id="workflow_project_id" class="selectpicker form-control select required" data-liveSearchPlaceholder="请选择对应
+            项目">
 
 
-            <%= f.input :project_sales,label: '* 销售'%>
-
-            <%= f.input :description,label: '工作内容描述', input_html: { class: "form-control"} %>
-
-            <%#= f.input :worktype,label: '工作类别', collection:['售前','售中','售后','供货','单次服务','集成'] %>
-
-
-      
-
-            <!-- 多选框 -->
-
-            <label>涉及厂商</label>
-
-            <%= f.association :companies,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
-
-            <%= f.input :other_company,label: false,placeholder: '其他厂商'  %>
-            <label>技术方向</label>
-            <%= f.association :skills,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
-
-            <%= f.input :other_skill,label: false,placeholder: '其他方向'  %>
-
-            <%= f.input :remaining_issue,label: '遗留问题', input_html: { class: "form-control"} %>
-
-
-            <%= f.input :hours,label: '工作量(小时)', input_html: { class: "form-control"} %>
-
-            <label for="">开始日期</label>
-
-            <%= f.datetime_select :start_time,:discard_hour => true ,default: @current_weekly.start_time %>
-
-            <br>
+            </select>
             
-            <label for="">结束日期</label>
-
-            <%= f.datetime_select :end_time,:discard_hour => true ,default: @current_weekly.end_time %>
-
-
-
           </div>
+
+          <%= f.input :description,label: '工作内容描述', input_html: { class: "form-control"} %>
+
+          <!-- 多选框 -->
+
+          <label>涉及厂商</label>
+
+          <%= f.association :companies,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
+
+          <%= f.input :other_company,label: false,placeholder: '其他厂商'  %>
+          <label>技术方向</label>
+          <%= f.association :skills,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
+
+          <%= f.input :other_skill,label: false,placeholder: '其他方向'  %>
+
+          <%= f.input :hours,label: '工作量(小时)', input_html: { class: "form-control"} %>
+
+          <label for="">开始日期</label>
+
+          <%= f.datetime_select :start_time,:discard_hour => true ,default: @current_weekly.start_time %>
+
+          <br>
           
-        
-                
+          <label for="">结束日期</label>
+
+          <%= f.datetime_select :end_time,:discard_hour => true ,default: @current_weekly.end_time %>
+
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交ing..." } %>
       </div>
     </div>
-
-
 <% end %>
 
 
 <style>
   span.checkbox.inline {
     display: inline;
-    padding: 1em;
+    /*padding: 1em;*/
+    margin: 1em;
   }
+  
 </style>
 
 
 <script>
 
 $(document).ready(function(){
+  // 设置 keyup 延时
+  var last;
+  // 动态ajax调整下拉框
+  $("#workflow_project_id").on('shown.bs.select',function(e){
+      $('#workflow_project_id').prev().find("input").keyup(function(event){
+        // 建立时间戳
+        last = event.timeStamp;
+        // 设置延时500ms 执行 keyup事件
+        setTimeout(function() {
+          if(last-event.timeStamp==0){
+
+            // 增加 id
+            $('#workflow_project_id').prev().find("input").attr('id',"project_id_input");
+            if ($('#project_id_input').val().length>1) {
+
+                  // console.log($('#project_id_input').val()); //获取输入框值输出到控制台  
+
+                  $.ajax({
+                    // get请求地址
+                        url: "/api/v1/projects/" + $('#project_id_input').val(),
+                        dataType: "json",
+                        success: function (data) {
+                          data_arrary = data['data'];
+                          
+                          // 如果是正常的搜到了
+                          if (data['stat']==1) {
+
+                          $('.selectpicker').html("");
+                            for (var i = 0; i < data_arrary.length; i++) {
+                                $('.selectpicker').append("<option value=" + data_arrary[i].id + ">" + data_arrary[i].sales_name+'#'+ data_arrary[i].code+'#'+ data_arrary[i].name + "</option>");
+                            };
+                            // 缺一不可
+                            $('#workflow_project_id').selectpicker('refresh');
+                            $('#workflow_project_id').selectpicker('render');
+
+                          } else {
+                            $('.selectpicker').html("");
+                            $('.selectpicker').append("<option value=0>未找到</option>");
+                          }
+                      }
+                  });
+                }
+          }
+          // body...
+        },500)
+
+      })  
+  });
+
   $("#search_project_blank").focus(function(){
     $('#search_project_blank').css("background-color","#fff");
   });
+
   $("#search_project_blank").blur(function(){
     code = $('#search_project_blank').val();
     searchProject(code);
   });
 
-  $('.workflow_project_sales').addClass('hidden');
-  $('#project_number').addClass('hidden');
+  // $('#project_number').addClass('hidden');
+
   // 如果选项卡选中了什么
   $('#workflow_workflow_type_id').change(function() {
-    // console.log('haha')
+
     /* Act on the event */
     console.log($(this).val());
-    if ($(this).val()>10 && $(this).val()<=14 ) {
+    if ($(this).val()==15 || $(this).val()==12 || $(this).val()==11) {
       // 隐藏项目号
       $('#project_number').addClass('hidden')
-      // 显示销售
-      $('.workflow_project_sales').removeClass('hidden');
-    }else if ($(this).val()>=15) {
-      // 隐藏项目号
-      $('#project_number').addClass('hidden')
-      // 显示销售
-      $('.workflow_project_sales').addClass('hidden');
+
     }else{
-      // 删除项目号
+      // 显示项目号
       $('#project_number').removeClass('hidden')
-      // 隐藏销售
-      $('.workflow_project_sales').addClass('hidden');
     }
   });
+
+
 
 
 });
 
 
-
+// 重新绘图 防止 display:none 的问题
+$(".selectpicker").selectpicker()
 
 
 
