@@ -49,6 +49,10 @@ class WorkflowsController < ApplicationController
         @project = current_user.exam_work
       elsif workflow_params[:workflow_type_id]=='12'
         @project = current_user.tech_growth
+      # 如果是休假
+      elsif workflow_params[:workflow_type_id]=='16'
+        @project = current_user.holiday
+        # workflow_params[:description]='休假'
       end
       # binding.pry
       # 如果前面的判断没有类似情况
@@ -69,6 +73,8 @@ class WorkflowsController < ApplicationController
           @workflow.weekly = @weekly
           @workflow.user = current_user
           @workflow.project = @project
+          # 如果没填写任何内容,就给个项目号
+          # @workflow.description ||= '无内容'
           current_user.cost.present? ? current_cost = current_user.cost : current_cost = 0
 
           @workflow.cost = current_cost*@workflow.hours
@@ -85,6 +91,7 @@ class WorkflowsController < ApplicationController
             flash[:notice] = '报工成功!'
             redirect_to root_path
           else
+            # binding.pry
             flash[:alert] = '报工失败'
             redirect_to root_path    
           end

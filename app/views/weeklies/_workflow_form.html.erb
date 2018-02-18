@@ -25,7 +25,12 @@
                      "认证考试" => 11,
                      "技术提升" => 12,
                      "部门工作" => 15,
+                     "休假" => 16,
             } %>
+
+          
+            
+          
 
           <div class="form-group" id="project_number">
 
@@ -40,19 +45,26 @@
 
           <%= f.input :description,label: '工作内容描述', input_html: { class: "form-control"} %>
 
+          
+          <div id="work_display_form">
+
           <!-- 多选框 -->
 
-          <label>涉及厂商</label>
+          <label id="workflow_companies_label">涉及厂商</label>
 
           <%= f.association :companies,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
 
           <%= f.input :other_company,label: false,placeholder: '其他厂商'  %>
-          <label>技术方向</label>
+          <label id="workflow_skills_label">技术方向</label>
           <%= f.association :skills,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
 
           <%= f.input :other_skill,label: false,placeholder: '其他方向'  %>
 
+          </div>
+
           <%= f.input :hours,label: '工作量(小时)', input_html: { class: "form-control"} %>
+
+          
 
           <label for="">开始日期</label>
 
@@ -154,11 +166,19 @@ $(document).ready(function(){
     console.log($(this).val());
     if ($(this).val()==15 || $(this).val()==12 || $(this).val()==11) {
       // 隐藏项目号
-      $('#project_number').addClass('hidden')
-
+      $('#project_number').addClass('hidden');
+      $('#work_display_form').removeClass('hidden');
+      $('#workflow_description').removeAttr('placeholder');
+    }else if($(this).val()==16){
+      // 隐藏项目号
+      $('#project_number').addClass('hidden');
+      $('#work_display_form').addClass('hidden');
+      $('#workflow_description').attr('placeholder','休假原因');
     }else{
       // 显示项目号
       $('#project_number').removeClass('hidden')
+      $('#work_display_form').removeClass('hidden');
+      $('#workflow_description').removeAttr('placeholder');
     }
   });
 
