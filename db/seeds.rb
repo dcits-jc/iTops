@@ -117,6 +117,8 @@ WorkflowType.create(name: '售前(厂商交流)')
 # 15
 WorkflowType.create(name: '部门工作')
 
+# 16
+WorkflowType.create(name: '休假')
 
 
 

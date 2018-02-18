@@ -69,6 +69,11 @@ class User < ApplicationRecord
     sbu_project = Project.find_by(following_sbu: self.sbu_name,project_type: "技术提升")
   end
 
+  # 休假
+  def holiday
+    sbu_project = Project.find_by(following_sbu: self.sbu_name,project_type: "休假")
+  end
+
 
   def is_admin?
     admin
