@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
   <li><%= link_to("全部部门",admin_sbus_index_path) %></li>
-  <li class="active"><%= @sbu.name %></li>
+  <li class="active"><%= @sbu.name %> <kbd><%= @users.count %>人</kbd> | <%= link_to "导出", admin_sbus_path(@sbu,format: "xls"),class: 'btn btn-primary btn-xs' %> </li>
 </ol>
 
 
@@ -9,13 +9,15 @@
   <thead>
     <tr>
       <td>用户名</td>
+      <td>职位</td>
       <td>操作</td>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to(user.email,admin_user_path(user)) %></td>
+        <td><%= link_to(user.name,admin_user_path(user)) %></td>
+        <td><%= user.title %></td>
 
         <td>
           <!-- 如果是管理员,则按钮为取消管理员 -->
