@@ -1,0 +1,26 @@
+<%= simple_form_for ["admin",@user] do |f| %>
+  <%= f.input :name ,label: '姓名'%>
+  <%= f.input :code ,label: '员工编号'%>
+  <%= f.input :itcode ,label: 'itcode'%>
+  <%= f.input :sbu_name ,label: '所属BU',collection: Sbu.pluck(:name)%>
+  <%= f.input :area ,label: '所属平台'%>
+  <%= f.input :phone ,label: '手机号'%>
+  <%= f.input :title ,label: '职位'%>
+  <%= f.input :job_class ,label: '职位类别',collection: ["职能","营销","技术"]%>
+  <%= f.input :level ,label: '级别',collection: ["初级","中级","高级","专家"]  %>
+  <%= f.input :cost ,label: '收费标准'%>
+
+  <!-- 多选框 -->
+
+  <label id="workflow_companies_label">熟悉厂商</label>
+
+  <%= f.association :companies,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
+
+  <label id="workflow_skills_label">技术方向</label>
+  <%= f.association :skills,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
+
+
+
+
+  <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交中..." },  onkeydown: "if(event.keyCode==13){return false;}"  %>
+<% end %>

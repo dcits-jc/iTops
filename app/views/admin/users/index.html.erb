@@ -8,6 +8,7 @@
   <div class="form-group">
     <%= f.search_field :itcode_or_name_cont, class: "form-control", placeholder: "输入用户名或 itcode"  %>
     <%= f.submit "搜索", class: "btn btn-warning"  %>
+    <%= link_to "新建用户",new_admin_user_path,class: "btn btn-default"%>
     <%#=sort_link(@q, :name)  %>
   </div>
 <% end %>

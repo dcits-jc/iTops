@@ -21,9 +21,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = user.new(user_params)
-    @user.create_currentweekly
+    @user = User.new(user_params)
+    @user.email = user_params[:itcode]+'@dcits.com'
+    @user.status = "在岗"
+    @user.password = "000000"
+    @user.password_confirmation = "000000"
+
     if @user.save
+      @user.create_currentweekly!
       flash[:notice] = '用户新建成功!'
       redirect_to admin_users_path
     else
@@ -83,7 +88,7 @@ class Admin::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:code,:name,:itcode,:sbu,:phone,:title,:level,:cost)
+    params.require(:user).permit(:code,:name,:itcode,:sbu_name,:phone,:title,:level,:cost,company_ids: [],skill_ids: [])
   end
 
 end
