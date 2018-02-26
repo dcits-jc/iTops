@@ -22,7 +22,7 @@ class Admin::WeeklyTemplatesController < ApplicationController
       format.html
       format.xls{ 
         # 设置文件名
-        headers["Content-Disposition"]="attachment; filename=\""+ 'Y'+@weekly_template.year.to_s+'-W'+@weekly_template.week.to_s+".xls" +  "\""
+        headers["Content-Disposition"]="attachment; filename=\""+ 'Y'+@weekly_template.year.to_s+'W'+@weekly_template.week.to_s+'('+@weekly_template.start_time.strftime("%Y-%m-%d")+'~'+@weekly_template.end_time.strftime("%Y-%m-%d")+").xls" +  "\""
       }  
       # { send_data @products.to_csv(col_sep: "\t") }
     end
