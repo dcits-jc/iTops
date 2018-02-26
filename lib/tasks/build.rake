@@ -3368,7 +3368,7 @@ namespace :build do
     Project.create(code: "DM7AE60637A1",name:"中原银行大集中项目",project_type: "集成",project_class: "A",customer_company: "中原银行",customer_name: "刘杰",customer_phone: "0371-85519809",pm_name: "张建虹",sales_name: "吕华",area: "北京",sbu: "第二金融BU-金融业务拓展事业部",submit_plan: "N",other: "")
     Project.create(code: "FT1AF60056A1",name:"北京烟草数据库系统备份项目",project_type: "单次服务",project_class: "D",customer_company: "大唐软件技术股份有限公司",customer_name: "陈戬",customer_phone: "59139480",pm_name: "张鑫",sales_name: "郭军",area: "北京",sbu: "第二政企BU-政企事业一部",submit_plan: "N",other: "")
     Project.create(code: "WT5AE70239AI",name:"2014年嘉兴光传输维保项目",project_type: "单次服务",project_class: "D",customer_company: "嘉兴电力",customer_name: "",customer_phone: "",pm_name: "袁晔栋",sales_name: "毛薇婷",area: "杭州",sbu: "电力BU",submit_plan: "N",other: "")
-    Project.create(code: "A62AF70001A1",name:"宁夏银行核心系统平台升级项目及手机微信银行建设项目——硬件及系统软件采购",project_type: "集成",project_class: "C",customer_company: "宁夏银行",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "尚红涛",area: "北京",sbu: "金融东北事业部",submit_plan: "N",other: "单次 ")
+    Project.create(code: "A62AF70001A1",name:"宁夏银行核心系统平台升级项目及手机微信银行建设项目——硬件及系统软件采购",project_type: "集成",project_class: "C",customer_company: "宁夏银行",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "尚红涛",area: "北京",sbu: "金融东北事业部",submit_plan: "N",other: "单次")
     Project.create(code: "AT1AF70063A1-售前",name:"丹棱SOHO3Q项目IT设备采购项目-售前",project_type: "集成售前",project_class: "B",customer_company: "SOHO中国",customer_name: "",customer_phone: "",pm_name: "张琪",sales_name: "赵月",area: "北京",sbu: "第二政企BU-政企事业一部",submit_plan: "N",other: "")
     Project.create(code: "AT1AF70060A1-售前",name:"民生信托存储系统及相关设备采购及实施项目-售前",project_type: "集成售前",project_class: "B",customer_company: "民生信托",customer_name: "",customer_phone: "",pm_name: "张琪",sales_name: "赵月",area: "北京",sbu: "第二政企BU-政企事业一部",submit_plan: "N",other: "")
     Project.create(code: "AT1AF70078A1-售前",name:"临沂市人民医院网络与信息部集成平台与电子病历项目服务器、存储等硬件及相关软件采购项目-售前",project_type: "集成售前",project_class: "B",customer_company: "临沂市人民医院",customer_name: "",customer_phone: "",pm_name: "张琪",sales_name: "赵月",area: "北京",sbu: "第二政企BU-政企事业一部",submit_plan: "N",other: "")
@@ -3385,7 +3385,7 @@ namespace :build do
     Project.create(code: "A65BF70015A1",name:"某课题设备与集成采购",project_type: "单次服务",project_class: "A",customer_company: "",customer_name: "",customer_phone: "",pm_name: "樊小飞",sales_name: "李泽",area: "北京",sbu: "运营商BU-安全业务部",submit_plan: "",other: "")
     Project.create(code: "AM6AF70048AH",name:"凯岸信息上海总部网络扩容项目",project_type: "供货",project_class: "C",customer_company: "上海凯岸信息科技有限公司",customer_name: "刘德泉",customer_phone: "18201831713",pm_name: "文丹",sales_name: "刘凯芸",area: "上海",sbu: "第一金融BU-金融华东事业部",submit_plan: "N",other: "")
     Project.create(code: "CTEAE70140A1",name:"海关总署2014年金关工程二期相关系统软件采购项目（二）",project_type: "集成",project_class: "A",customer_company: "中国海关总署",customer_name: "胡自强",customer_phone: "87167031",pm_name: "刘诗钊",sales_name: "张男",area: "北京",sbu: "第二政企BU-政企事业四部",submit_plan: "Y",other: "")
-    Project.create(code: "AMPAE70093A1",name:"服务器及软件整体采购项目",project_type: "单次服务",project_class: "C",customer_company: "内蒙古宁城农信",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "任芳",area: "北京",sbu: "金融北区事业一部",submit_plan: "N",other: "单次 ")
+    Project.create(code: "AMPAE70093A1",name:"服务器及软件整体采购项目",project_type: "单次服务",project_class: "C",customer_company: "内蒙古宁城农信",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "任芳",area: "北京",sbu: "金融北区事业一部",submit_plan: "N",other: "单次")
     Project.create(code: "AM9AF70040A1",name:"包商银行通辽分行安全设备采购",project_type: "单次服务",project_class: "C",customer_company: "包商银行",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "任芳",area: "北京",sbu: "金融北区事业一部",submit_plan: "N",other: "单次 ")
     Project.create(code: "AM9AF70090A1",name:"网络安全产品宁波分行采购项目(出保项目)",project_type: "单次服务",project_class: "C",customer_company: "包商银行宁波分行",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "任芳",area: "北京",sbu: "金融北区事业一部",submit_plan: "N",other: "单次 ")
     Project.create(code: "AM9AF70023A1",name:"邯郸银行小型机、服务器及KVM套件、HMC控制台采购项目",project_type: "集成",project_class: "C",customer_company: "邯郸银行",customer_name: "",customer_phone: "",pm_name: "张斌",sales_name: "欧阳娟",area: "北京",sbu: "金融北区事业一部",submit_plan: "N",other: "单次 ")
@@ -4956,6 +4956,550 @@ namespace :build do
     User.create(code: "1016965",name:"赵秀军",email:"zhaoxjf@dcits.com",itcode:"zhaoxjf",phone:"",level:"中级",cost:"900",sbu_name:"运营商BU",area:"北京",status:"在岗",job_class:"技术",costcenter:"31T90215",title:"系统工程师",password: "000000",password_confirmation: "000000")
   end
 
+
+
+  desc "build temp projects"
+  task :temp_projects => :environment do
+    Project.create(code: "临时",name: "孙自平的临时项目",sales_name: "孙自平",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "车轩的临时项目",sales_name: "车轩",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "李廷波的临时项目",sales_name: "李廷波",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "陈燕的临时项目",sales_name: "陈燕",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "毛静的临时项目",sales_name: "毛静",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "张曼丽的临时项目",sales_name: "张曼丽",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "杨子彤的临时项目",sales_name: "杨子彤",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "李尚锋的临时项目",sales_name: "李尚锋",sbu: "大客户北方区事业部")
+    Project.create(code: "临时",name: "牛海峰的临时项目",sales_name: "牛海峰",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "刘海涛的临时项目",sales_name: "刘海涛",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "封伯和的临时项目",sales_name: "封伯和",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "郭武军的临时项目",sales_name: "郭武军",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "张洛宁的临时项目",sales_name: "张洛宁",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "谢树昊的临时项目",sales_name: "谢树昊",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "谢贻霖的临时项目",sales_name: "谢贻霖",sbu: "大客户华南区事业部")
+    Project.create(code: "临时",name: "杨标的临时项目",sales_name: "杨标",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "虞京宏的临时项目",sales_name: "虞京宏",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "吴昊的临时项目",sales_name: "吴昊",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "于明的临时项目",sales_name: "于明",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "梁旭晨的临时项目",sales_name: "梁旭晨",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "刘雅琼的临时项目",sales_name: "刘雅琼",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "张华的临时项目",sales_name: "张华",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "袁华伟的临时项目",sales_name: "袁华伟",sbu: "大客户新业务事业部")
+    Project.create(code: "临时",name: "张安旺的临时项目",sales_name: "张安旺",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "黄紧文的临时项目",sales_name: "黄紧文",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "向洪川的临时项目",sales_name: "向洪川",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "范宏的临时项目",sales_name: "范宏",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "文泰平的临时项目",sales_name: "文泰平",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "曹洪亮的临时项目",sales_name: "曹洪亮",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "余洋的临时项目",sales_name: "余洋",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "陈峰的临时项目",sales_name: "陈峰",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "宋贤文的临时项目",sales_name: "宋贤文",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "张振峰的临时项目",sales_name: "张振峰",sbu: "大客户中南区事业部")
+    Project.create(code: "临时",name: "王新的临时项目",sales_name: "王新",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "卫星光的临时项目",sales_name: "卫星光",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "史磊的临时项目",sales_name: "史磊",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "陈卫的临时项目",sales_name: "陈卫",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "赵国良的临时项目",sales_name: "赵国良",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "张诚珖的临时项目",sales_name: "张诚珖",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "项斓的临时项目",sales_name: "项斓",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "李路平的临时项目",sales_name: "李路平",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "于德志的临时项目",sales_name: "于德志",sbu: "大客户中央区事业部")
+    Project.create(code: "临时",name: "方晓敏的临时项目",sales_name: "方晓敏",sbu: "大客户综合管理部")
+    Project.create(code: "临时",name: "吴钧亮的临时项目",sales_name: "吴钧亮",sbu: "大客户综合管理部")
+    Project.create(code: "临时",name: "王侃的临时项目",sales_name: "王侃",sbu: "大客户综合管理部")
+    Project.create(code: "临时",name: "刘利忠的临时项目",sales_name: "刘利忠",sbu: "大客户综合管理部")
+    Project.create(code: "临时",name: "陈延国的临时项目",sales_name: "陈延国",sbu: "大客户综合管理部")
+    Project.create(code: "临时",name: "李进涛的临时项目",sales_name: "李进涛",sbu: "第二金融综合管理部")
+    Project.create(code: "临时",name: "于丁的临时项目",sales_name: "于丁",sbu: "第二金融综合管理部")
+    Project.create(code: "临时",name: "吴雨阳的临时项目",sales_name: "吴雨阳",sbu: "第二金融综合管理部")
+    Project.create(code: "临时",name: "王辉的临时项目",sales_name: "王辉",sbu: "第二金融综合管理部")
+    Project.create(code: "临时",name: "邢千里的临时项目",sales_name: "邢千里",sbu: "第二金融综合管理部")
+    Project.create(code: "临时",name: "甄正的临时项目",sales_name: "甄正",sbu: "第二金融综合管理部")
+    Project.create(code: "临时",name: "格日乐图  的临时项目",sales_name: "格日乐图  ",sbu: "金融核心客户事业部")
+    Project.create(code: "临时",name: "刘梦雨的临时项目",sales_name: "刘梦雨",sbu: "金融核心客户事业部")
+    Project.create(code: "临时",name: "刘众的临时项目",sales_name: "刘众",sbu: "金融核心客户事业部")
+    Project.create(code: "临时",name: "朱明的临时项目",sales_name: "朱明",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "郑锐的临时项目",sales_name: "郑锐",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "马郭波的临时项目",sales_name: "马郭波",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "梅玉国的临时项目",sales_name: "梅玉国",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "龚召华的临时项目",sales_name: "龚召华",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "曾祥金的临时项目",sales_name: "曾祥金",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "马郭波的临时项目",sales_name: "马郭波",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "王宁的临时项目",sales_name: "王宁",sbu: "金融南区事业部")
+    Project.create(code: "临时",name: "吕华的临时项目",sales_name: "吕华",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "张洁的临时项目",sales_name: "张洁",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "刘成龙的临时项目",sales_name: "刘成龙",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "陈瑟的临时项目",sales_name: "陈瑟",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "尚红涛的临时项目",sales_name: "尚红涛",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "马力隆的临时项目",sales_name: "马力隆",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "崔新宇的临时项目",sales_name: "崔新宇",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "王诗雨的临时项目",sales_name: "王诗雨",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "王晓博的临时项目",sales_name: "王晓博",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "宋雪的临时项目",sales_name: "宋雪",sbu: "金融业务拓展事业二部")
+    Project.create(code: "临时",name: "张润贤的临时项目",sales_name: "张润贤",sbu: "金融业务拓展事业三部")
+    Project.create(code: "临时",name: "闫闯的临时项目",sales_name: "闫闯",sbu: "金融业务拓展事业三部")
+    Project.create(code: "临时",name: "董俊秀的临时项目",sales_name: "董俊秀",sbu: "金融业务拓展事业三部")
+    Project.create(code: "临时",name: "刘荣辉的临时项目",sales_name: "刘荣辉",sbu: "金融业务拓展事业三部")
+    Project.create(code: "临时",name: "刘琴的临时项目",sales_name: "刘琴",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "张磊的临时项目",sales_name: "张磊",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "于朗的临时项目",sales_name: "于朗",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "王家伟的临时项目",sales_name: "王家伟",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "邹建凯的临时项目",sales_name: "邹建凯",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "王书克的临时项目",sales_name: "王书克",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "吴非的临时项目",sales_name: "吴非",sbu: "金融业务拓展事业一部")
+    Project.create(code: "临时",name: "鞠明涛的临时项目",sales_name: "鞠明涛",sbu: "第二政企综合管理部")
+    Project.create(code: "临时",name: "田小丽的临时项目",sales_name: "田小丽",sbu: "第二政企综合管理部")
+    Project.create(code: "临时",name: "孙国伟的临时项目",sales_name: "孙国伟",sbu: "第二政企综合管理部")
+    Project.create(code: "临时",name: "江涛的临时项目",sales_name: "江涛",sbu: "第二政企综合管理部")
+    Project.create(code: "临时",name: "付成喜的临时项目",sales_name: "付成喜",sbu: "电力北区业务二部")
+    Project.create(code: "临时",name: "刘洋的临时项目",sales_name: "刘洋",sbu: "电力北区业务二部")
+    Project.create(code: "临时",name: "马超的临时项目",sales_name: "马超",sbu: "电力北区业务二部")
+    Project.create(code: "临时",name: "解文强的临时项目",sales_name: "解文强",sbu: "电力北区业务一部")
+    Project.create(code: "临时",name: "胡晓晶的临时项目",sales_name: "胡晓晶",sbu: "电力北区业务一部")
+    Project.create(code: "临时",name: "皇甫晨卓的临时项目",sales_name: "皇甫晨卓",sbu: "电力北区业务一部")
+    Project.create(code: "临时",name: "贾波的临时项目",sales_name: "贾波",sbu: "电力北区业务一部")
+    Project.create(code: "临时",name: "王舰的临时项目",sales_name: "王舰",sbu: "电力北区业务一部")
+    Project.create(code: "临时",name: "曹剑萍的临时项目",sales_name: "曹剑萍",sbu: "电力华东业务部")
+    Project.create(code: "临时",name: "毛薇婷的临时项目",sales_name: "毛薇婷",sbu: "电力华东业务部")
+    Project.create(code: "临时",name: "黄毅的临时项目",sales_name: "黄毅",sbu: "电力华东业务部")
+    Project.create(code: "临时",name: "钮新的临时项目",sales_name: "钮新",sbu: "电力华东业务部")
+    Project.create(code: "临时",name: "郑贤才的临时项目",sales_name: "郑贤才",sbu: "电力华东业务部")
+    Project.create(code: "临时",name: "马飞的临时项目",sales_name: "马飞",sbu: "电力华东业务部")
+    Project.create(code: "临时",name: "王智超的临时项目",sales_name: "王智超",sbu: "电力南区事业部")
+    Project.create(code: "临时",name: "吴斌斌的临时项目",sales_name: "吴斌斌",sbu: "电力南区事业部")
+    Project.create(code: "临时",name: "梁玉梅的临时项目",sales_name: "梁玉梅",sbu: "电力南区事业部")
+    Project.create(code: "临时",name: "郑少甘的临时项目",sales_name: "郑少甘",sbu: "电力南区事业部")
+    Project.create(code: "临时",name: "沈勇的临时项目",sales_name: "沈勇",sbu: "电力南区事业部")
+    Project.create(code: "临时",name: "阳章林的临时项目",sales_name: "阳章林",sbu: "电力南区事业部")
+    Project.create(code: "临时",name: "秦耀星的临时项目",sales_name: "秦耀星",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "王小午的临时项目",sales_name: "王小午",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "张晓羽的临时项目",sales_name: "张晓羽",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "张星光的临时项目",sales_name: "张星光",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "李轩的临时项目",sales_name: "李轩",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "王鹏的临时项目",sales_name: "王鹏",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "郭少豪的临时项目",sales_name: "郭少豪",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "李大海的临时项目",sales_name: "李大海",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "张岩的临时项目",sales_name: "张岩",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "柴宏的临时项目",sales_name: "柴宏",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "张蕊的临时项目",sales_name: "张蕊",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "占娟的临时项目",sales_name: "占娟",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "汪雨的临时项目",sales_name: "汪雨",sbu: "金融系统及安全事业部")
+    Project.create(code: "临时",name: "袁迪的临时项目",sales_name: "袁迪",sbu: "能源业务部")
+    Project.create(code: "临时",name: "马薇的临时项目",sales_name: "马薇",sbu: "能源业务部")
+    Project.create(code: "临时",name: "王智刚的临时项目",sales_name: "王智刚",sbu: "能源业务部")
+    Project.create(code: "临时",name: "武熠的临时项目",sales_name: "武熠",sbu: "能源业务部")
+    Project.create(code: "临时",name: "刘辉的临时项目",sales_name: "刘辉",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "张男的临时项目",sales_name: "张男",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "李祺欣的临时项目",sales_name: "李祺欣",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "郑国刚的临时项目",sales_name: "郑国刚",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "肖巍的临时项目",sales_name: "肖巍",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "李知伦的临时项目",sales_name: "李知伦",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "张峰的临时项目",sales_name: "张峰",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "范志伟的临时项目",sales_name: "范志伟",sbu: "政企事业四部")
+    Project.create(code: "临时",name: "孙亚娟的临时项目",sales_name: "孙亚娟",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "黄磊的临时项目",sales_name: "黄磊",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "张雯雯的临时项目",sales_name: "张雯雯",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "刘伟的临时项目",sales_name: "刘伟",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "高峰的临时项目",sales_name: "高峰",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "孟雪鹏的临时项目",sales_name: "孟雪鹏",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "张喜华的临时项目",sales_name: "张喜华",sbu: "金融北区事业二部")
+    Project.create(code: "临时",name: "张伟的临时项目",sales_name: "张伟",sbu: "金融北区新业务发展部")
+    Project.create(code: "临时",name: "杨健的临时项目",sales_name: "杨健",sbu: "金融北区新业务发展部")
+    Project.create(code: "临时",name: "黄丁杰的临时项目",sales_name: "黄丁杰",sbu: "金融北区新业务发展部")
+    Project.create(code: "临时",name: "杨轶的临时项目",sales_name: "杨轶",sbu: "金融北区新业务发展部")
+    Project.create(code: "临时",name: "刘烨的临时项目",sales_name: "刘烨",sbu: "金融北区业务一部")
+    Project.create(code: "临时",name: "王凯的临时项目",sales_name: "王凯",sbu: "金融北区业务一部")
+    Project.create(code: "临时",name: "陶磊的临时项目",sales_name: "陶磊",sbu: "金融北区业务一部")
+    Project.create(code: "临时",name: "欧阳娟的临时项目",sales_name: "欧阳娟",sbu: "金融北区业务一部")
+    Project.create(code: "临时",name: "刘俊的临时项目",sales_name: "刘俊",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "王磊的临时项目",sales_name: "王磊",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "秦曦的临时项目",sales_name: "秦曦",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "谌奎的临时项目",sales_name: "谌奎",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "衡成兵的临时项目",sales_name: "衡成兵",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "俞赛的临时项目",sales_name: "俞赛",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "许结移的临时项目",sales_name: "许结移",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "唐甲东的临时项目",sales_name: "唐甲东",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "夏晨的临时项目",sales_name: "夏晨",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "邱在鹏的临时项目",sales_name: "邱在鹏",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "胡嘉诚的临时项目",sales_name: "胡嘉诚",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "王婷的临时项目",sales_name: "王婷",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "高燕的临时项目",sales_name: "高燕",sbu: "金融华东事业部")
+    Project.create(code: "临时",name: "唐莉的临时项目",sales_name: "唐莉",sbu: "IDC业务部")
+    Project.create(code: "临时",name: "黄可的临时项目",sales_name: "黄可",sbu: "IDC业务部")
+    Project.create(code: "临时",name: "陈超的临时项目",sales_name: "陈超",sbu: "IDC业务部")
+    Project.create(code: "临时",name: "王如春的临时项目",sales_name: "王如春",sbu: "IDC业务部")
+    Project.create(code: "临时",name: "高杨的临时项目",sales_name: "高杨",sbu: "大企业事业部")
+    Project.create(code: "临时",name: "王轲的临时项目",sales_name: "王轲",sbu: "大企业事业部")
+    Project.create(code: "临时",name: "李思明的临时项目",sales_name: "李思明",sbu: "大企业事业部")
+    Project.create(code: "临时",name: "李燕的临时项目",sales_name: "李燕",sbu: "大企业事业部")
+    Project.create(code: "临时",name: "吕鑫的临时项目",sales_name: "吕鑫",sbu: "大企业事业部")
+    Project.create(code: "临时",name: "雷京的临时项目",sales_name: "雷京",sbu: "大企业事业部")
+    Project.create(code: "临时",name: "施学诚的临时项目",sales_name: "施学诚",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "毛咏梅的临时项目",sales_name: "毛咏梅",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "胡迪秋的临时项目",sales_name: "胡迪秋",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "白佳星的临时项目",sales_name: "白佳星",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "张旭松的临时项目",sales_name: "张旭松",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "孙伟晓的临时项目",sales_name: "孙伟晓",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "臧圣博的临时项目",sales_name: "臧圣博",sbu: "第一政企综合管理部")
+    Project.create(code: "临时",name: "戚杰的临时项目",sales_name: "戚杰",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "潘先静的临时项目",sales_name: "潘先静",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "李婷的临时项目",sales_name: "李婷",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "杜晓源的临时项目",sales_name: "杜晓源",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "王林艺的临时项目",sales_name: "王林艺",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "王志伟的临时项目",sales_name: "王志伟",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "马宇航的临时项目",sales_name: "马宇航",sbu: "互联网北区事业部")
+    Project.create(code: "临时",name: "杨雪的临时项目",sales_name: "杨雪",sbu: "互联网东区事业部")
+    Project.create(code: "临时",name: "钟庚香的临时项目",sales_name: "钟庚香",sbu: "互联网东区事业部")
+    Project.create(code: "临时",name: "李博书的临时项目",sales_name: "李博书",sbu: "互联网东区事业部")
+    Project.create(code: "临时",name: "徐强的临时项目",sales_name: "徐强",sbu: "互联网东区事业部")
+    Project.create(code: "临时",name: "成弘璐的临时项目",sales_name: "成弘璐",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "杜继旭的临时项目",sales_name: "杜继旭",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "扈丹的临时项目",sales_name: "扈丹",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "姚健的临时项目",sales_name: "姚健",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "陈建超的临时项目",sales_name: "陈建超",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "邵轶科的临时项目",sales_name: "邵轶科",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "包世婕的临时项目",sales_name: "包世婕",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "陈镇的临时项目",sales_name: "陈镇",sbu: "华东集成应用事业部")
+    Project.create(code: "临时",name: "王玉龙的临时项目",sales_name: "王玉龙",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "桑戟南的临时项目",sales_name: "桑戟南",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "李彦的临时项目",sales_name: "李彦",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "丁凯的临时项目",sales_name: "丁凯",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "高天运的临时项目",sales_name: "高天运",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "周健的临时项目",sales_name: "周健",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "姜华的临时项目",sales_name: "姜华",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "王理俊的临时项目",sales_name: "王理俊",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "张相春的临时项目",sales_name: "张相春",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "周飞的临时项目",sales_name: "周飞",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "胡震雷的临时项目",sales_name: "胡震雷",sbu: "量子拓展事业部")
+    Project.create(code: "临时",name: "赵锋君的临时项目",sales_name: "赵锋君",sbu: "广西业务部")
+    Project.create(code: "临时",name: "林耀辉的临时项目",sales_name: "林耀辉",sbu: "广西业务部")
+    Project.create(code: "临时",name: "常希盟的临时项目",sales_name: "常希盟",sbu: "军队事业部")
+    Project.create(code: "临时",name: "孙晓轮的临时项目",sales_name: "孙晓轮",sbu: "军队事业部")
+    Project.create(code: "临时",name: "王进超的临时项目",sales_name: "王进超",sbu: "军工解决方案业务部")
+    Project.create(code: "临时",name: "厉京文的临时项目",sales_name: "厉京文",sbu: "军工解决方案业务部")
+    Project.create(code: "临时",name: "吴鑫的临时项目",sales_name: "吴鑫",sbu: "军工解决方案业务部")
+    Project.create(code: "临时",name: "战昊的临时项目",sales_name: "战昊",sbu: "军工解决方案业务部")
+    Project.create(code: "临时",name: "李德杰的临时项目",sales_name: "李德杰",sbu: "政府公安事业部")
+    Project.create(code: "临时",name: "张爽的临时项目",sales_name: "张爽",sbu: "政府公安事业部")
+    Project.create(code: "临时",name: "寻如思的临时项目",sales_name: "寻如思",sbu: "政府公安事业部")
+    Project.create(code: "临时",name: "朱恒伟的临时项目",sales_name: "朱恒伟",sbu: "政府公安事业部")
+    Project.create(code: "临时",name: "张炜的临时项目",sales_name: "张炜",sbu: "政府公安事业部")
+    Project.create(code: "临时",name: "焦耀平的临时项目",sales_name: "焦耀平",sbu: "运营商人防业务部")
+    Project.create(code: "临时",name: "陈仁明的临时项目",sales_name: "陈仁明",sbu: "运营商人防业务部")
+    Project.create(code: "临时",name: "张倩的临时项目",sales_name: "张倩",sbu: "运营商西区业务部")
+    Project.create(code: "临时",name: "陈创的临时项目",sales_name: "陈创",sbu: "运营商西区业务部")
+    Project.create(code: "临时",name: "贾涛的临时项目",sales_name: "贾涛",sbu: "运营商西区业务部")
+    Project.create(code: "临时",name: "曲涛的临时项目",sales_name: "曲涛",sbu: "运营商西区业务部")
+    Project.create(code: "临时",name: "向国钊的临时项目",sales_name: "向国钊",sbu: "运营商西区业务部")
+    Project.create(code: "临时",name: "王爱平的临时项目",sales_name: "王爱平",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "张顶的临时项目",sales_name: "张顶",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "王怡慢的临时项目",sales_name: "王怡慢",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "迟绍旭的临时项目",sales_name: "迟绍旭",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "王峰的临时项目",sales_name: "王峰",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "张晓芳的临时项目",sales_name: "张晓芳",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "王诗童的临时项目",sales_name: "王诗童",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "张邦政的临时项目",sales_name: "张邦政",sbu: "运营商新业务事业部")
+    Project.create(code: "临时",name: "陈险峰的临时项目",sales_name: "陈险峰",sbu: "运营商业务拓展二部")
+    Project.create(code: "临时",name: "吴庆华的临时项目",sales_name: "吴庆华",sbu: "运营商业务拓展一部")
+    Project.create(code: "临时",name: "赫然的临时项目",sales_name: "赫然",sbu: "运营商业务拓展一部")
+    Project.create(code: "临时",name: "杨浩的临时项目",sales_name: "杨浩",sbu: "运营商业务拓展一部")
+    Project.create(code: "临时",name: "饶伟荣的临时项目",sales_name: "饶伟荣",sbu: "运营商业务拓展一部")
+    Project.create(code: "临时",name: "赵月的临时项目",sales_name: "赵月",sbu: "运营商政企业务一部")
+    Project.create(code: "临时",name: "张信勇的临时项目",sales_name: "张信勇",sbu: "运营商政企业务一部")
+    Project.create(code: "临时",name: "刘晓枫的临时项目",sales_name: "刘晓枫",sbu: "运营商政企业务一部")
+    Project.create(code: "临时",name: "石锦的临时项目",sales_name: "石锦",sbu: "运营商政企业务一部")
+    Project.create(code: "临时",name: "李玉涛的临时项目",sales_name: "李玉涛",sbu: "运营商政企业务一部")
+    Project.create(code: "临时",name: "施美琳的临时项目",sales_name: "施美琳",sbu: "运营商智能制造业务部")
+    Project.create(code: "临时",name: "王俊运的临时项目",sales_name: "王俊运",sbu: "运营商智能制造业务部")
+    Project.create(code: "临时",name: "兰红的临时项目",sales_name: "兰红",sbu: "运营商智能制造业务部")
+    Project.create(code: "临时",name: "蒋雯的临时项目",sales_name: "蒋雯",sbu: "运营商智能制造业务部")
+    Project.create(code: "临时",name: "崔炜的临时项目",sales_name: "崔炜",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "鲍亮的临时项目",sales_name: "鲍亮",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "陈扬的临时项目",sales_name: "陈扬",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "王春艳的临时项目",sales_name: "王春艳",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "祁悦的临时项目",sales_name: "祁悦",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "张娜的临时项目",sales_name: "张娜",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "刘洋的临时项目",sales_name: "刘洋",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "张海莹的临时项目",sales_name: "张海莹",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "吴高翔的临时项目",sales_name: "吴高翔",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "李泽的临时项目",sales_name: "李泽",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "李大庆的临时项目",sales_name: "李大庆",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "赵玲东的临时项目",sales_name: "赵玲东",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "王培帆的临时项目",sales_name: "王培帆",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "陈海海的临时项目",sales_name: "陈海海",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "张雨的临时项目",sales_name: "张雨",sbu: "运营商中央区事业部")
+    Project.create(code: "临时",name: "王浩宇的临时项目",sales_name: "王浩宇",sbu: "运营商综合管理部")
+  end
+
+
+  desc "build temp projects"
+  task :del_temp_projects => :environment do
+    Project.find_by(name: "孙自平的临时项目",sales_name: "孙自平").delete
+    Project.find_by(name: "车轩的临时项目",sales_name: "车轩").delete
+    Project.find_by(name: "李廷波的临时项目",sales_name: "李廷波").delete
+    Project.find_by(name: "陈燕的临时项目",sales_name: "陈燕").delete
+    Project.find_by(name: "毛静的临时项目",sales_name: "毛静").delete
+    Project.find_by(name: "张曼丽的临时项目",sales_name: "张曼丽").delete
+    Project.find_by(name: "杨子彤的临时项目",sales_name: "杨子彤").delete
+    Project.find_by(name: "李尚锋的临时项目",sales_name: "李尚锋").delete
+    Project.find_by(name: "牛海峰的临时项目",sales_name: "牛海峰").delete
+    Project.find_by(name: "刘海涛的临时项目",sales_name: "刘海涛").delete
+    Project.find_by(name: "封伯和的临时项目",sales_name: "封伯和").delete
+    Project.find_by(name: "郭武军的临时项目",sales_name: "郭武军").delete
+    Project.find_by(name: "张洛宁的临时项目",sales_name: "张洛宁").delete
+    Project.find_by(name: "谢树昊的临时项目",sales_name: "谢树昊").delete
+    Project.find_by(name: "谢贻霖的临时项目",sales_name: "谢贻霖").delete
+    Project.find_by(name: "杨标的临时项目",sales_name: "杨标").delete
+    Project.find_by(name: "虞京宏的临时项目",sales_name: "虞京宏").delete
+    Project.find_by(name: "吴昊的临时项目",sales_name: "吴昊").delete
+    Project.find_by(name: "于明的临时项目",sales_name: "于明").delete
+    Project.find_by(name: "梁旭晨的临时项目",sales_name: "梁旭晨").delete
+    Project.find_by(name: "刘雅琼的临时项目",sales_name: "刘雅琼").delete
+    Project.find_by(name: "张华的临时项目",sales_name: "张华").delete
+    Project.find_by(name: "袁华伟的临时项目",sales_name: "袁华伟").delete
+    Project.find_by(name: "张安旺的临时项目",sales_name: "张安旺").delete
+    Project.find_by(name: "黄紧文的临时项目",sales_name: "黄紧文").delete
+    Project.find_by(name: "向洪川的临时项目",sales_name: "向洪川").delete
+    Project.find_by(name: "范宏的临时项目",sales_name: "范宏").delete
+    Project.find_by(name: "文泰平的临时项目",sales_name: "文泰平").delete
+    Project.find_by(name: "曹洪亮的临时项目",sales_name: "曹洪亮").delete
+    Project.find_by(name: "余洋的临时项目",sales_name: "余洋").delete
+    Project.find_by(name: "陈峰的临时项目",sales_name: "陈峰").delete
+    Project.find_by(name: "宋贤文的临时项目",sales_name: "宋贤文").delete
+    Project.find_by(name: "张振峰的临时项目",sales_name: "张振峰").delete
+    Project.find_by(name: "王新的临时项目",sales_name: "王新").delete
+    Project.find_by(name: "卫星光的临时项目",sales_name: "卫星光").delete
+    Project.find_by(name: "史磊的临时项目",sales_name: "史磊").delete
+    Project.find_by(name: "陈卫的临时项目",sales_name: "陈卫").delete
+    Project.find_by(name: "赵国良的临时项目",sales_name: "赵国良").delete
+    Project.find_by(name: "张诚珖的临时项目",sales_name: "张诚珖").delete
+    Project.find_by(name: "项斓的临时项目",sales_name: "项斓").delete
+    Project.find_by(name: "李路平的临时项目",sales_name: "李路平").delete
+    Project.find_by(name: "于德志的临时项目",sales_name: "于德志").delete
+    Project.find_by(name: "方晓敏的临时项目",sales_name: "方晓敏").delete
+    Project.find_by(name: "吴钧亮的临时项目",sales_name: "吴钧亮").delete
+    Project.find_by(name: "王侃的临时项目",sales_name: "王侃").delete
+    Project.find_by(name: "刘利忠的临时项目",sales_name: "刘利忠").delete
+    Project.find_by(name: "陈延国的临时项目",sales_name: "陈延国").delete
+    Project.find_by(name: "李进涛的临时项目",sales_name: "李进涛").delete
+    Project.find_by(name: "于丁的临时项目",sales_name: "于丁").delete
+    Project.find_by(name: "吴雨阳的临时项目",sales_name: "吴雨阳").delete
+    Project.find_by(name: "王辉的临时项目",sales_name: "王辉").delete
+    Project.find_by(name: "邢千里的临时项目",sales_name: "邢千里").delete
+    Project.find_by(name: "甄正的临时项目",sales_name: "甄正").delete
+    Project.find_by(name: "格日乐图的临时项目",sales_name: "格日乐图").delete
+    Project.find_by(name: "刘梦雨的临时项目",sales_name: "刘梦雨").delete
+    Project.find_by(name: "刘众的临时项目",sales_name: "刘众").delete
+    Project.find_by(name: "朱明的临时项目",sales_name: "朱明").delete
+    Project.find_by(name: "郑锐的临时项目",sales_name: "郑锐").delete
+    Project.find_by(name: "马郭波的临时项目",sales_name: "马郭波").delete
+    Project.find_by(name: "梅玉国的临时项目",sales_name: "梅玉国").delete
+    Project.find_by(name: "龚召华的临时项目",sales_name: "龚召华").delete
+    Project.find_by(name: "曾祥金的临时项目",sales_name: "曾祥金").delete
+    Project.find_by(name: "马郭波的临时项目",sales_name: "马郭波").delete
+    Project.find_by(name: "王宁的临时项目",sales_name: "王宁").delete
+    Project.find_by(name: "吕华的临时项目",sales_name: "吕华").delete
+    Project.find_by(name: "张洁的临时项目",sales_name: "张洁").delete
+    Project.find_by(name: "刘成龙的临时项目",sales_name: "刘成龙").delete
+    Project.find_by(name: "陈瑟的临时项目",sales_name: "陈瑟").delete
+    Project.find_by(name: "尚红涛的临时项目",sales_name: "尚红涛").delete
+    Project.find_by(name: "马力隆的临时项目",sales_name: "马力隆").delete
+    Project.find_by(name: "崔新宇的临时项目",sales_name: "崔新宇").delete
+    Project.find_by(name: "王诗雨的临时项目",sales_name: "王诗雨").delete
+    Project.find_by(name: "王晓博的临时项目",sales_name: "王晓博").delete
+    Project.find_by(name: "宋雪的临时项目",sales_name: "宋雪").delete
+    Project.find_by(name: "张润贤的临时项目",sales_name: "张润贤").delete
+    Project.find_by(name: "闫闯的临时项目",sales_name: "闫闯").delete
+    Project.find_by(name: "董俊秀的临时项目",sales_name: "董俊秀").delete
+    Project.find_by(name: "刘荣辉的临时项目",sales_name: "刘荣辉").delete
+    Project.find_by(name: "刘琴的临时项目",sales_name: "刘琴").delete
+    Project.find_by(name: "张磊的临时项目",sales_name: "张磊").delete
+    Project.find_by(name: "于朗的临时项目",sales_name: "于朗").delete
+    Project.find_by(name: "王家伟的临时项目",sales_name: "王家伟").delete
+    Project.find_by(name: "邹建凯的临时项目",sales_name: "邹建凯").delete
+    Project.find_by(name: "王书克的临时项目",sales_name: "王书克").delete
+    Project.find_by(name: "吴非的临时项目",sales_name: "吴非").delete
+    Project.find_by(name: "鞠明涛的临时项目",sales_name: "鞠明涛").delete
+    Project.find_by(name: "田小丽的临时项目",sales_name: "田小丽").delete
+    Project.find_by(name: "孙国伟的临时项目",sales_name: "孙国伟").delete
+    Project.find_by(name: "江涛的临时项目",sales_name: "江涛").delete
+    Project.find_by(name: "付成喜的临时项目",sales_name: "付成喜").delete
+    Project.find_by(name: "刘洋的临时项目",sales_name: "刘洋").delete
+    Project.find_by(name: "马超的临时项目",sales_name: "马超").delete
+    Project.find_by(name: "解文强的临时项目",sales_name: "解文强").delete
+    Project.find_by(name: "胡晓晶的临时项目",sales_name: "胡晓晶").delete
+    Project.find_by(name: "皇甫晨卓的临时项目",sales_name: "皇甫晨卓").delete
+    Project.find_by(name: "贾波的临时项目",sales_name: "贾波").delete
+    Project.find_by(name: "王舰的临时项目",sales_name: "王舰").delete
+    Project.find_by(name: "曹剑萍的临时项目",sales_name: "曹剑萍").delete
+    Project.find_by(name: "毛薇婷的临时项目",sales_name: "毛薇婷").delete
+    Project.find_by(name: "黄毅的临时项目",sales_name: "黄毅").delete
+    Project.find_by(name: "钮新的临时项目",sales_name: "钮新").delete
+    Project.find_by(name: "郑贤才的临时项目",sales_name: "郑贤才").delete
+    Project.find_by(name: "马飞的临时项目",sales_name: "马飞").delete
+    Project.find_by(name: "王智超的临时项目",sales_name: "王智超").delete
+    Project.find_by(name: "吴斌斌的临时项目",sales_name: "吴斌斌").delete
+    Project.find_by(name: "梁玉梅的临时项目",sales_name: "梁玉梅").delete
+    Project.find_by(name: "郑少甘的临时项目",sales_name: "郑少甘").delete
+    Project.find_by(name: "沈勇的临时项目",sales_name: "沈勇").delete
+    Project.find_by(name: "阳章林的临时项目",sales_name: "阳章林").delete
+    Project.find_by(name: "秦耀星的临时项目",sales_name: "秦耀星").delete
+    Project.find_by(name: "王小午的临时项目",sales_name: "王小午").delete
+    Project.find_by(name: "张晓羽的临时项目",sales_name: "张晓羽").delete
+    Project.find_by(name: "张星光的临时项目",sales_name: "张星光").delete
+    Project.find_by(name: "李轩的临时项目",sales_name: "李轩").delete
+    Project.find_by(name: "王鹏的临时项目",sales_name: "王鹏").delete
+    Project.find_by(name: "郭少豪的临时项目",sales_name: "郭少豪").delete
+    Project.find_by(name: "李大海的临时项目",sales_name: "李大海").delete
+    Project.find_by(name: "张岩的临时项目",sales_name: "张岩").delete
+    Project.find_by(name: "柴宏的临时项目",sales_name: "柴宏").delete
+    Project.find_by(name: "张蕊的临时项目",sales_name: "张蕊").delete
+    Project.find_by(name: "占娟的临时项目",sales_name: "占娟").delete
+    Project.find_by(name: "汪雨的临时项目",sales_name: "汪雨").delete
+    Project.find_by(name: "袁迪的临时项目",sales_name: "袁迪").delete
+    Project.find_by(name: "马薇的临时项目",sales_name: "马薇").delete
+    Project.find_by(name: "王智刚的临时项目",sales_name: "王智刚").delete
+    Project.find_by(name: "武熠的临时项目",sales_name: "武熠").delete
+    Project.find_by(name: "刘辉的临时项目",sales_name: "刘辉").delete
+    Project.find_by(name: "张男的临时项目",sales_name: "张男").delete
+    Project.find_by(name: "李祺欣的临时项目",sales_name: "李祺欣").delete
+    Project.find_by(name: "郑国刚的临时项目",sales_name: "郑国刚").delete
+    Project.find_by(name: "肖巍的临时项目",sales_name: "肖巍").delete
+    Project.find_by(name: "李知伦的临时项目",sales_name: "李知伦").delete
+    Project.find_by(name: "张峰的临时项目",sales_name: "张峰").delete
+    Project.find_by(name: "范志伟的临时项目",sales_name: "范志伟").delete
+    Project.find_by(name: "孙亚娟的临时项目",sales_name: "孙亚娟").delete
+    Project.find_by(name: "黄磊的临时项目",sales_name: "黄磊").delete
+    Project.find_by(name: "张雯雯的临时项目",sales_name: "张雯雯").delete
+    Project.find_by(name: "刘伟的临时项目",sales_name: "刘伟").delete
+    Project.find_by(name: "高峰的临时项目",sales_name: "高峰").delete
+    Project.find_by(name: "孟雪鹏的临时项目",sales_name: "孟雪鹏").delete
+    Project.find_by(name: "张喜华的临时项目",sales_name: "张喜华").delete
+    Project.find_by(name: "张伟的临时项目",sales_name: "张伟").delete
+    Project.find_by(name: "杨健的临时项目",sales_name: "杨健").delete
+    Project.find_by(name: "黄丁杰的临时项目",sales_name: "黄丁杰").delete
+    Project.find_by(name: "杨轶的临时项目",sales_name: "杨轶").delete
+    Project.find_by(name: "刘烨的临时项目",sales_name: "刘烨").delete
+    Project.find_by(name: "王凯的临时项目",sales_name: "王凯").delete
+    Project.find_by(name: "陶磊的临时项目",sales_name: "陶磊").delete
+    Project.find_by(name: "欧阳娟的临时项目",sales_name: "欧阳娟").delete
+    Project.find_by(name: "刘俊的临时项目",sales_name: "刘俊").delete
+    Project.find_by(name: "王磊的临时项目",sales_name: "王磊").delete
+    Project.find_by(name: "秦曦的临时项目",sales_name: "秦曦").delete
+    Project.find_by(name: "谌奎的临时项目",sales_name: "谌奎").delete
+    Project.find_by(name: "衡成兵的临时项目",sales_name: "衡成兵").delete
+    Project.find_by(name: "俞赛的临时项目",sales_name: "俞赛").delete
+    Project.find_by(name: "许结移的临时项目",sales_name: "许结移").delete
+    Project.find_by(name: "唐甲东的临时项目",sales_name: "唐甲东").delete
+    Project.find_by(name: "夏晨的临时项目",sales_name: "夏晨").delete
+    Project.find_by(name: "邱在鹏的临时项目",sales_name: "邱在鹏").delete
+    Project.find_by(name: "胡嘉诚的临时项目",sales_name: "胡嘉诚").delete
+    Project.find_by(name: "王婷的临时项目",sales_name: "王婷").delete
+    Project.find_by(name: "高燕的临时项目",sales_name: "高燕").delete
+    Project.find_by(name: "唐莉的临时项目",sales_name: "唐莉").delete
+    Project.find_by(name: "黄可的临时项目",sales_name: "黄可").delete
+    Project.find_by(name: "陈超的临时项目",sales_name: "陈超").delete
+    Project.find_by(name: "王如春的临时项目",sales_name: "王如春").delete
+    Project.find_by(name: "高杨的临时项目",sales_name: "高杨").delete
+    Project.find_by(name: "王轲的临时项目",sales_name: "王轲").delete
+    Project.find_by(name: "李思明的临时项目",sales_name: "李思明").delete
+    Project.find_by(name: "李燕的临时项目",sales_name: "李燕").delete
+    Project.find_by(name: "吕鑫的临时项目",sales_name: "吕鑫").delete
+    Project.find_by(name: "雷京的临时项目",sales_name: "雷京").delete
+    Project.find_by(name: "施学诚的临时项目",sales_name: "施学诚").delete
+    Project.find_by(name: "毛咏梅的临时项目",sales_name: "毛咏梅").delete
+    Project.find_by(name: "胡迪秋的临时项目",sales_name: "胡迪秋").delete
+    Project.find_by(name: "白佳星的临时项目",sales_name: "白佳星").delete
+    Project.find_by(name: "张旭松的临时项目",sales_name: "张旭松").delete
+    Project.find_by(name: "孙伟晓的临时项目",sales_name: "孙伟晓").delete
+    Project.find_by(name: "臧圣博的临时项目",sales_name: "臧圣博").delete
+    Project.find_by(name: "戚杰的临时项目",sales_name: "戚杰").delete
+    Project.find_by(name: "潘先静的临时项目",sales_name: "潘先静").delete
+    Project.find_by(name: "李婷的临时项目",sales_name: "李婷").delete
+    Project.find_by(name: "杜晓源的临时项目",sales_name: "杜晓源").delete
+    Project.find_by(name: "王林艺的临时项目",sales_name: "王林艺").delete
+    Project.find_by(name: "王志伟的临时项目",sales_name: "王志伟").delete
+    Project.find_by(name: "马宇航的临时项目",sales_name: "马宇航").delete
+    Project.find_by(name: "杨雪的临时项目",sales_name: "杨雪").delete
+    Project.find_by(name: "钟庚香的临时项目",sales_name: "钟庚香").delete
+    Project.find_by(name: "李博书的临时项目",sales_name: "李博书").delete
+    Project.find_by(name: "徐强的临时项目",sales_name: "徐强").delete
+    Project.find_by(name: "成弘璐的临时项目",sales_name: "成弘璐").delete
+    Project.find_by(name: "杜继旭的临时项目",sales_name: "杜继旭").delete
+    Project.find_by(name: "扈丹的临时项目",sales_name: "扈丹").delete
+    Project.find_by(name: "姚健的临时项目",sales_name: "姚健").delete
+    Project.find_by(name: "陈建超的临时项目",sales_name: "陈建超").delete
+    Project.find_by(name: "邵轶科的临时项目",sales_name: "邵轶科").delete
+    Project.find_by(name: "包世婕的临时项目",sales_name: "包世婕").delete
+    Project.find_by(name: "陈镇的临时项目",sales_name: "陈镇").delete
+    Project.find_by(name: "王玉龙的临时项目",sales_name: "王玉龙").delete
+    Project.find_by(name: "桑戟南的临时项目",sales_name: "桑戟南").delete
+    Project.find_by(name: "李彦的临时项目",sales_name: "李彦").delete
+    Project.find_by(name: "丁凯的临时项目",sales_name: "丁凯").delete
+    Project.find_by(name: "高天运的临时项目",sales_name: "高天运").delete
+    Project.find_by(name: "周健的临时项目",sales_name: "周健").delete
+    Project.find_by(name: "姜华的临时项目",sales_name: "姜华").delete
+    Project.find_by(name: "王理俊的临时项目",sales_name: "王理俊").delete
+    Project.find_by(name: "张相春的临时项目",sales_name: "张相春").delete
+    Project.find_by(name: "周飞的临时项目",sales_name: "周飞").delete
+    Project.find_by(name: "胡震雷的临时项目",sales_name: "胡震雷").delete
+    Project.find_by(name: "赵锋君的临时项目",sales_name: "赵锋君").delete
+    Project.find_by(name: "林耀辉的临时项目",sales_name: "林耀辉").delete
+    Project.find_by(name: "常希盟的临时项目",sales_name: "常希盟").delete
+    Project.find_by(name: "孙晓轮的临时项目",sales_name: "孙晓轮").delete
+    Project.find_by(name: "王进超的临时项目",sales_name: "王进超").delete
+    Project.find_by(name: "厉京文的临时项目",sales_name: "厉京文").delete
+    Project.find_by(name: "吴鑫的临时项目",sales_name: "吴鑫").delete
+    Project.find_by(name: "战昊的临时项目",sales_name: "战昊").delete
+    Project.find_by(name: "李德杰的临时项目",sales_name: "李德杰").delete
+    Project.find_by(name: "张爽的临时项目",sales_name: "张爽").delete
+    Project.find_by(name: "寻如思的临时项目",sales_name: "寻如思").delete
+    Project.find_by(name: "朱恒伟的临时项目",sales_name: "朱恒伟").delete
+    Project.find_by(name: "张炜的临时项目",sales_name: "张炜").delete
+    Project.find_by(name: "焦耀平的临时项目",sales_name: "焦耀平").delete
+    Project.find_by(name: "陈仁明的临时项目",sales_name: "陈仁明").delete
+    Project.find_by(name: "张倩的临时项目",sales_name: "张倩").delete
+    Project.find_by(name: "陈创的临时项目",sales_name: "陈创").delete
+    Project.find_by(name: "贾涛的临时项目",sales_name: "贾涛").delete
+    Project.find_by(name: "曲涛的临时项目",sales_name: "曲涛").delete
+    Project.find_by(name: "向国钊的临时项目",sales_name: "向国钊").delete
+    Project.find_by(name: "王爱平的临时项目",sales_name: "王爱平").delete
+    Project.find_by(name: "张顶的临时项目",sales_name: "张顶").delete
+    Project.find_by(name: "王怡慢的临时项目",sales_name: "王怡慢").delete
+    Project.find_by(name: "迟绍旭的临时项目",sales_name: "迟绍旭").delete
+    Project.find_by(name: "王峰的临时项目",sales_name: "王峰").delete
+    Project.find_by(name: "张晓芳的临时项目",sales_name: "张晓芳").delete
+    Project.find_by(name: "王诗童的临时项目",sales_name: "王诗童").delete
+    Project.find_by(name: "张邦政的临时项目",sales_name: "张邦政").delete
+    Project.find_by(name: "陈险峰的临时项目",sales_name: "陈险峰").delete
+    Project.find_by(name: "吴庆华的临时项目",sales_name: "吴庆华").delete
+    Project.find_by(name: "赫然的临时项目",sales_name: "赫然").delete
+    Project.find_by(name: "杨浩的临时项目",sales_name: "杨浩").delete
+    Project.find_by(name: "饶伟荣的临时项目",sales_name: "饶伟荣").delete
+    Project.find_by(name: "赵月的临时项目",sales_name: "赵月").delete
+    Project.find_by(name: "张信勇的临时项目",sales_name: "张信勇").delete
+    Project.find_by(name: "刘晓枫的临时项目",sales_name: "刘晓枫").delete
+    Project.find_by(name: "石锦的临时项目",sales_name: "石锦").delete
+    Project.find_by(name: "李玉涛的临时项目",sales_name: "李玉涛").delete
+    Project.find_by(name: "施美琳的临时项目",sales_name: "施美琳").delete
+    Project.find_by(name: "王俊运的临时项目",sales_name: "王俊运").delete
+    Project.find_by(name: "兰红的临时项目",sales_name: "兰红").delete
+    Project.find_by(name: "蒋雯的临时项目",sales_name: "蒋雯").delete
+    Project.find_by(name: "崔炜的临时项目",sales_name: "崔炜").delete
+    Project.find_by(name: "鲍亮的临时项目",sales_name: "鲍亮").delete
+    Project.find_by(name: "陈扬的临时项目",sales_name: "陈扬").delete
+    Project.find_by(name: "王春艳的临时项目",sales_name: "王春艳").delete
+    Project.find_by(name: "祁悦的临时项目",sales_name: "祁悦").delete
+    Project.find_by(name: "张娜的临时项目",sales_name: "张娜").delete
+    Project.find_by(name: "刘洋的临时项目",sales_name: "刘洋").delete
+    Project.find_by(name: "张海莹的临时项目",sales_name: "张海莹").delete
+    Project.find_by(name: "吴高翔的临时项目",sales_name: "吴高翔").delete
+    Project.find_by(name: "李泽的临时项目",sales_name: "李泽").delete
+    Project.find_by(name: "李大庆的临时项目",sales_name: "李大庆").delete
+    Project.find_by(name: "赵玲东的临时项目",sales_name: "赵玲东").delete
+    Project.find_by(name: "王培帆的临时项目",sales_name: "王培帆").delete
+    Project.find_by(name: "陈海海的临时项目",sales_name: "陈海海").delete
+    Project.find_by(name: "张雨的临时项目",sales_name: "张雨").delete
+    Project.find_by(name: "王浩宇的临时项目",sales_name: "王浩宇").delete
+  end
 
 
 end
