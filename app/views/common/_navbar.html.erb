@@ -63,12 +63,14 @@
                               <li>
                                 <%= link_to('我管理的项目',my_projects_path) %>
                               </li> 
-
+                              
+                              <% if current_user.manager_sbus.present? %>
                               <li>
                                 <%= link_to sbus_index_path do %>
                                   我的团队
                                 <% end %>
                               </li>
+                              <% end %>
 
                         </ul>
                     </li>
