@@ -10,7 +10,7 @@
 
   <ol class="breadcrumb">
     <li class="active"><%= link_to("团队",sbus_index_path) %></li>
-    <li class="active"><%= @sbu.name %> <kbd><%= @users.count %>人</kbd> </li>
+    <li class="active"><%= @sbu.name %></li>
   </ol>
 
 
@@ -19,15 +19,14 @@
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#workflow" aria-controls="workflow" role="tab" data-toggle="tab">工作</a></li>
-      <li role="presentation"><a href="#member" aria-controls="member" role="tab" data-toggle="tab">成员</a></li>
+      <li role="presentation" class="active"><a href="#workflow" aria-controls="workflow" role="tab" data-toggle="tab">工作 <kbd><%= @workflows.count %></kbd> </a></li>
+      <li role="presentation"><a href="#member" aria-controls="member" role="tab" data-toggle="tab">成员  <kbd><%= @users.count %></kbd>  </a></li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="workflow">
 
-        <%= link_to "导出", sbus_path(@sbu,format: "xls"),class: 'btn btn-primary btn-xs' %>
 
           <table class="table">
             <thead>
@@ -82,6 +81,8 @@
           <div class="text-center">
             <%= will_paginate @workflows %>
           </div>
+      
+      <%= link_to "导出", sbus_path(@sbu,format: "xls"),class: 'btn btn-primary btn-xs' %>
 
       </div>
       <div role="tabpanel" class="tab-pane" id="member">
