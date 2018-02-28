@@ -1,6 +1,13 @@
 class Sbu < ApplicationRecord
 
-  # has_many :users
+  has_many :sbu_leaders
+  has_many :sbu_managers, through: :sbu_leaders,source: :user
+
+
+  def add_manager!(user)
+    self.sbu_managers << user
+    self.save
+  end
 
 end
 

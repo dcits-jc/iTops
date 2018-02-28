@@ -4,6 +4,29 @@
 </ol>
 
 
+  <p>部门管理员:
+    <% @sbu.sbu_managers.each do |m| %>
+      <%= m.name %>
+    <% end %>
+  </p>
+
+
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newsbumanager">
+    新增管理员
+  </button>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="newsbumanager" tabindex="-1" role="dialog" aria-labelledby="newWorkflowLabel">
+    <div class="modal-dialog" role="document">
+      <%= render "userselect_form" %>
+    </div>
+  </div>
+
+
+
+
 
 <table class="table">
   <thead>

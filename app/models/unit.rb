@@ -3,9 +3,9 @@ class Unit < ApplicationRecord
   # 一个部门拥有多个员工
   # has_many :users
 
-  # 一个部门可能有多个领导
-  has_many :user_leader_units
-  has_many :unit_leaders, through: :user_leader_units, source: :user
+  # # 一个部门可能有多个领导
+  # has_many :user_leader_units
+  # has_many :unit_leaders, through: :user_leader_units, source: :user
 
 
   has_many :son_relationships, class_name: "UnitRelationship",

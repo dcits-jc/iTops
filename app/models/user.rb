@@ -5,8 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,:authentication_keys => [:itcode]
 
   # 一个用户可能管理多个部门
-  has_many :user_leader_units
-  has_many :leading_units, through: :user_leader_units, source: :unit
+  # has_many :user_leader_units
+  # has_many :leading_units, through: :user_leader_units, source: :unit
+
+
+  # sbu 管理员
+  has_many :sbu_leaders
+  has_many :manager_sbus, through: :sbu_leaders,source: :sbu
 
 
 
@@ -97,6 +102,16 @@ class User < ApplicationRecord
   # 关闭强制邮箱登录
   def email_required?
     false
+  end
+
+
+  # 搜索常规项目
+  def self.search_normal(search)
+    if search
+      where('name LIKE ? or itcode LIKE ?',"%#{search}%","%#{search}%")
+    else
+      scoped
+    end
   end
 
 end
