@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   resources :my_projects
 
+  # 我的团队
+  resources :sbus
+
+
   # 管理员路由
   namespace :admin do
     resources :workflows
@@ -69,6 +73,7 @@ Rails.application.routes.draw do
   namespace :api, :defaults => { :format => :json } do
     namespace :v1 do
       get "/projects/:project_code" => "projects#normal", as: :project
+      get "/users/:itcode" => "users#normal", as: :user
       # resources :trains, only: [:index, :show]
       # resources :reservations, ony:[:show, :create, :update, :destroy] 
       # 为了更明白的给api 使用者显示,所以最好手动列出来,并且将'id'换成对应的参数

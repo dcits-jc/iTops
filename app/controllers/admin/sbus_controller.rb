@@ -5,6 +5,9 @@ class Admin::SbusController < ApplicationController
     @sbus = Sbu.all
   end
 
+
+
+
   def show
     @sbu = Sbu.find(params[:id])
     @users = User.where(sbu_name: @sbu.name)
@@ -20,5 +23,21 @@ class Admin::SbusController < ApplicationController
     end
 
   end
+
+
+
+  def update
+    @sbu = Sbu.find(params[:id])
+    user = User.find(sbu_params[:sbu_managers])
+    @sbu.add_manager!(user)
+    redirect_to admin_sbus_path(@sbu)
+  end
+
+  private
+
+  def sbu_params
+    params.require(:sbu).permit(:id,:sbu_managers)
+  end
+
 
 end

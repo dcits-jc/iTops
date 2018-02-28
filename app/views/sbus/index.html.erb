@@ -1,0 +1,33 @@
+<div class="col-md-2 text-right">
+
+    <h1>我的团队</h1>
+
+  
+</div>
+<div class="col-md-10">
+
+
+
+  <ol class="breadcrumb">
+    <li class="active">团队</li>
+  </ol>
+
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>团队名</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sbus.each do |sbu| %>
+      <tr>
+        <td><%= link_to(sbu.name,sbus_path(sbu)) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>  

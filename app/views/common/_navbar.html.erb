@@ -60,10 +60,16 @@
                                   参与过的项目
                                 <% end %>
                               </li>
-
-                            <li>
+                              <li>
                                 <%= link_to('我管理的项目',my_projects_path) %>
-                            </li> 
+                              </li> 
+
+                              <li>
+                                <%= link_to sbus_index_path do %>
+                                  我的团队
+                                <% end %>
+                              </li>
+
                         </ul>
                     </li>
                     <li> <%= link_to("帮助", faq_landingpage_index_path) %> </li>
