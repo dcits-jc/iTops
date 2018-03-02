@@ -75,6 +75,7 @@
 <hr>
 <%= link_to('编辑',edit_admin_project_path(@project),class: "btn btn-primary")  %>
 
+<%= link_to('删除',admin_project_path(@project),method: 'DELETE',class: "btn btn-danger")  %>
 
   <% if @project.workflow_disabled?  %>
     <%= link_to('开启继续报工',enable_workflow_admin_project_path(@project),method: 'post',class: "btn btn-warning") %></td>
