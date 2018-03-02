@@ -63,6 +63,17 @@ class Admin::ProjectsController < ApplicationController
   end
 
 
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.delete
+      flash[:notice] = '项目删除成功!'
+      redirect_to admin_projects_path
+    else
+      flash[:alert] = '项目删除失败'
+      render admin_projects_path    
+    end        
+  end
+
 
 
   # 禁止报工

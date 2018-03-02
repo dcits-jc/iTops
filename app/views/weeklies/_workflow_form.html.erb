@@ -35,7 +35,7 @@
           <div class="form-group" id="project_number">
 
             <label>* 项目</label>
-            <select data-live-search="true" data-size=10  name="workflow[project_id]" id="workflow_project_id" class="selectpicker form-control select required" data-liveSearchPlaceholder="请选择对应项目">
+            <select data-live-search="true" data-size=10  name="workflow[project_id]" id="workflow_project_id" class="selectpicker form-control select required" data-live-search-placeholder="输入项目名关键字或项目号进行搜索" data-none-selected-text="选择指定项目">
 
 
             </select>
@@ -188,8 +188,7 @@ $(document).ready(function(){
 
 
 // 重新绘图 防止 display:none 的问题
-$(".selectpicker").selectpicker()
-
+$(".selectpicker").selectpicker();
 
 
 </script>
