@@ -18,6 +18,7 @@ class Admin::UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @sbu_names = Sbu.pluck(:name)
   end
 
   def create
@@ -44,10 +45,10 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save
-      flash[:notice] = '用户新建成功!'
+      flash[:notice] = '用户更新成功!'
       redirect_to admin_users_path
     else
-      flash[:alert] = '用户新建失败'
+      flash[:alert] = '用户更新失败'
       render :new    
     end
   end
