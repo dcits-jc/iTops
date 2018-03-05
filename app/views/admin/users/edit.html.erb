@@ -4,11 +4,11 @@
   <li class="active">编辑</li>
 </ol>
 
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for [:admin,@user] do |f| %>
   <%= f.input :name ,label: '姓名'%>
   <%= f.input :code ,label: '员工编号'%>
   <%= f.input :itcode ,label: 'itcode'%>
-  <%= f.input :sbu ,label: '所属部门'%>
+  <%= f.input :sbu_name ,label: '所属部门', collection: @sbu_names %>
   <%= f.input :phone ,label: '联系方式'%>
   <%= f.input :title ,label: '职位'%>
   <%= f.input :level ,label: '级别'%>
