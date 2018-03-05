@@ -10,6 +10,7 @@ class SbusController < ApplicationController
     @workflows_xls = Workflow.includes(:weekly).includes(:user).where(users: {sbu_name: @sbu.name}).order("workflows.created_at DESC")
     @workflows = @workflows_xls.paginate(:page => params[:page], :per_page => 30)
 
+    
     respond_to do |format|
       format.html
       # format.csv { send_data @workflows.to_csv }

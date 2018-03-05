@@ -1,12 +1,57 @@
-<h1><%= current_user.name %></h1>
-<p>员工编号:<%= current_user.code %></p>
-<p>ITcode:<%= current_user.itcode %></p>
-<p>所属部门:<%= current_user.sbu_name %></p>
-<p>联系方式:<%= current_user.phone %></p>
-<p>职位:<%= current_user.title %></p>
-<p>级别:<%= current_user.level %></p>
-<p>成本:<%= current_user.cost %></p>
+<div class="col-md-2 text-right">
+
+    <h1>我的团队</h1>
+
+  
+</div>
+<div class="col-md-10">
 
 
 
-<%= link_to('编辑',edit_admin_user_path(current_user),class: "btn btn-primary") %>
+  <ol class="breadcrumb">
+    <li class="active"><%= link_to("团队",sbus_index_path) %></li>
+    <li class="active"><%= @user.sbu_name %></li>
+    <li class="active"><%= @user.email %></li>
+  </ol>
+
+
+
+
+<h1><%= @user.name %></h1>
+<p>员工编号:<%= @user.code %></p>
+<p>ITcode:<%= @user.itcode %></p>
+<p>所属部门:<%= @user.sbu_name %></p>
+<p>联系方式:<%= @user.phone %></p>
+<p>职位:<%= @user.title %></p>
+<p>级别:<%= @user.level %></p>
+<p>成本:<%= @user.cost %></p>
+
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>周</td>
+      <td>工作量</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weeklies.each do |weekly| %>
+      <% if weekly.workload_sum == 0 %>
+        <tr class="bg-danger">
+      <% else %>
+        <tr>
+      <% end %>
+    
+      <td><%= link_to('Y'+(weekly.year).to_s+'W'+(weekly.week).to_s,admin_user_weekly_path(@user,weekly))  %></td>
+      <td><%= weekly.workload_sum %>小时</td>
+    </tr>
+    
+    <% end %>
+  </tbody>
+</table>
+
+
+</div>
