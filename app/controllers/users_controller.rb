@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @weeklies = @user.weeklies.order_by_week
   end
 
   def edit
