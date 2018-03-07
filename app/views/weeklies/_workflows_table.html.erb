@@ -3,7 +3,7 @@
   <% @workflows.each do |workflow| %>
 
 
-  <div class="panel panel-default" style="font-size: 0.5em">
+  <div class="panel panel-default">
     <div class="panel-heading">
       <kbd><%= workflow[0].code %></kbd> # <kbd><%= workflow[0].sbu %></kbd> # <kbd><%= workflow[0].sales_name %></kbd>
       <h4><%= workflow[0].name %></h4>
@@ -40,10 +40,10 @@
           <h3 class="text-center"><%= w.hours %>h</h3>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-8">
-          <p><em> <small><%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></small></em> </p>
+          <p><em> <%= w.start_time.strftime("%Y-%m-%d") %> ~ <%= w.end_time.strftime("%Y-%m-%d") %></em> </p>
           <blockquote>
 
-          <p style="font-size: 0.5em"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"> </span>  <kbd><%= w.workflow_type.name %></kbd> </p>
+          <p><span class="glyphicon glyphicon-bookmark" aria-hidden="true"> </span>  <kbd><%= w.workflow_type.name %></kbd> </p>
             
             <% if w.description.present? %>
               
@@ -54,7 +54,7 @@
           
 
 
-          <p style="font-size: 0.5em">
+          <p>
             <span class="glyphicon glyphicon-tags" aria-hidden="true"> </span> 
             <% if companies.present? %>
               <% companies.each do |c|%>
