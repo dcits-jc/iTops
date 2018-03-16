@@ -23,15 +23,19 @@ class Admin::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    # @project.members << current_user
-    # @project.managers << current_user
-    if @project.save
-      flash[:notice] = '项目新建成功!'
-      redirect_to admin_project_path(@project)
+    if (Project.find_by_name(@project.name)).present?
+      flash[:alert] = '项目名已存在'
+      render :new
     else
-      flash[:alert] = '项目新建失败'
-      render :new    
-    end    
+      if @project.save
+        flash[:notice] = '项目新建成功!'
+        redirect_to admin_project_path(@project)
+      else
+        flash[:alert] = '项目新建失败'
+        render :new    
+      end  
+    end
+  
   end
 
 
