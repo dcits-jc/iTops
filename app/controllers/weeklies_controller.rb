@@ -10,6 +10,19 @@ class WeekliesController < ApplicationController
   def show
     @weekly = Weekly.find(params[:id])
     @workflows = @weekly.workflows_group_by_project
+
+    @simple_workflows = @weekly.workflows
+
+    respond_to do |format|
+      format.html
+      # format.csv { send_data @workflows.to_csv }
+      format.xls{ 
+        # 设置文件名
+        headers["Content-Disposition"]= "attachment; filename=Y" + @weekly.year.to_s + "W" + @weekly.week.to_s + "_周报导出.xls"
+      }  
+    end
+
+
   end
 
   def edit

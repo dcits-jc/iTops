@@ -10,6 +10,11 @@
 
   <h1>Y<%= @weekly.year %> # W<%= @weekly.week %></h1>
   <p>日期:<%= @weekly.start_time.strftime("%Y-%m-%d") %>~<%= @weekly.end_time.strftime("%Y-%m-%d") %></p>
+
+  <%= link_to weekly_path(@weekly,format: "xls"),title: '导出工作量'  do%>
+    <span class="glyphicon glyphicon-save">导出本周工作量</span>
+  <% end %>
+
   <%= render 'common/workflows_table' %>
 
 </div>
