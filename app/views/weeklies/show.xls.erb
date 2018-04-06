@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">项目号</Data></Cell>
+        <Cell><Data ss:Type="String">项目名</Data></Cell>
+        <Cell><Data ss:Type="String">事业部</Data></Cell>
+        <Cell><Data ss:Type="String">销售</Data></Cell>
+        <Cell><Data ss:Type="String">工作内容描述</Data></Cell>
+        <Cell><Data ss:Type="String">工作类型</Data></Cell>
+        <Cell><Data ss:Type="String">涉及厂商</Data></Cell>
+        <Cell><Data ss:Type="String">技术方向</Data></Cell>
+        <Cell><Data ss:Type="String">工作量(小时)</Data></Cell>
+
+        <Cell><Data ss:Type="String">开始时间</Data></Cell>
+        <Cell><Data ss:Type="String">结束时间</Data></Cell>
+      </Row>
+
+      <% @simple_workflows.each do |workflow| %>
+
+        <% companies = workflow.companies.map {|s| s.name} %>
+        <% skills = workflow.skills.map {|s| s.name} %>
+        <!-- 把其他情况加进去 -->
+        <% if workflow.other_company.present?
+          companies.push(workflow.other_company)
+        end %>
+        <% if workflow.other_skill.present?
+          skills.push(workflow.other_skill)
+        end %>
+
+        <Row>
+          <Cell><Data ss:Type="String"><%= workflow.project.code %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.project.name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.project.sbu %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.project_sales %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.description %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.workflow_type.name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= companies %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= skills %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= workflow.hours %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.start_time.strftime("%Y-%m-%d") %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= workflow.end_time.strftime("%Y-%m-%d") %></Data></Cell>
+        </Row>
+      <% end %>
+
+    </Table>
+  </Worksheet>
+</Workbook>

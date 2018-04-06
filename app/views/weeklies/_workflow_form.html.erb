@@ -53,7 +53,10 @@
 
           <%= f.association :companies,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
 
+          <input type="text">
+
           <%= f.input :other_company,label: false,placeholder: '其他厂商'  %>
+
           <label id="workflow_skills_label">技术方向</label>
           <%= f.association :skills,label: false, as: :check_boxes ,item_wrapper_class: 'inline'  %>
 
